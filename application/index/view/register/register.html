@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="__STATIC__/css/book.css" />
+		<link rel="stylesheet" href="__STATIC__/css/header.css">
+		<link rel="stylesheet" href="__STATIC__/css/foot.css" />
+		<script type="text/javascript" src="__STATIC__/js/header.js"></script>
+		<script type="text/javascript" src="__STATIC__/js/index.js"></script>
+		<link rel="stylesheet" href="__STATIC__/css/orderConfirm.css" />
+		<link rel="stylesheet" href="__STATIC__/css/regist.css" />
+		<script type="text/javascript" src="__STATIC__/js/regist.js"></script>
+	</head>
+
+	<body>
+		<!--
+        	作者：杨富宙
+        	时间：2018-10-09
+        	描述：页面顶部
+        -->
+		{include file="common/header.html"/}
+		<!--
+          	作者：XXX
+          	时间：2018-10-09
+          	描述：页面中部示例
+          -->
+
+		<div class="mainDiv">
+			<div class="registMainDiv">
+				<!--<iframe class="TopDiv" src="header.html" frameborder="0" scrolling="no"></iframe><!--//这是头-->
+				<div class="registCenterDiv">
+					<div class="registMessageDiv">
+						<div class="registMessageTopDiv">
+							<div class="LMTopLeft">新用户注册</div>
+							<div id="logist" class="LMTopRight" onclick="onnewLogin();">直接登录</div>
+							<div class="LMTopBottom">
+							</div>
+						</div>
+						<form action="registSuccess.html" method="get" onsubmit="return summitClick();">
+							<div class="registMessageCenterDiv">
+								<div class="registInput">
+									<div class="inputvalue">用户名：</div>
+									<div class="inputDiv"><input type="text" id="name" name="name" placeholder="请输入您的用户名" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的用户名'" /></div>
+									<div class="errDiv"><span id="errName"></span></div>
+								</div>
+								<div class="registInput">
+									<div class="inputvalue">登录密码：</div>
+									<div class="inputDiv"><input type="password" id="pwd" name="pwd" placeholder="请输入您的密码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的密码'" /></div>
+									<div class="errDiv"><span id="errPwd"></span></div>
+								</div>
+								<div class="registInput">
+									<div class="inputvalue">邮箱：</div>
+									<div class="inputDiv"><input type="email" id="email" name="email" placeholder="请输入邮箱地址" onfocus="this.placeholder=''" onblur="this.placeholder='请 输入邮箱地址'" /></div>
+									<div class="errDiv"><span id="errEmail"></span></div>
+								</div>
+								<div class="registInput">
+									<div class="inputvalue">手机号：</div>
+									<div class="inputDiv"><input type="tel" id="tel" name="tel" placeholder="请输入您的手机号" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的手机号'" /></div>
+									<div class="errDiv"><span id="errTel"></span></div>
+								</div>
+								<div class="registInput registMessageBottomDiv">
+									<div class="inputvalue"></div>
+									<div class="inputDiv">
+										<div class="button"><input type="submit" value="提交注册信息" /></div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+
+				</div>
+				<!--<iframe class="BottomDiv" src="foot.html" frameborder="0" scrolling="no"></iframe>-->
+				<!--<div class="BottomDiv">这是尾</div>-->
+			</div>
+		</div>
+
+		<!--
+        	作者：lajiaopingzi@163.com
+        	时间：2018-10-09
+        	描述：网页的尾部      大标签： FootTop
+        -->
+		{include file="common/foot.html"/}
+	</body>
+
+</html>

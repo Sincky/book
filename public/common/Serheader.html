@@ -1,0 +1,107 @@
+
+		<div class="SevAllMainDiv">
+			<div class="SevUpDiv">
+				<div class="SevUpLeftDiv">
+					<p>小娜娜书城管理系统</p>
+				</div>
+				<div class="SevUpRightDiv">
+					<div class="SURimglDiv">
+						<img src="__STATIC__/img/nana/nanalineswhite.png" />
+					</div>
+					<span>小娜娜</span>
+					<div class="SURimgrDiv">
+						<a href="Sevpasswordchange.html" target="iframe"><img src="__STATIC__/img/nana/nanauser.png" /></a>
+					</div>
+					<!--<p>nana</p>-->
+
+				</div>
+			</div>
+			<div class="SevDownDiv">
+				<div class="SevDownLeftDiv" id="SevDownLeftID">
+					<ul id="accordion" class="accordion">
+						<li>
+							<div class="link link1">
+								<a href="Order-list.html" target="iframe">
+									<div class="SDLeftLiDiv">
+										<div class="SDLeftLi">
+											<div class="SDLeftLizuoDiv">
+												<img src="__STATIC__/img/nana/nanachoose1.png">	
+											</div>
+											<span>订单管理</span>
+											<div class="SDLeftLiyouDiv">
+												<img title="0"  id="imgLeft0" src="__STATIC__/img/nana/nanaleft1.png" />
+											</div>
+										</div>
+									
+										
+									</div>
+								</a>
+							</div>
+							<ul class="submenu">
+								<li>
+									<a href="#">添加订单</a>
+								</li>
+								<li>
+									<a href="#">修改订单</a>
+								</li>
+								<li>
+									<a href="#">订单搜索</a>
+								</li>
+								<li>
+									<a href="#">订单消息</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div class="link link2">
+								<a href="product-list.html" target="iframe">
+								<div class="SDLeftLiDiv">
+									<div class="SDLeftLi">
+											<div class="SDLeftLizuoDiv">
+												<img src="__STATIC__/img/nana/nanachoose1.png">	
+											</div>
+											<span>商品管理</span>
+											<div  class="SDLeftLiyouDiv">
+												<img title="0" id="imgLeft1" src="__STATIC__/img/nana/nanaleft1.png" />
+											</div>
+										</div>
+								</div>
+								</a>
+							</div>
+							<ul class="submenu">
+								<li>
+									<a href="product-add.html" target="iframe">添加商品</a>
+								</li>
+								<li>
+									<a href="product-edit.html" target="iframe">修改商品</a>
+								</li>
+								<li>
+									<a href="#">商品搜索</a>
+								</li>
+								<li>
+									<a href="produt-detail.html" target="iframe">商品消息</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					
+				</div>
+				<div class="SevDownRightDiv">
+					<iframe name="iframe" class="SevDownRCenter" src="SerHelo.html" onload="iFrameHeight(this);" frameborder="0" scrolling="no"><!--此处可以将 src 的html 改变来改变中间的内容-->		
+						
+					</iframe>
+					<script>
+						function iFrameHeight(id) {
+							console.log("reloading");
+							var ifm = id;
+							var subWeb = document.frames ? document.frames[id].document : ifm.contentDocument;
+							if(ifm != null && subWeb != null) {
+								ifm.height = subWeb.body.clientHeight + 50;
+							}
+							reSizeByLeft(id);
+						}
+					</script>
+				
+				</div>
+			</div>
+		</div>

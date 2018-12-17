@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" href="__STATIC__/css/book.css" />
+	<link rel="stylesheet" href="__STATIC__/css/SevAll.css" />
+	<script type="text/javascript" src="__STATIC__/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/Serindex.js"></script>
+	<script>
+		function reSizeByLeft(id) {
+			var h = id.clientHeight;
+			var leftDiv = document.getElementById("SevDownLeftID");
+			leftDiv.style.height = (h + 50) + "px";
+		}
+	</script>
+
+	<body>
+		{include file="common/serheader.html"/}
+		{include file="common/serfoot.html"/}
+	</body>
+
+</html>
