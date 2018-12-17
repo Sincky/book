@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/product-add.css" />
+		<link rel="stylesheet" href="css/book.css" />
+	<script type="text/javascript" src="js/product-add.js"></script>
+	
+	</head>
+	<body>
+		<div class="orderMain">
+		<div class="orderBarDiv">
+			<div class="orderBar">
+				<img src="img/header/set.png" />
+				<a href="product-list.html"><span>商品管理</span></a>
+				><a href="product-list.html"><span> 所有商品</span></a>
+				<span>> 添加商品</span>
+			</div>
+		</div>
+		<div class="inputInforDiv">
+			<div class="titleDiv">信息录入</div>
+			<div class="inforDiv">
+				<div class="valueDiv"><input type="text" placeholder="图书编号"  name="bookNumber" id="bookNumber" /></div>
+				<div class="valueDiv"><input type="text" placeholder="书名"  name="bookName" id="bookName" /></div>
+				<div class="valueDiv"><input type="text" placeholder="作者"  name="bookAuthor" id="bookAuthor" /></div>
+				
+				<div class="valueDiv"><input type="text" placeholder="价格"  name="bookPrice" id="bookPrice" /></div>
+				<div class="valueDiv"><input type="text" placeholder="页数"  name="bookPages" id="bookPages" /></div>
+				<div class="valueDiv"><input type="text" placeholder="字数"  name="bookWords" id="bookWords" /></div>
+				
+				<div class="valueDiv"><input type="text" placeholder="出版社"  name="publishComoany" id="publishComoany" /></div>
+				<div class="valueDiv"><input type="text" placeholder="版次"  name="publishEdition" id="publishEdition" /></div>
+				<div class="valueDiv"><input type="date" placeholder="出版日期"  name="publishDate" id="publishDate"/></div>
+			
+				<div class="listDiv"><select name="format">
+					<option>16开</option>
+					<option>A4</option>
+					<option>A5</option>
+					<option>B4</option>
+				</select> </div>
+				
+				<div class="listDiv"><select name="packaging">
+					<option>钉装 </option>
+					<option>胶装</option>
+					<option>现状线装</option>
+				</select> </div>
+				
+				<div class="listDiv"><select name="paper">
+					<option>拷贝纸</option>
+					<option>打字纸</option>
+					<option>书写纸</option>
+					<option>胶装纸</option>
+				</select> </div>
+				
+				<div class="buttonDiv">
+					<input type='button' class='btn' value='索引图' onclick="$('fileField').click();"/>
+ 					<input type='text' name='textfield' id='textfield' class='txt' readonly="readonly"/>  
+				    <input type="file" name="fileField" class="file" id="fileField" style="display:none;" size="28" onchange="document.getElementById('textfield').value=this.value" />
+				</div>
+				<div class="buttonDiv">
+					<input type='button' class='btn' value='介绍图' onclick="$('fileField2').click();"/>
+ 					<input type='text' name='textfield2' id='textfield2' class='txt' readonly="readonly"/>  
+				    <input type="file" name="fileField2" class="file" id="fileField2" style="display:none;" size="28" onchange="document.getElementById('textfield2').value=this.value" />
+				</div>
+				<div class="buttonDiv">
+					<input type='button' class='btn' value='收集图' onclick="$('fileField3').click();"/>
+ 					<input type='text' name='textfield3' id='textfield3' class='txt' readonly="readonly"/>  
+				    <input type="file" name="fileField3" class="file" id="fileField3" style="display:none;" size="28" onchange="document.getElementById('textfield3').value=this.value" />
+				</div>
+			
+				<div class="buttonDiv">
+					<input type='button' class='btn' value='详图1' onclick="$('fileField4').click();"/>
+ 					<input type='text' name='textfield4' id='textfield4' class='txt' readonly="readonly"/>  
+				    <input type="file" name="fileField4" class="file" id="fileField4" style="display:none;" size="28" onchange="document.getElementById('textfield4').value=this.value" />
+				</div>
+				<div class="buttonDiv">
+					<input type='button' class='btn' value='详图2' onclick="$('fileField5').click();"/>
+ 					<input type='text' name='textfield5' id='textfield5' class='txt' readonly="readonly"/>  
+				    <input type="file" name="fileField5" class="file" id="fileField5" style="display:none;" size="28" onchange="document.getElementById('textfield5').value=this.value" />
+				</div>
+				<div class="buttonDiv">
+					<input type='button' class='btn' value='详图3' onclick="$('fileField6').click();"/>
+ 					<input type='text' name='textfield6' id='textfield6' class='txt' readonly="readonly"/>  
+				    <input type="file" name="fileField6" class="file" id="fileField6" style="display:none;" size="28" onchange="document.getElementById('textfield6').value=this.value" />
+				</div>
+				
+				<div class="buttonDiv">
+					<input type='button' class='btn' value='大图1' onclick="$('fileField7').click();"/>
+ 					<input type='text' name='textfield7' id='textfield7' class='txt' readonly="readonly"/>  
+				    <input type="file" name="fileField7" class="file" id="fileField7" style="display:none;" size="28" onchange="document.getElementById('textfield7').value=this.value" />
+				</div>
+				<div class="buttonDiv">
+					<input type='button' class='btn' value='大图2' onclick="$('fileField8').click();"/>
+ 					<input type='text' name='textfield8' id='textfield8' class='txt' readonly="readonly"/>  
+				    <input type="file" name="fileField8" class="file" id="fileField8" style="display:none;" size="28" onchange="document.getElementById('textfield8').value=this.value" />
+				</div>
+				<div class="buttonDiv">
+					<input type='button' class='btn' value='大图3' onclick="$('fileField9').click();"/>
+ 					<input type='text' name='textfield9' id='textfield9' class='txt' readonly="readonly"/>  
+				    <input type="file" name="fileField9" class="file" id="fileField9" style="display:none;" size="28" onchange="document.getElementById('textfield9').value=this.value" />
+				</div>
+				<div class="commitButtonDiv"><input type="submit" id="inforCommit" name="inforCommit" value="提交" /> </div>
+			</div>
+			
+		</div>
+	</div>	
+	</body>
+</html>
