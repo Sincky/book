@@ -1,0 +1,74 @@
+*,body,div,p,ul,li,a,input{
+	margin: 0px;	/*上下左右 都是0px*/
+	padding: 0px;	/**/
+	font-family: "微软雅黑";
+	border: 1px;
+	text-decoration: none; 
+}
+
+.SlMainDiv{
+	width: 90%px;
+	height: 600px;
+	margin: 10px auto;
+	display: table;
+}
+.SlMainMessDiv{
+	margin: auto;
+	width: 400px;
+	height: 400px;
+	text-align: center;
+	padding-top: 40px;
+	display: table-cell;
+	vertical-align: middle;
+}
+.SlMMDiv{
+	height: 350px;
+	margin-top: 20px;
+	background-color:aliceblue;
+}
+
+.SlMMDiv .title{
+	margin: 10px auto;
+	padding: 20px;
+}
+
+.inputDiv1{
+	height: 50px;
+	width: 300px;
+	
+}
+.inputDiv1 input{
+	background-image: url(../img/nana/nanauser.png) ;
+	background-repeat: no-repeat;
+	background-position-x: 260px;
+	background-position-y: 5px;
+	height: 50px;
+	width: 300px;
+}
+.inputDiv2{
+	margin-top: 30px;
+	height: 50px;
+	width: 300px;
+}
+.inputDiv2 input{
+	background-image: url(../img/nana/nanapassw.png) ;
+	background-repeat: no-repeat;
+	background-position-x: 260px;
+	background-position-y: 5px;
+	height: 50px;
+	width: 300px;
+}
+.submitDiv{
+	margin-left:50px;
+	margin-top: 30px;
+	height: 40px;
+	width: 100px;
+}
+.submitDiv input{
+	background-color: deepskyblue;
+	height: 40px;
+	width: 100px;
+}
+.passwSpanDiv{
+	color: #00BFFF;
+}

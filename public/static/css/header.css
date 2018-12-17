@@ -1,0 +1,80 @@
+*{
+	font-family: "微软雅黑";
+}
+body{
+	background-color: whitesmoke;
+}
+.headerDiv{
+	height: 120px;
+	width: 1000px;/*1500很大*/
+	margin: 0px auto;
+}
+/*headDiv     -》一个大的div下的所有样式写在一起*/
+.headerTop{
+	height: 120px;
+}
+/*头部的左边图片logo*/
+.headerTop .leftHeadDiv{
+	float: left;
+	width:120px;
+	height: 50px;
+	margin-left:0px;
+	margin-top: 25px;
+}
+/*头部中间搜索栏*/
+.headerTop .HTopDiv{
+	float: left;
+	width:450px;
+	height:50px;
+	margin-left: 100px;
+	margin-top: 20px;
+}
+.headerTop .HTopDiv .searchDiv{
+	float: left;
+	width:400px;
+	height: 40px;
+	margin-top: 5px;
+}
+
+.HTopDiv .FindPic{
+	float: left;
+	width: 40px;
+	margin-top: 5px;
+}
+/*这个是调整搜索栏的长度和高度*/
+.HTopDiv .searchDiv input{
+	width: 400px;
+	height: 30px;
+	border: rgb(12,160,231) 2px solid;
+	
+	
+}
+/*改变text placeholder颜色*/
+.HTopDiv .searchDiv input::-webkit-input-placeholder{
+		color:grey;
+	}
+/*这个是导航栏*/
+.headerTop .UlTopDiv{
+	float: right;
+	width:470px;
+	height:20px;
+	margin-top: 10px;
+	margin-right: 0px;
+	
+}
+
+.headerTop .UlTopDiv li{
+	float:left;
+	/*/width: 45px;*/
+	margin-right: 0px;
+	list-style: none;
+	padding: 0px 5px;
+	font-size: 10px;
+	
+}
+/*设置链接的下划线*/
+.headerTop .UlTopDiv a{
+	text-decoration: none;
+	color: gray;
+	
+}

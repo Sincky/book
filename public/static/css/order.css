@@ -1,0 +1,454 @@
+*,body,div,p,ul,li,a,input{
+	margin: 0px;	/*上下左右 都是0px*/
+	padding: 0px;	/**/
+	font-family: "微软雅黑";
+	border: 1px;
+	text-decoration: none; 
+}
+
+
+.mainDiv{
+	height:1500px;
+	width: 1000px;/*1500很大*/
+	margin: 0px auto;
+}
+.mainTop{
+	height:700px;
+}
+.mainTop .leftmainDiv{
+	float: left;
+	width:160px;
+	height: 470px;
+	margin-left:0px;
+	margin-top: 25px;
+}
+.mainTop .leftmainDiv .OrderPic{
+	float: left;
+}
+/*?????*/
+.mainTop .leftmainDiv #leftsidebar_box{
+    width:160px;
+    height:470px;
+!important;overflow:hidden;
+!important;position:absolute;
+!important;
+    /*background-color: #0aa1ed;*/
+    background:#f5f5f5;
+    font-size:12px;
+    color:#808080;
+    font-family: "SimHei";
+}
+.mainTop .leftmainDiv .line{
+    height:2px;
+    width:100%;
+}
+.mainTop .leftmainDiv #leftsidebar_box dt{
+    padding-left:40px;
+    padding-right:10px;
+    background-repeat:no-repeat;
+    background-position:10px center;
+    color:#f5f5f5;
+    font-size:14px;
+    font-weight:bold;
+    font-family:"SimHei";
+    position:relative;
+    line-height:36px;
+    cursor:pointer;
+    margin-bottom: 10px;
+}
+
+.mainTop .leftmainDiv #leftsidebar_box dd{
+    background-color:#fff;
+    padding-left:40px;
+    padding-top: 18px;
+    position: relative;
+    top:-10px;
+}
+.mainTop .leftmainDiv #leftsidebar_box .my_order dd span{
+    color:#0aa1ed;
+}
+.mainTop .leftmainDiv #leftsidebar_box dd a{
+    color:#808080;
+    line-height:20px;
+}
+.mainTop .leftmainDiv #leftsidebar_box dd a:hover{
+    color:#0aa1ed;
+    line-height:20px;
+}
+.mainTop .leftmainDiv #leftsidebar_box dt img{
+    position:absolute;
+    right:10px;
+    top:15px;
+}
+.mainTop .leftmainDiv #leftsidebar_box dl dd:last-child{
+    padding-bottom:10px;
+}
+
+
+/*左导航图标*/
+.my_order dt{background-image:url(../img/myOrder/myOrder.png)}
+
+
+/*我的订单下拉的样式
+.mainTop .leftmainDiv ul.menu {
+  padding: 0;
+  list-style: none;
+  width: 100px;
+  margin: 20px auto;
+  font-family: 'Century Gothic';
+  box-shadow: 0px 0px 25px #00000000;/*可有可无
+  clear: both;
+  display: table;
+}*/*/
+/*下拉框的字体
+.mainTop .leftmainDiv ul.menu .list {
+  font-size: 14px;
+  border-bottom: 1px solid #000;
+  position: relative;
+  width: 150px;
+  box-sizing: border-box;
+  height: 30px;
+  vertical-align: sub;
+  background: #000000;
+  clear: both;
+}*/
+/*
+
+.mainTop .leftmainDiv ul.menu .list a {
+  text-decoration: none;
+  color: #000;
+  padding: 0px 0px 0px 0px;
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+}
+/*让list里面的item隐藏
+.mainTop .leftmainDiv ul.menu .list .items {
+  height: 0px;
+  overflow: hidden;
+}*/
+/*list item的边距
+.mainTop .leftmainDiv ul.menu .list .items a {
+  padding: 10px;
+}*/
+/*点击item颜色的改变
+.mainTop .leftmainDiv ul.menu .list .items a:hover {
+  background-color: gray;
+  color: #000;
+  transition: 300ms all;
+}
+.mainTop .leftmainDiv ul.menu .list:last-child {
+  border-bottom: none;
+}*/
+/*显示item*/
+/*.mainTop .leftmainDiv ul.menu .active > .items {
+  display: block;
+  background: 000;/*item的背景颜色
+  padding: 0px;
+  height: auto;
+  color: #000;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 200ms;
+  clear: both;
+  float: left;
+  width: 100%;
+}*/
+/*中间部分*/
+.mainTop .midmainDiv{
+	float: left;
+	width:800px;
+	height: 700px;
+	margin-left:0px;
+	margin-top: 25px;
+}
+/*中间订单情况的栏*/
+.mainTop .midmainDiv .TitlePic{
+	float: left;
+	width:825px;
+	height: 37px;
+	margin-left:10px;
+	margin-top: 20px;
+	background-color:rgb(235,233,234) ;
+	
+}
+.mainTop .midmainDiv .TitlePic .headitems{
+	width:825px;
+	height: 37px;
+	margin-top:10px ;
+	
+}
+.mainTop .midmainDiv .TitlePic .headitems .items1{
+	float:left;
+	width: 325px;
+	height: 37px;
+	list-style: none;
+	padding: 0px 5px;
+	font-size: 10px;
+	text-align: center;
+
+}
+.mainTop .midmainDiv .TitlePic .headitems .items2{
+	float:left;
+	width: 70px;
+	height: 37px;
+	list-style: none;
+	padding: 0px 5px;
+	font-size: 10px;
+	text-align: center;
+
+}
+.mainTop .midmainDiv .TitlePic .headitems .items3{
+	float:left;
+	width: 45px;
+	height: 37px;
+	list-style: none;
+	padding: 0px 5px;
+	font-size: 10px;
+	text-align: center;
+
+}
+.mainTop .midmainDiv .TitlePic .headitems .items4{
+	float:left;
+	width: 64px;
+	height: 37px;
+	list-style: none;
+	padding: 0px 5px;
+	font-size: 10px;
+	text-align: center;
+
+}
+.mainTop .midmainDiv .TitlePic .headitems .items5{
+	float:left;
+	width: 80px;
+	height: 37px;
+	list-style: none;
+	padding: 0px 5px;
+	font-size: 10px;
+	text-align: center;
+
+}
+.mainTop .midmainDiv .TitlePic .headitems .items6{
+	float:left;
+	width: 90px;
+	height: 37px;
+	list-style: none;
+	padding: 0px 5px;
+	font-size: 10px;
+	text-align: center;
+
+}
+.mainTop .midmainDiv .TitlePic .headitems .items7{
+	float:left;
+	width: 40px;
+	height: 37px;
+	list-style: none;
+	padding: 0px 5px;
+	font-size: 10px;
+	text-align: center;
+
+}
+
+.mainTop .midmainDiv .MassageDiv{
+	float: left;
+	width:825px;
+	height:180px;
+	margin-left:10px;
+	margin-top: 5px;
+}
+.mainTop .midmainDiv .MassageDiv .MassageTopDiv{
+	float: left;
+	width:825px;
+	height: 20px;
+	margin-left:0px;
+	margin-top: 0px;
+	background-color:rgb(235,233,234) ;
+}
+.mainTop .midmainDiv .MassageDiv .MassageTopDiv h1{
+	font-size: 10px;
+	color: rgb(153,153,154);
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv{
+	float: left;
+	width:825px;
+	height: 150px;
+	margin-left:0px;
+	margin-top: 0px;
+	background-color:white ;
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .MassagegoodDiv{
+	float: left;
+	width:335px;
+	height: 150px;
+	margin-left:0px;
+	margin-top: 0px;
+	background-color:white ;
+	border-color: rgb(232,232,232);
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .MassagegoodDiv .goodPic{
+	float: left;
+	width:80px;
+	height: 90px;
+	margin-left:10px;
+	margin-top: 30px;
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .MassagegoodDiv .MassagegoodnameDiv{
+	float: left;
+	width:230px;
+	height: 100px;
+	margin-left:10px;
+	margin-top: 15px;
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .MassagegoodDiv .MassagegoodnameDiv h1{
+	font-size: 10px;
+	color: rgb(153,153,154);
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Pirce{
+	float: left;
+	width:70px;
+	height: 150px;
+	margin-left:0px;
+	margin-top: 0px;
+	border-color: rgb(232,232,232);
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Pirce h1{
+	margin-left: 15px;
+	margin-top: 20px;
+	font-size: 10px;
+	color: rgb(153,153,154);
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Number{
+	float: left;
+	width:65px;
+	height: 150px;
+	margin-left:0px;
+	margin-top: 0px;
+	border-color: rgb(232,232,232);
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Number h1{
+	margin-left: 20px;
+	margin-top: 50px;
+	font-size: 10px;
+	color: rgb(153,153,154);
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .SaleAfter{
+	float: left;
+	width:65px;
+	height: 150px;
+	margin-left:0px;
+	margin-top: 0px;
+	border-color: rgb(232,232,232);
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .SaleAfter h1{
+	margin-left: 5px;
+	margin-top: 20px;
+	font-size: 10px;
+	color: rgb(153,153,154);
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .RPirce{
+	float: left;
+	width:90px;
+	height: 150px;
+	margin-left:0px;
+	margin-top: 0px;
+	border-color: rgb(232,232,232);
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .RPirce h1{
+	margin-left: 15px;
+	margin-top: 50px;
+	font-size: 10px;
+	color: rgb(153,153,154);
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Zhuangtai{
+	float: left;
+	width:100px;
+	height: 150px;
+	margin-left:0px;
+	margin-top: 0px;
+	border-color: rgb(232,232,232);
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Zhuangtai h1{
+	
+	font-size: 10px;
+	color: rgb(153,153,154);
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Zhuangtai .Fahuo{
+	margin-left: 25px;
+	margin-top: 40px;
+	width:60px;
+	height: 50px;
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Caozuo{
+	float: left;
+	width:85px;
+	height: 150px;
+	margin-left:0px;
+	margin-top: 0px;
+	border-color: rgb(232,232,232);
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv button{
+	width:70px;
+	height: 40px;
+	margin-left:7px;
+	margin-top: 50px;
+	font-size: 10px;
+	color: whitesmoke;
+	background-color:  rgb(10,161,237);
+	border-color: rgb(10,161,237);
+}
+/*页码的部分*/
+.mainTop .midmainDiv .PageDiv{
+	float: left;
+	width:825px;
+	height:80px;
+	margin-left:0px;
+	margin-top: 5px;
+	background-color: rgba(240,240,240,0.8);
+}
+.mainTop .midmainDiv .PageDiv .Page{
+	float: right;
+	width: 300px;
+	height: 40px;
+	margin-top:10px ;
+}
+
+.mainTop .midmainDiv .PageDiv .Page .PageButton .buttonup{
+	float: left;
+	width:50px;
+	height:25px;
+	margin-left:4px;
+	margin-top: 5px;
+	color: rgb(191,191,191);
+	background-color:rgb(242,242,242);
+	border-radius: 3px;
+}
+.mainTop .midmainDiv .PageDiv .Page .PageButton .buttondown{
+	float: left;
+	width:50px;
+	height:25px;
+	margin-left:4px;
+	margin-top: 5px;
+	background-color:rgb(242,242,242)  ;
+	color:cornflowerblue;
+	border-radius: 4px;
+}
+
+.mainTop .midmainDiv .PageDiv .Page .PageNumber input{
+	float: left;
+	width:25px;
+	height:25px;
+	margin-left:3px;
+	margin-top: 5px;
+	color:cornflowerblue;
+	background-color:rgb(242,242,242) ;
+	border-color: rgb(242,242,242);
+	border-radius: 4px;
+}
+.mainTop .midmainDiv .PageDiv .Page .PageNumber .button1{
+	float: left;
+	width:25px;
+	height:25px;
+	margin-left:3px;
+	margin-top: 5px;
+	border : none;
+	background-color: rgba(240,240,240,0.8);
+}

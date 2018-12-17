@@ -1,0 +1,115 @@
+body{
+	background-color: whitesmoke;
+}
+.FootDiv{
+	width: 1000px;	
+	margin: 0px auto;
+}
+/*尾部上部*/
+.FootTop{
+	height:200px;
+}
+.FootTop .FootTopLeft{
+	float:left;
+	width: 245px;
+	height: 200px;
+	
+}
+.FootTop .FootTopLeft .FPicture1{	
+	float: left;
+	width: 60px;
+	height: 60px;
+	margin-left:100px;
+	margin-top: 50px;
+}
+.FootTop .FootTopLeft .FPictureName{
+	float: left;
+	margin-left: 90px;
+	font-size: 20px;
+}
+
+
+/*尾部中部*/
+.FootMiddle{
+	height: 250px;
+	background-color: white;
+}
+.FootMiddle .FootMiddle1{
+	float: left;
+	width: 320px;
+	height: 150px;
+	margin-left: 50px;
+	margin-top: 80px;
+}
+.FootMiddle .FootMiddle1 .FPicture2{
+	float: left;
+	margin-top:5px;
+}
+.FootMiddle .FootMiddle2{
+	float: left;
+	width: 80px;
+	height: 120px;
+	margin-left: 25px;
+	margin-top: 90px;
+}
+.FootMiddle .FootMiddle2 .FWord1{
+	font-size: 18px;
+	height: 25px;
+	align-content: center;	
+}
+.FootMiddle .FootMiddle2 .FWord1 a{
+	text-decoration: none;
+	color: black;
+}
+.FootMiddle .FootMiddle2 .FWord2{
+	font-size: 15px;
+	height: 20px;
+	align-content: center;
+	margin-left: 5px;
+	color: grey;
+	margin-top: 5px;	
+}
+.FootMiddle .FootMiddle2 .FWord2 a{
+	text-decoration: none;
+	color: gray;
+}
+.FootMiddle .FootMiddle2 .FWord3{
+	width: 60px;
+	height: 30px;
+	align-content: center;
+	margin-left: 15px;
+	margin-top: 5px;
+}
+
+.FootMiddle .FootMiddle3{
+	float: left;
+	width: 130px;
+	height: 130px;
+	margin-left: 50px;
+	margin-top: 80px;
+}
+.FootMiddle .FootMiddle3 .FWord1{
+	font-size: 18px;
+	width: 130px;
+	height: 30px;
+	margin-top: 10px;
+}
+.FootMiddle .FootMiddle3 .FPicture3{
+	width: 120px;
+}
+.FootMiddle .FootMiddle4{
+	float: left;
+	width: 100px;
+	height: 100px;
+	margin-top: 100px;
+}
+
+/*尾部下部*/
+.FootBottom{
+	height: 30px;
+	background-color: white;
+}
+.FootBottomDiv{
+	font-size: 16px;
+	color: black;
+}

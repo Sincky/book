@@ -1,0 +1,172 @@
+.hideDiv{
+/*	width: 1000px;*/
+	margin: 0px auto;
+	width: 100%;
+}
+.hideDiv .SevODMid{
+	height:595px ;
+	background-color: white;
+		box-shadow: 2px 2px 50px #d3d3d3;
+} 
+.hideDiv .SevODMid div{
+/*	border:solid #00FF00 1px;*/
+}
+
+/*中部的上部  订单那一行*/
+.hideDiv .SevODMid .MidDiv1{
+	height: 80px;
+}
+.hideDiv .SevODMid .MidDiv1 span{
+	float: left;
+	width:150px;
+	height:35px;
+	color: #4682B4;
+	text-align: center;
+	font-size:30px ;
+	font-weight: 800;
+}
+.hideDiv .SevODMid .MidDiv1 p{
+	float: right;
+	color: dimgray;
+	margin-right: 20px;
+	margin-top: 15px;
+}
+.hideDiv .SevODMid .Line{
+	float: left;
+	width: 90%;
+	height: 4px;
+	border:solid white 5px;
+	border-radius: 10px;
+	border-bottom-color:#87CEFA ;
+	margin-left: 50px;
+}
+
+/*中部的中部*/
+.hideDiv .SevODMid .MidDiv2{
+	height: 150px;
+}
+.hideDiv .SevODMid .MidDiv2 .Mid2_left{
+	float: left;
+	height: 145px;
+/*	width: 450px;*/
+	width: 50%;
+}
+.hideDiv .SevODMid .MidDiv2 .Mid2_left .Mid2_left_title{
+	float: left;
+	width: 150px;
+	height: 30px;
+}
+.hideDiv .SevODMid .MidDiv2 .Mid2_left .Mid2_left_title span{
+	float: left;
+	font-size:25px ;
+/*	margin-left: 22px;*/
+}
+.hideDiv .SevODMid .MidDiv2 .Mid2_left .Mid2_left_detail{
+	float: left;
+	width: 500px;
+	height: 100px;	
+}
+.hideDiv .SevODMid .MidDiv2 .Mid2_left .Mid2_left_detail div{
+	float: left;
+	width: 450px;
+	height: 32px;
+/*	margin-left: 22px;*/
+}
+.hideDiv .SevODMid .MidDiv2 .Mid2_left .Mid2_left_detail span{
+	float: left;
+	font-size:18px ;
+	font-weight: 800;	
+}
+.hideDiv .SevODMid .MidDiv2 .Mid2_left .Mid2_left_detail p{
+	float: left;
+	font-size:18px ;
+	margin-top: 0px;
+}
+.hideDiv .SevODMid .MidDiv2 .Mid2_left .Mid2_left_detail div.inputDiv{
+	float: left;
+	font-size:18px ;
+	width: 320px;
+}
+
+/*中部的下部*/
+.hideDiv .SevODMid .MidDiv3{
+	height: 335px;
+	background-color: white;
+}
+.hideDiv .SevODMid .MidDiv3 .color1{
+	background-color: #e6e6fa;
+}
+.hideDiv .SevODMid .MidDiv3 .head{
+	height: 35px;
+}
+.hideDiv .SevODMid .MidDiv3 .head div{
+	float: left;
+	font-size:18px ;
+	font-weight: 800;
+}
+.hideDiv .SevODMid .MidDiv3 .head .Num{
+	margin-left: 30px;
+}
+.hideDiv .SevODMid .MidDiv3 .head .Name{
+	margin-left: 50px;
+}
+.hideDiv .SevODMid .MidDiv3 .head .Id{
+	margin-left: 100px;
+}
+.hideDiv .SevODMid .MidDiv3 .head .detail{
+	margin-left: 100px;
+}
+.hideDiv .SevODMid .MidDiv3 .head .price{
+	margin-left: 350px;
+}
+.hideDiv .SevODMid .MidDiv3 .content{
+	height: 50px;
+}
+.hideDiv .SevODMid .MidDiv3 .content div{
+	float: left;
+	font-size:15px ;
+	height: 50px;
+}
+.hideDiv .SevODMid .MidDiv3 .content .Num{
+	width: 100px;
+	text-align: center;
+
+}
+.hideDiv .SevODMid .MidDiv3 .content .Name{
+	width: 120px;
+	text-align: center;
+}
+.hideDiv .SevODMid .MidDiv3 .content .Id{
+	width: 150px;
+	text-align: center;
+}
+.hideDiv .SevODMid .MidDiv3 .content .detail{
+	width: 400px;
+	margin-left: 50px;
+}
+.hideDiv .SevODMid .MidDiv3 .content .price{
+	width: 100px;
+	text-align: center;
+}
+.hideDiv .SevODMid .MidDiv4{
+	height: 50px;
+	margin-top: 0px;
+	background-color: white;
+}
+.hideDiv .SevODMid .MidDiv4 .botton{
+	float: right;
+	margin-right: 20px;
+	width: 60px;
+	height: 30px;
+	margin-top: 5px;
+}
+.hideDiv .SevODMid .MidDiv4 .botton input{
+	width: 60px;
+	height: 30px;
+	background-color: #ADD8E6;
+	/*border-top-color: white;
+	border-left-color: white;*/
+/*	box-shadow: 5px,5px,50px,#D3D3D3;*/
+	outline: none;
+
+}

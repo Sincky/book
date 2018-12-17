@@ -1,0 +1,234 @@
+
+*{
+	font-family: "微软雅黑";
+	font-size:16px ;
+	border: 1px;
+}
+a{
+	text-decoration: none; 
+}
+body{
+	background-color: whitesmoke;
+}
+.mianDiv{
+	width: 1000px;
+	height: 750px;
+	margin: 0px auto; 
+}
+/*上*/
+.SevODTop{
+	height: 45px;
+	
+}
+.SevODTop .TopRightDiv1{
+	float: left;
+	vertical-align: middle;
+	margin-top: 3px;
+}
+.SevODTop .TopRightDiv2{
+	float: right;
+	vertical-align: middle;
+	height:30px;
+	margin-top: 15px;
+}		
+.SevODTop .TopRightDiv2 li{
+	float:left;
+	padding: 0px 5px;
+	font-size: 18px;
+	list-style: none;
+	font-weight: 800;
+	
+}
+/*设置链接的下划线*/
+.SevODTop .TopRightDiv2 a{
+	text-decoration: none;	
+	color: dimgray;
+}
+.SevODTop .TopRightDiv2  b{
+	color: darkgray;
+	font-size: 12px;
+}
+
+/*中*/
+.SevODMid{
+	height:650px ;
+	background-color: white;
+	box-shadow: 2px 2px 50px #d3d3d3;
+} 
+.SevODMid div{
+/*border:solid #00FF00 1px;	*/
+}
+
+/*中部的上部  订单那一行*/
+.SevODMid .MidDiv1{
+	height: 50px;
+	border:solid white 5px
+}
+.SevODMid .MidDiv1 span{
+	float: left;
+	width:150px;
+	height:35px;
+	color: #4682B4;
+	text-align: center;
+	font-size:30px ;
+	font-weight: 800;
+}
+.SevODMid .MidDiv1 p{
+	float: right;
+	color: dimgray;
+	margin-right: 20px;
+	margin-top: 15px;
+}
+.SevODMid .Line{
+	float: left;
+	width: 900px;
+	height: 4px;
+	border:solid white 5px;
+	border-radius: 10px;
+	border-bottom-color:#87CEFA ;
+	margin-left: 50px;
+}
+
+/*中部的中部*/
+.SevODMid .MidDiv2{
+	height: 150px;
+}
+.SevODMid .MidDiv2 .Mid2_left{
+	float: left;
+	height: 145px;
+	width: 450px;
+}
+.SevODMid .MidDiv2 .Mid2_left .Mid2_left_title{
+	float: left;
+	width: 150px;
+	height: 30px;
+}
+.SevODMid .MidDiv2 .Mid2_left .Mid2_left_title span{
+	float: left;
+	font-size:25px ;
+	margin-left: 22px;
+}
+.SevODMid .MidDiv2 .Mid2_left .Mid2_left_detail{
+	float: left;
+	width: 550px;
+	height: 100px;	
+}
+.SevODMid .MidDiv2 .Mid2_left .Mid2_left_detail div{
+	float: left;
+	width: 500px;
+	height: 32px;
+	margin-left: 22px;
+}
+.SevODMid .MidDiv2 .Mid2_left .Mid2_left_detail span{
+	float: left;
+	font-size:18px ;
+	font-weight: 800;		
+}
+.SevODMid .MidDiv2 .Mid2_left .Mid2_left_detail p{
+	float: left;
+	font-size:18px ;
+}
+.SevODMid .MidDiv2 .Mid2_left .Mid2_left_detail div.inputDiv{
+	float: left;
+	font-size:18px ;
+	width: 400px;
+	margin-left: 0px;
+}
+/*order-process上的颜色*/
+.SevODMid .MidDiv2 .Mid2_left .Mid2_left_detail div.inputDiv .Sbutton{
+	width: 60px;
+	height: 30px;
+	font-size: 18px;
+	background-color: #ADD8E6;
+	border-top-color: white;
+	border-left-color: white;
+	outline: none;
+}
+
+/*中部的下部*/
+.SevODMid .MidDiv3{
+	height: 350px;
+}
+.SevODMid .MidDiv3 .color1{
+	background-color: #e6e6fa;
+}
+.SevODMid .MidDiv3 .head{
+	height: 35px
+}
+.SevODMid .MidDiv3 .head div{
+	float: left;
+	font-size:18px ;
+	font-weight: 800;
+}
+.SevODMid .MidDiv3 .head .Num{
+	margin-left: 30px;
+}
+.SevODMid .MidDiv3 .head .Name{
+	margin-left: 50px;
+}
+.SevODMid .MidDiv3 .head .Id{
+	margin-left: 100px;
+}
+.SevODMid .MidDiv3 .head .detail{
+	margin-left: 100px;
+}
+.SevODMid .MidDiv3 .head .price{
+	margin-left: 350px;
+}
+.SevODMid .MidDiv3 .content{
+	height: 50px
+}
+.SevODMid .MidDiv3 .content div{
+	float: left;
+	font-size:15px ;
+	height: 50px;
+	/*border: solid green 1px;*/
+}
+.SevODMid .MidDiv3 .content .Num{
+	width: 100px;
+	text-align: center;
+
+}
+.SevODMid .MidDiv3 .content .Name{
+	width: 120px;
+	text-align: center;
+}
+.SevODMid .MidDiv3 .content .Id{
+	width: 150px;
+	text-align: center;
+}
+.SevODMid .MidDiv3 .content .detail{
+	width: 400px;
+	margin-left: 55px;
+}
+.SevODMid .MidDiv3 .content .price{
+	width: 100px;
+	text-align: center;
+}
+
+
+/*Print部分*/
+.SevODMid .MidDiv4{
+	height: 95px;
+}
+.SevODMid .MidDiv4 .botton{
+	float: right;
+	margin-top: 40px;
+	margin-right: 20px;
+	width: 60px;
+	height: 30px;
+}
+.SevODMid .MidDiv4 .botton input{
+	width: 60px;
+	height: 30px;
+	background-color: #ADD8E6;
+	border-top-color: white;
+	border-left-color: white;
+	outline: none;
+	
+}
+
+/*下*/
+.SevFoot{
+	height: 50px;
+}

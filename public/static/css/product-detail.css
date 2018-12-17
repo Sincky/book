@@ -1,0 +1,145 @@
+*{
+	font-family: "微软雅黑";
+	font-size:16px ;
+	border: 1px;
+}
+a{
+	text-decoration: none; 
+}
+
+body{
+	width: 80%;
+	/*background-color: lightgoldenrodyellow;*/
+	background-color: whitesmoke;
+	height: auto;
+}
+
+.orderBarDiv{
+	margin-top: 0px;
+	margin: 10px;
+	height: 50px;
+}
+.orderBarDiv .orderBar{
+	font-size: 20px;
+	color: darkslategray;
+	margin-top: 10px;
+	margin-right: 5px;
+	float: right;
+}
+
+.inputInforDiv{
+	margin: 10px;
+	height: auto;
+	border-radius: 5px;
+	background-color: white;
+	box-shadow: 1px 1px 5px 1px #D3D3D3;
+	border-top: steelblue 4px solid;
+}
+.titleDiv{
+	margin:10px;
+	font-size: 25px;
+	font-weight: bold;
+}
+.inforDiv{
+	/*margin: 0px auto;*/
+	height: 650px;
+	padding-top:10px;
+	border:solid lightgrey 1px;
+}
+
+.inforDiv div{
+	float: left;
+	width: 30%;
+	height: 40px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.inforDiv .valueDiv b{
+	font-size: 15px;
+	float: right;
+	margin-right: 75%;
+	margin-top: 5px;
+}
+.inforDiv .valueDiv input{
+	width: 70%;
+	height: 90%;
+	float: right;
+	text-align: left;
+	font-size: 15px;
+	margin-right: 0px;
+	margin-top: -33px;
+}
+.inforDiv .listDiv b{
+	font-size: 15px;
+	float: right;
+	margin-right: 75%;
+	margin-top: 5px;
+}
+.inforDiv .listDiv select{
+	width: 70%;
+	height: 90%;
+	text-align: left;
+	font-size: 16px;
+	float: right;
+	margin-right: 0px;
+	margin-top: -33px;
+}
+.buttonDiv{ 
+	float: left;
+	width: 30%;
+	height: 40px;
+	margin-left: 35px;
+	margin-top: 20px;
+	} 
+.inforDiv .buttonDiv input{
+	vertical-align:middle; 
+	margin:0; 
+	padding:0
+}
+.txt{ 
+	float: left;
+	height:40px; 
+	border:1px solid #cdcdcd; 
+	width:75%;
+} 
+.btn{ 
+	float: left;
+	background-color:cornflowerblue; 
+	border:1px solid #CDCDCD;
+	height:40px; 
+	width:24%;
+} 
+.file{
+	float: left;
+	width: 0%;
+}
+.inforDiv .img1Div{
+	float: left;
+	height: 350px;
+	width: 30%;
+	margin-top: 0px;
+	background-image: url(../img/goods/9787111532644/detail1big.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px -5px;
+} 
+.inforDiv .img2Div{
+	float: left;
+	margin-top: 0px;
+	height: 350px;
+	width: 30%;
+	background-image: url(../img/goods/9787111532644/detail2big.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	margin-left: 50px;
+}
+.inforDiv .img3Div{
+	float: left;
+	margin-top: 0px;
+	height: 350px;
+	width: 30%;
+	background-image: url(../img/goods/9787111532644/detail3big.jpg);
+	background-repeat: no-repeat;
+	background-position: 0px -20px;
+}
+
+

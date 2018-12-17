@@ -1,0 +1,266 @@
+.mainDiv{
+	height:400px;
+	width: 1000px;/*1500很大*/
+	margin: 0px auto;
+}
+.mainDiv .OrderHead{
+	height: 20px;
+	width:1000px;
+	margin-top: 0px;
+	margin-left:0px;
+}
+.mainDiv .OrderHead h1{
+	float: left;
+	font-size: 13px;
+	margin-top:0px ;
+	margin-left:5px;
+	color: rgb(124,124,124);
+}
+.mainDiv .OrderHead a{
+	text-decoration: none;
+	color: rgb(124,124,124);
+}
+.mainDiv .OrderTop{
+	height: 30px;
+	width:1000px;
+	margin-top: 10px;
+	margin-left:0px;
+	background-color:rgb(233,233,233); 
+}
+.mainDiv .OrderTop h1{
+	float: left;
+	font-size: 13px;
+	margin-top:0px ;
+	margin-left:10px;
+	color: rgb(124,124,124);
+}
+.mainDiv .OrderMid{
+	height: 230px;
+	width: 1000px;
+	margin-top: 10px;
+}
+.mainDiv .OrderMid .OrderP{
+	float: left;
+	height: 80px;
+	width: 1000px;
+	margin-left:100px ;
+	margin-top: 100px;
+	
+
+}
+.mainDiv .OrderMid .OrderP li{
+	float: left;
+	list-style: none;
+	margin-left: 30px;
+	margin-top: 0px;
+}
+.mainDiv .OrderMid .OrderP .li2{
+	float: left;
+	list-style: none;
+	margin-left: 30px;
+	margin-top: 30px;
+}
+.mainDiv .OrderMid .OrderTip{
+	float: left;
+	height: 30px;
+	width: 500px;
+	margin-left:100px ;
+	margin-top: 0px;
+}
+.mainDiv .OrderMid .OrderTip h1{
+	float: left;
+	font-size: 10px;
+	margin-top:0px ;
+	margin-left:35px;
+	color: rgb(124,124,124);
+	
+}
+.mainDiv .OrderMid .OrderTip .time{
+	float: left;
+	font-size: 10px;
+	margin-top:0px ;
+	margin-left:0px;
+	color: rgb(124,124,124);
+	
+}
+.XMessage{
+	height: 60px;
+	width: 1000px;
+	margin-top: 10px;
+}
+.XMessage .XMessageTop{
+	height: 21px;
+	width: 1000px;
+	margin-top:0px;
+	border-bottom: rgb(187,187,187) 1px solid;
+}
+.XMessage .XMessageTop h1{
+	float: left;
+	font-size: 15px;
+	margin-top:0px ;
+	margin-left:0px;
+	color: rgb(124,124,124);
+	
+}
+.XMessage .XMessageM{
+	height: 40px;
+	width: 1000px;
+	margin-top:2px;
+}
+.XMessage .XMessageM h1{
+	float: left;
+	font-size: 10px;
+	margin-top:0px ;
+	margin-left:0px;
+	color: rgb(124,124,124);
+	
+}
+.SMessage{
+	height: 300px;
+	width: 1000px;
+	margin-top: 10px;
+}
+.SMessage .SMessageTop{
+	height: 20px;
+	width: 1000px;
+	margin-top:0px;
+	border-bottom-color:rgb(232,232,232) ;
+}
+.SMessage .SMessageTop h1{
+	float: left;
+	font-size: 15px;
+	margin-top:0px ;
+	margin-left:0px;
+	color: rgb(124,124,124);
+	
+}
+.SMessage .SMessageM{
+	height: 40px;
+	width: 1000px;
+	margin-top:0px;
+	background-color:rgb(233,233,233);  ;
+}
+.mainDiv .Smessage{
+	float: left;
+	height: 40px;
+	width: 1000px;
+}
+
+.mainDiv .Smessage .Sitem1{
+	float: left;
+	list-style: none;
+	margin-left: 170px;
+	margin-top: 10px;
+	font-size: 13px;
+	width:60px ;
+}
+.mainDiv .Smessage .Sitem2{
+	float: left;
+	list-style: none;
+	margin-left: 240px;
+	margin-top: 10px;
+	font-size: 13px;
+}
+.mainDiv .Smessage .Sitem3{
+	float: left;
+	list-style: none;
+	margin-left: 150px;
+	margin-top: 10px;
+	font-size: 13px;
+}
+.mainDiv .Smessage .Sitem4{
+	float: left;
+	list-style: none;
+	margin-left: 170px;
+	margin-top: 10px;
+	font-size: 13px;
+}
+.MessageTipDiv{
+	float: left;
+	width:1000px;
+	height: 20px;
+	margin-left:0px;
+	margin-top: 5px;
+	background-color:rgb(235,233,234) ;
+}
+.MessageTipDiv h1{
+	font-size: 9px;
+	color: rgb(153,153,154);
+}
+.MessageN{
+	float: left;
+	width:1000px;
+	height: 150px;
+	margin-left:0px;
+	margin-top: 0px;
+	background-color:rgb(255,255,255) ;
+}
+
+.MessageN .GoodText{
+	float: left;
+	width:400px;
+	height: 150px;
+	margin-left:0px;
+	margin-top: 0px;
+	border-color:rgb(153,153,154) ;
+}
+.MessageN .GoodM{
+	float: left;
+	width:100px;
+	height: 100px;
+	margin-left:30px;
+	margin-top: 20px;
+}
+.MessageN .MessagegoodnameDiv {
+	float: left;
+	width:230px;
+	height: 100px;
+	margin-left:10px;
+	margin-top: 20px;
+}
+.MessageN .MessagegoodnameDiv h1{
+	font-size: 10px;
+	color: rgb(153,153,154);
+}
+.MessageN .GoodPir{
+	float: left;
+	width:200px;
+	height: 150px;
+	margin-left:0px;
+	margin-top: 0px;
+	border-color:rgb(153,153,154) ;
+}
+.MessageN .GoodPir h1{
+	margin-left: 80px;
+	margin-top:50px;
+	font-size: 10px;
+	color: rgb(153,153,154);
+}
+.MessageN .GoodNum{
+	float: left;
+	width:200px;
+	height: 150px;
+	margin-left:0px;
+	margin-top: 0px;
+	border-color:rgb(153,153,154);
+}
+.MessageN .GoodNum h1{
+	margin-left: 90px;
+	margin-top: 50px;
+	font-size: 10px;
+	color: rgb(153,153,154);
+}
+.MessageN .ShiFu{
+	float: left;
+	width:190px;
+	height: 150px;
+	margin-left:0px;
+	margin-top: 0px;
+	border-color:rgb(153,153,154);
+}
+.MessageN .ShiFu h1{
+	margin-left: 87px;
+	margin-top: 50px;
+	font-size: 10px;
+	color: rgb(153,153,154);
+}

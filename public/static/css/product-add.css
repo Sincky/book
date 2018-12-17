@@ -1,0 +1,174 @@
+*{
+	font-family: "微软雅黑";
+	font-size:16px ;
+	border: 1px;
+}
+a{
+	text-decoration: none; 
+}
+body{
+	
+	/*background-color: lightgoldenrodyellow;*/
+	background-color: whitesmoke;
+	
+}
+.orderMain{
+	/*height: 1000px;*/
+	width: 80%;
+	margin: 10px auto;
+}
+.orderBarDiv{
+
+	margin-top: 0px;
+	margin: 10px auto;
+	height: 50px;
+}
+.orderBarDiv .orderBar{
+	
+	color: darkslategray;
+	margin-top: 10px;
+	margin-right: 5px;
+	float: right;
+}
+
+.inputInforDiv{
+	margin: 10px;
+	height: auto;
+	border-radius: 5px;
+	background-color: white;
+	box-shadow: 1px 1px 5px 1px #D3D3D3;
+	border-top: steelblue 4px solid;
+}
+.titleDiv{
+	margin: 5px;
+	margin-left: 20px;
+	font-size: 20px;
+	font-weight: bold;
+
+}
+.inforDiv{
+	/*margin: 0px auto;*/
+	height: 650px;
+	padding-top:10px;
+	border:solid lightgrey 1px;
+}
+
+.inforDiv div{
+	float: left;
+	width: 30%;
+	height: 40px;
+	margin-left: 32px;
+	margin-top: 20px;
+}
+.inforDiv .valueDiv input{
+	width: 100%;
+	height: 90%;
+	text-align: left;
+	border:solid lightgrey 1px;
+	
+}
+.inforDiv .listDiv select{
+	width: 100%;
+	height: 90%;
+	text-align: left;
+	
+}
+.buttonDiv{ 
+	float: left;
+	width: 30%;
+	height: 40px;
+	margin-left: 35px;
+	margin-top: 20px;
+	} 
+.inforDiv .buttonDiv input{
+	vertical-align:middle; 
+	margin:0; 
+	padding:0
+}
+.txt{ 
+	float: left;
+	height:40px; 
+	border:1px solid #cdcdcd; 
+	width:75%;
+} 
+.btn{ 
+	float: left;
+	background-color:cornflowerblue; 
+	border:1px solid #CDCDCD;
+	height:40px; 
+	width:24%;
+	color: white;
+} 
+.file{
+	float: left;
+	width: 0%;
+}
+.inforDiv .commitButtonDiv{
+	float: right;
+	margin-right: 10px;
+	margin-top: 0px;
+	 
+}
+.inforDiv .commitButtonDiv input{
+	float: right;
+	margin-right: 0px;
+	margin-top: 170px;
+	width: 80px;
+	height: 50px;
+	text-align:center;
+	color: white;
+	background-color: cornflowerblue;
+	
+}
+.inforDiv .editButtonDiv{
+	float: right;
+	margin-right: 10px;
+	margin-top: 0px;
+}
+.inforDiv .editButtonDiv input{
+	float: right;
+	margin-right: 0px;
+	margin-top: 0px;
+	width: 80px;
+	height: 50px;
+	text-align:center;
+	background-color: steelblue;
+	color: white;
+}
+/*.editButtonDiv input{
+	width: 50px;
+	height: 45px;
+	font-size: 20px;
+	text-align: center;
+	background-color: steelblue;
+	color: white;
+}*/
+.inforDiv .img1Div{
+	float: left;
+	height: 350px;
+	width: 30%;
+	margin-top: 0px;
+	background-image: url(../img/goods/9787111532644/detail1big.jpg);
+	background-repeat: no-repeat;
+	background-position: -70px -5px;
+} 
+.inforDiv .img2Div{
+	float: left;
+	margin-top: 0px;
+	height: 350px;
+	width: 30%;
+	background-image: url(../img/goods/9787111532644/detail2big.jpg);
+	background-repeat: no-repeat;
+	background-position: -70px 0px;
+}
+.inforDiv .img3Div{
+	float: left;
+	margin-top: 0px;
+	height: 350px;
+	width: 30%;
+	background-image: url(../img/goods/9787111532644/detail3big.jpg);
+	background-repeat: no-repeat;
+	background-position: -60px -20px;
+}
+
+

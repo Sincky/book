@@ -1,0 +1,143 @@
+*{
+	font-family: "微软雅黑";
+}
+
+
+.orderConfirmMainDiv {
+	height:700px;
+	width: 1000px;
+	margin: 5px auto;
+}
+.navlist{
+    width:1000px;
+    height:38px;
+    margin: 25px auto;
+}
+.navlist li{
+    float:left;
+    height:38px;
+    line-height:35px;
+    position: relative;
+    list-style: none;
+    
+    
+    
+}
+
+.navlist_blue{
+    background-color:#0AA1ED;
+    text-align:center;
+    font-size:16px;
+    font-weight:bold;
+    color:#FFF;
+    width:318px;/*最后改为318*/
+    height:38px;
+}
+.navlist .navlist_blue_arrow{
+    width: 0;
+    height: 0;
+    border-top: 19px solid transparent;
+    border-left: 20px solid #0aa1ed;
+    border-bottom: 19px solid transparent;
+}
+
+.navlist_gray{
+    background-color:#e8e8e8;
+    text-align:center;
+    font-size:14px;
+    font-weight:bold;
+    width:320px;
+}
+
+.navlist .navlist_gray_arrow{
+    width: 0;
+    height: 0;
+    border-top: 19px solid transparent;
+    border-left: 20px solid #e8e8e8;
+    border-bottom: 19px solid transparent;
+}
+.navlist>ul>li>b{
+    width: 0;
+    height: 0;
+    border-top: 19px solid transparent;
+    border-left: 20px solid #f5f5f5;
+    border-bottom: 19px solid transparent;
+    position:absolute;
+    left:0;
+}
+.orderConfirmChooseAdDiv{
+	height: 200px;
+	width: 1000px;
+}
+.OCCTopDiv p{
+	font-weight: 800;
+}
+.OCCborderDiv{
+	margin-top: 5px;
+	border: solid gray 1px;
+}
+.OCCCenterDiv{
+	margin-top: 10px;
+	height: 40px;
+	border:solid 2px;
+	border-color: deepskyblue;
+	font-size: 25px;
+}
+.OCCCenterDiv p{
+	float: left;
+	height: 40px;
+	width: 125px;
+	background-color: deepskyblue;
+	color: white;
+	line-height: 40px;
+
+}
+.OCCCenterDiv span{
+	float: left;
+	height: 40px;
+	width: 600px;
+	line-height: 40px;
+	
+
+}
+.OCCCenterradioDiv{
+	/*margin-top: 5px;*/
+	float: left;
+	line-height: 40px;
+}
+.OCCCenteraddressDiv{
+	font-size: 15px;
+	
+}
+.OCCCenteraddressDiv span{
+	margin-left: 5px;
+}
+.CFPtableDiv{
+	height: 280px;
+	width: 1000px;
+}
+.OCCBottomDiv{
+	height: 35px;
+	background-color: gainsboro;
+}
+.OCCBottomleftDiv{
+	float: left;
+	padding-top: 10px;
+}
+.OCCBottomrightDiv{
+	float: right;
+	border: 1px;
+}
+.buttoDiv input{
+	margin: 0px 2px;
+	height: 35px;
+	width: 90px;
+	font-size: 14px;
+	background-color: cornflowerblue;
+	color: white;
+	border: 1px;
+}
+.OCCBottomrightDiv span{
+	color: dodgerblue;
+	font-size: 25px;
+}

@@ -1,0 +1,391 @@
+*,body,div,p,ul,li,a,input{
+	margin: 0px;	/*上下左右 都是0px*/
+	padding: 0px;	/**/
+	font-family: "微软雅黑";
+	border: 1px;
+	text-decoration: none; 
+}
+
+ 
+.mainDiv{
+	width: 1000px;
+	height: auto;
+	margin: 10px auto;
+}
+
+/*商品标题*/
+.productTitleDiv{
+	font-weight: bold;
+}
+
+/*商品展示区域*/
+.productMainDiv{
+	height: 530px;
+}
+
+/*商品图片区域*/ 
+.picInfoDiv{
+	float: left;
+	width: 420px;
+	margin: 5px;
+
+}
+.picInfoDiv .picDiv{
+
+	margin: 5px;
+
+	
+}
+.picInfoDiv .picDiv .pictureBig{
+	margin: 15px 0px;
+	width: 100%;
+	
+}
+
+.picInfoDiv .otherPicDiv{
+	margin: 0px;
+}
+.picInfoDiv .otherPicDiv .otherPicture{
+	margin: 5px;
+}
+
+/*商品信息区域*/
+.showInfoDiv{
+	float: left;
+	width: 550px;
+	margin: 5px;
+}
+
+/*商品名字区域*/
+.showInfoDiv .productNameDiv{
+	margin: 10px 10px;
+	font-weight: bold;
+}
+
+/*商品价格区域*/
+.showInfoDiv .productPriceDiv {
+	margin: 10px 10px;
+	padding: 10px 0px;
+	font-weight: bold;
+	color: gray;
+	background-color: #EEE;
+	font-size: 15px;
+	
+}
+.showInfoDiv .productPriceDiv .productPriceInfo {
+	margin: 10px;
+}
+.showInfoDiv .productPriceDiv .productPriceInfo .productPrice{
+	margin-left: 10px;
+	font-size: 50px;
+	color: deepskyblue;
+}
+.showInfoDiv .productPriceDiv .productPriceOtherInfo{
+	margin: 10px;
+}
+.showInfoDiv .productPriceDiv .productPriceOtherInfo .productPriceOther{
+	margin-left: 10px;
+	font-size: 15px;
+}
+/*商品信息区域*/
+.showInfoDiv .messboxInfoDiv{
+	margin: 10px 10px;
+}
+.showInfoDiv .messboxInfoDiv .messboxInfo{
+	margin: 10px;
+}
+.showInfoDiv .messboxInfo .title {
+	margin: 10px 0px;
+	font-size: 15px;
+	font-weight: bold;
+	color: gray;
+}
+
+.showInfoDiv .messboxInfo .title .publishHouse,.publishDate,.contactSer{
+	margin-left: 10px;
+	font-weight: bold;
+	color: gray;
+	font-size: 15px;
+	
+}
+
+.showInfoDiv .messboxInfo .title .numberAdd,.numberSub{
+	width: 30px;
+	height: 30px;
+	margin: 0px 10px;
+}
+.showInfoDiv .messboxInfo .title .number{
+	width: 26px;
+	height: 26px;
+	text-align: center;
+
+
+}
+
+/*购买、购物车、收藏*/
+.showInfoDiv .productBuyDiv{
+	margin: 10px 10px;
+}
+.showInfoDiv .productBuyDiv .productBuyB{
+	vertical-align: middle;
+	margin: 10px 10px;
+	width: 162px;
+	height: 50px;
+	color: dodgerblue;
+	background-color:#eee ;
+}
+
+.showInfoDiv .productBuyDiv .productAddPartI{
+	margin: 10px 10px;
+	width: 160px;
+	height: 48px;
+	vertical-align: middle;
+}
+
+.showInfoDiv .productBuyDiv .productBuyBDiv,.productAddPartDiv,.productCollectionDiv{
+	float: left;
+	margin: 10px 10px;
+	vertical-align: middle;
+}
+
+.showInfoDiv .productBuyDiv .productCollectionDiv2{
+	margin: 10px 10px;
+	width: 48px;
+	height: 48px;
+	background-color: deepskyblue;
+	text-align: center;
+}
+
+.showInfoDiv .productBuyDiv .productCollectionDiv .productCollectionI{
+	margin-top: 4px;
+	width: 20px;
+	height: 17px;
+}
+
+.showInfoDiv .productBuyDiv .productCollectionDiv p{
+	color: white;
+	font-size: 14px;
+}
+
+/*推荐图书区域*/
+.recommendDiv{
+	margin: 10px auto;
+	height: 250px;
+}
+
+.recommendDiv .recommendTitle{
+	margin: 5px;
+	height: 25px;
+}
+.recommendDiv .recommendTitleS{
+	font-size: 20px;
+	font-weight: bolder;
+}
+.recommendDiv .recommendTitleS2{
+	margin-left: 10px;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	background-color: black;
+}
+
+.recommendDiv  .recommendProductList{
+	margin: 5px;
+	height: 205px;
+	border:solid lightgray 1px;
+}
+.recommendDiv  .recommendProductList .recommendProduct{
+	float: left;
+	margin: 10px 20px;
+	width: 200px;
+	height: 185px;
+	text-align: center;
+}
+.recommendDiv  .recommendProductList .ProductPic{
+	display: table;
+	margin: 2px;
+}
+.recommendDiv  .recommendProductList .ProductPicI{
+	vertical-align: middle;
+	height: 150px;
+}
+.recommendDiv  .recommendProductList .ProductTitle{
+	margin: 2px;
+}
+
+
+/*商品详情*/
+.productContentDiv{
+	width: 1000px;
+	height: auto;
+	padding-bottom:100px;
+	border-bottom:solid lightgray 1px;
+}
+/*左边内容*/
+.productContentDiv .leftContentDiv{
+	margin: 10px 0px;
+	height: auto;
+	width: 810px;
+	border-right:solid lightgray 1px;
+}
+/*右边导航栏*/
+.productContentDiv .rightMenuDiv{
+	float: right;
+	margin: 5px 0px;
+	transition: 0.5s;
+}
+
+
+
+/*左边*/
+/*商品详情、商品评论标题*/
+.productContentDiv  .contentTitleDiv{
+	margin: 5px 0px;
+	height: 45px;
+	background-color: #EEE;
+}
+.productContentDiv .contentTitleDiv .title{
+	float: left;
+	margin: 0px 10px;
+	height: 40px;
+	width: 90px;
+	text-align: center;
+	display: table;
+}
+.productContentDiv .contentTitleDiv .title p{
+	width: 75px;
+	font-weight: bolder;
+	display: table-cell;
+	vertical-align: middle;
+}
+.productContentDiv .contentTitleDiv  .select{
+	border-bottom: solid cornflowerblue 4px;
+}
+/*商品参数*/
+.productContentDiv .productParameterDiv{
+	margin: 10px;
+}
+
+.productContentDiv  .parameterTitleDiv,.introduceTitleDiv,.AfterSaleTitleDiv{
+	height: 45px;
+	width: auto;
+}
+.productContentDiv .title2 .parameterTitle{
+	padding: 12px 6px;
+	margin-right: 45px;
+	border-bottom: 1px #EEEEEE solid;
+
+}
+.productContentDiv .title2 span{
+	margin: 0px 0px;
+	vertical-align: middle;
+	font-weight: bold;
+}
+.productContentDiv .title2 img{
+	margin: 0px 2px;
+	vertical-align: middle;
+}
+
+/*table*/
+.productContentDiv .parameterTable table{
+	margin: 10px 4px;
+	font-size: 14px;
+	width: 98%;
+	height: 150px;
+	
+}
+
+/*商品介绍*/
+.productContentDiv .productIntroduceDiv{
+	margin: 10px;
+	height: auto;
+}
+
+.productContentDiv .productIntroduceDiv .introduceImgDiv{
+	height: auto;
+	margin: 5px;
+	margin-top: 20px;
+}
+
+/*售后保障*/
+
+.productContentDiv .productAfterSaleDiv{
+	margin: 10px;
+	margin-right: 45px;
+	height: auto;
+}
+
+.productContentDiv .productAfterSaleDiv .AfterSaleElementDiv{
+	margin: 5px 0px;
+}
+.productContentDiv .productAfterSaleDiv .AfterSaleElementDiv .ElementDiv{
+	margin: 5px 3px;
+	
+}
+.productContentDiv .productAfterSaleDiv .AfterSaleElementDiv .ElementDiv .ElementTitleDiv{
+	height: 40px;
+	margin: 20px 0px;
+}
+
+.productContentDiv .productAfterSaleDiv .AfterSaleElementDiv .ElementDiv .ElementTitleDiv img{
+	margin: 5px 0px;
+	float: left;
+}
+
+.productContentDiv .productAfterSaleDiv .AfterSaleElementDiv .ElementDiv .ElementTitleDiv span{
+	margin: 10px 5px;
+	float: left;
+	font-weight: bold;
+	color: deepskyblue;
+}
+
+.productContentDiv .productAfterSaleDiv .AfterSaleElementDiv .ElementDiv .ElementContentDiv{
+	margin: 5px 0px;
+	font-size: 14px;
+	
+}
+
+
+/*右边*/
+.productContentDiv .rightMenuDiv .AddPartDiv{
+	margin: 5px;
+	
+}
+
+.productContentDiv .rightMenuDiv .menuDiv{
+	height: auto;
+}
+.productContentDiv .rightMenuDiv .menuDiv .menuElement{
+	margin: 10px 5px;
+	background-color: #EEE;
+	height: 50px;
+	width: 94%;
+	text-align: center;
+	box-shadow: 1px 1px 5px 1px #D3D3D3;
+	transition: 1s;
+}
+
+.productContentDiv .rightMenuDiv .menuDiv .menuElement:hover{
+	margin: 10px 5px;
+	background-color: #EFEFEF;
+	height: 50px;
+	width: 94%;
+	text-align: center;
+	box-shadow: 3px 3px 10px 2px #D3D3D3;
+	 transition: 1s;
+}
+
+.productContentDiv .rightMenuDiv .menuDiv .menuElement .title{
+	padding: 12px;
+}
+.productContentDiv .rightMenuDiv .menuDiv .menuElement .title img{
+	vertical-align: middle;
+}
+.productContentDiv .rightMenuDiv .menuDiv .menuElement .title span{
+	vertical-align: middle;
+	color: #000000;
+	margin: 0px 8px;
+}
+
+
+

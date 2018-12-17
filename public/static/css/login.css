@@ -1,0 +1,86 @@
+*,body,div,p,ul,li,a,input{
+	margin: 0px;	/*上下左右 都是0px*/
+	padding: 0px;	/**/
+	font-family: "微软雅黑";
+	border: 1px;
+	text-decoration: none; 
+}
+
+
+.button input{
+	border: 1px;
+
+}
+
+.loginMainDiv{
+	height: 600px;
+	width: 1000px;
+	align-content: center;
+	margin: 0px auto;
+}
+.loginMainDiv .TopDiv{
+	height: 120px;
+	width: 1000px;
+}
+.loginMainDiv .loginCenterDiv{
+	margin-top: 10px;
+	padding: 5px;
+	height: 600px;
+	width: 1000px;
+	background: url(../img/login.jpg) no-repeat;
+}
+.loginCenterDiv .loginMessageDiv{
+	float: right;
+	margin-right: 100px;
+	margin-top: 150px;
+	height: 240px;
+	width: 300px;
+	background: rgba(0,0,0,0.4);
+}
+.loginMessageDiv .loginMessageTopDiv{
+	float: left;
+	height: 50px;
+	width: 300px;
+	
+}
+.loginMessageTopDiv .LMTopLeft{
+	float: left;
+	color:white;
+	margin-left: 5px;
+	height: 30px;
+	width: 100px;
+	margin-top: 10px;
+	
+	
+}
+.loginMessageTopDiv .LMTopRight{
+	float: right;
+	color: white;
+	margin-left: 5px;
+	height: 20px;
+	width:80px;
+	margin-top: 20px;
+	font-size: 10px;
+}
+.loginMessageTopDiv .LMTopBottom{
+	color: white;
+	border: dotted 1px;
+	width: 280px;
+	margin-top: 48px;
+}
+.loginMessageDiv .loginInput{
+	
+}
+.loginMessageDiv .loginInput input{
+	margin: 10px auto;
+	margin-left: 5px;
+	height: 40px;
+	width: 280px;
+}
+.loginMessageDiv .loginMessageBottomDiv input{
+	background-color: skyblue;
+}
+.loginMainDiv .BottomDiv{
+	height: 580px;
+	width: 1000px;
+}

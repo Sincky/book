@@ -1,0 +1,299 @@
+*{
+	font-family: "微软雅黑";
+}
+
+
+body{
+	background-color: rgba(0,0,0,0.025);
+}
+.mainDiv{
+	width: 1000px;
+	height: 800px;
+	margin: 0px auto;
+	border: 2px solid rgba(169,169,169,0.3);
+	border-radius: 5px;
+	box-shadow: 5px 5px 20px #D3D3D3;
+	;
+}
+.cartDiv{
+	
+}
+
+.wordDiv{
+	height: 60px;
+}
+.wordDiv .leftWordDiv{
+	float: left;
+	width: 80px;
+	height: 50px;
+	margin-top: 30px;
+	text-align: center;
+	font-size: 25px;
+}
+.wordDiv .rightWordDiv{
+	float: right;
+	width: 340px;
+	height: 60px;
+	margin-top: 30px;
+	text-align: center;
+	font-size: 12px;
+}
+.statisticsDiv{
+	float: left;
+	margin-left: 0px;
+	margin-top: 10px;
+}
+ .pieceDiv{
+	float: left;
+	width: 50px;
+	height: 30px;
+	margin-left: 0px;
+}
+ .pieceDiv input{
+	width: 90%;
+	height: 90%;
+	font-size: 25px;
+	text-align: center;
+	color: cornflowerblue;
+	border: hidden;
+	background-color:rgb(249,249,249) ;
+}
+.amountDiv{
+	float: left;
+	width: 50px;
+	height: 30px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+}
+ .amountDiv input{
+	width: 90%;
+	height: 90%;
+	font-size: 25px;
+	text-align: center;
+	color: cornflowerblue;
+	border: hidden;
+	background-color:rgb(249,249,249) ;
+}
+.headDiv{
+	float: left;
+	width: 1000px;
+	height: 30px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+	padding-top: 10px;
+	border-top-color: rgb(188,188,188);
+	border-bottom-color: rgb(188,188,188);
+	/*box-shadow: -3px -3px 10px 5px darkgray inset;*/
+	background-color: rgba(0,0,0,0.1);
+	-webkit-padding-start: 0px;
+	
+}
+.headDiv li{
+	float: left;
+	margin-left: -10px;
+	/*width: 40px;*/
+	list-style: none;
+	padding: 0px 65px;
+	font-size: 16px;
+}
+
+.listDiv{
+	height: 630px;
+	background-color: rgba(255,255,255,1);
+	font-size: 16px;
+}
+
+.listDiv .itemDiv{
+	float: left;
+	width: 1000px;
+	height: 100px;
+	margin: 0px auto;
+}
+/*item颜色和样式*/
+.cartDiv .listDiv .color{
+	background-color: lightyellow;
+}
+.listDiv .itemDiv .choseDiv{
+	float: left;
+	margin-left: 33px;
+	margin-top: 40px;
+	width: 100px;
+	text-align: center;
+	margin-left: 12px;
+}
+.listDiv .itemDiv .goodsDiv{
+	float: left;
+	margin-left: 20px;
+	width: 250px;
+}
+.listDiv .itemDiv .goodsDiv .pictureDiv{
+	float: left;
+	margin-left: -10px;
+	width: 20px;
+	height: 60px;
+	margin-top: 5px;
+}
+.listDiv .itemDiv .goodsDiv .publishDiv{
+	float: right;
+	margin-right: 15px;
+	width: 180px;
+	height: 100px;
+	margin-top: 0px;
+}
+.listDiv .itemDiv .goodsDiv .publishDiv .bookNameDiv{
+	margin-left: 30px;
+	margin-top: 15px;
+	font-size: 10px;
+}
+.listDiv .itemDiv .goodsDiv .publishDiv .authorDiv{
+	margin-left: 30px;
+	margin-top: 5px;
+	font-size: 10px;
+}
+.listDiv .itemDiv .onePriceDiv{
+	float: left;
+	margin-left: 10px;
+	margin-top: 35px;
+}
+.listDiv .itemDiv .CNYDiv{
+	float: left;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+.listDiv .itemDiv .priceDiv{
+	float: left;
+	margin-left: 0px;
+	margin-top: -5px;
+	font-size: 20px;
+	text-align: center;
+}
+
+.listDiv .itemDiv .numberDiv{
+	float: left;
+	margin-left: 110px;
+	margin-top: 30px;
+	font-size: 20px;
+	text-align: center;
+}
+
+/*加减号按钮的设置*/
+.listDiv .itemDiv .numberDiv span{
+	float: left;
+	width: 28px;
+	height: 26px;
+	/*background-image: url(../img/dsBuffer.bmp);*/
+}
+
+
+.listDiv .itemDiv .numberDiv b.symbolDiv{
+	margin-top: 5px;
+}
+/*中间显示数量的控件样式设计*/
+.listDiv .itemDiv .numberDiv .numberValue{
+	float: left;
+	width: 28px;
+	height: 26px;
+	margin-top: 0px;
+	background-color: #9FCDFF;
+	border-color: #ADB5BD;
+	border-top-color: white;
+	border-left-color: white;
+}
+
+
+
+
+.listDiv .itemDiv .numberDiv input{
+	width: 30px;
+	height: 20px;
+	text-align: center;
+	margin-top: -20px;
+	border-color: darkgray;
+}
+.listDiv .itemDiv .sumCNYDiv{
+	float: left;
+	margin-left: 85px;
+	margin-top: 35px;
+}
+.listDiv .itemDiv .sumDiv{
+	float: left;
+	margin-left: 0px;
+	margin-top: 31px;
+	font-size: 20px;
+	text-align: center;
+}
+.listDiv .itemDiv .deleteDiv{
+	float: right;
+	margin-right: 110px;
+	margin-top: 31px;
+	font-size: 20px;
+	text-align: center;
+}
+.deleteDiv a{
+	text-decoration: none;
+	color: gray;
+	
+}
+
+.commitDiv{
+	height: 50px;
+	background-color: rgba(0,0,0,0.1);
+}
+/*.commitDiv .choseAllDiv{
+	float: left;
+	margin-left: 50px;
+	margin-top: 30px;
+	font-size: 20px;
+}*/
+
+.commitDiv .choseAllDiv{
+	float: left;
+	margin-left: 55px;
+	
+	margin-top: 20px;
+	font-size: 20px;
+}
+
+
+.commitDiv .middleDiv{
+	float: left;
+	margin-top: 15px;
+	margin-left: 350px;
+	font-size: 16px;
+}
+.commitDiv .commitButtonDiv{
+	float: right;
+	width: 100px;
+	height: 40px;
+	margin-top: 5px;
+	margin-right: 40px;
+	
+}
+.commitDiv .middleDiv .pieceDiv input{
+   background-color: rgb(225,225,225);
+}
+.commitDiv .middleDiv .amountDiv input{
+   background-color: rgb(225,225,225);
+}
+/*.commitDiv .commitButtonDiv input{
+	width: 200px;
+	height: 50px;
+	font-size: 25px;
+	background-color: #1E90FF;
+	
+	 color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}*/
+
+.commitDiv .commitButtonDiv input{
+	font-weight: 650;
+	width: 100%;
+	height: 100%;
+	border: 1px;
+	font-size: 15px;
+	background-color: rgb(12,160,231);
+	color: #fff;
+ 
+}
+

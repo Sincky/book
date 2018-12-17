@@ -1,0 +1,189 @@
+/*支付的头部*/
+.mainDiv{
+	height:400px;
+	width: 1000px;/*1500很大*/
+	margin: 0px auto;
+}
+.mainDiv .PayHead{
+	height:50px;
+	width: 1000px;
+}
+.navlist{
+    width:1000px;
+    height:38px;
+    margin: 25px auto;
+}
+.navlist li{
+    float:left;
+    height:38px;
+    line-height:35px;
+    position: relative;
+    list-style: none;
+    
+    
+    
+}
+
+.navlist_blue{
+    background-color:#0AA1ED;
+    text-align:center;
+    font-size:16px;
+    font-weight:bold;
+    color:#FFF;
+    width:318px;/*最后改为318*/
+    height:38px;
+}
+.navlist .navlist_blue_arrow{
+    width: 0;
+    height: 0;
+    border-top: 19px solid transparent;
+    border-left: 20px solid #0aa1ed;
+    border-bottom: 19px solid transparent;
+}
+
+.navlist_gray{
+    background-color:#e8e8e8;
+    text-align:center;
+    font-size:14px;
+    font-weight:bold;
+    width:320px;
+}
+
+.navlist .navlist_gray_arrow{
+    width: 0;
+    height: 0;
+    border-top: 19px solid transparent;
+    border-left: 20px solid #e8e8e8;
+    border-bottom: 19px solid transparent;
+}
+.navlist>ul>li>b{
+    width: 0;
+    height: 0;
+    border-top: 19px solid transparent;
+    border-left: 20px solid #f5f5f5;
+    border-bottom: 19px solid transparent;
+    position:absolute;
+    left:0;
+}
+/*支付金额模块*/
+.PayInfo{
+	width: 1000px;
+	height: 60px;
+	
+}
+.PayInfo .Infotop{
+	width: 1000px;
+	height: 30px;
+	background-color:rgb(245,245,245);
+}
+.PayInfo .Infotop .left{
+	float: left;
+	font-size: 15px;
+	margin-top:10px ;
+	margin-left:0px;
+	color: rgb(124,124,124);
+}
+.PayInfo .Infotop b{
+	font-size: 13px;
+	margin-top:15px ;
+	margin-right: 0px;
+	color: rgb(14,161,232);
+}
+.PayInfo .Infotop .right{
+	float: right;
+	font-size: 13px;
+	margin-top:10px ;
+	margin-right: 10px;
+	color: rgb(124,124,124);
+}
+.PayInfo .Infolefttop{
+	
+	width: 1000px;
+	height: 30px;
+	background-color:rgb(233,233,233);
+}
+.PayInfo .Infolefttop h1{
+	float: left;
+	font-size: 13px;
+	margin-top:5px ;
+	margin-left: 20px;
+	color: rgb(124,124,124);
+}
+/*银行支付*/
+.PayBank{
+	width: 1000px;
+	height: 100px;
+	background-color:rgb(255,255,255);
+}
+
+/*银行支付*/
+.dnBank ul{
+    background: #fff;
+    width:1000px;
+    box-sizing: border-box;
+    padding: 35px 16px 25px 18px;
+    float:left;
+    box-shadow: 3px 3px 6px #ccc;
+    list-style: none;
+}
+.dnBank ul li{
+    float:left;
+    margin:0 20px 10px;
+}
+.dnBank .Quan{
+	float: left;
+	margin-left: 0px;
+	margin-top: 20px;
+	width:10px;
+	height: 10px;
+}
+.dnBank .BPic{
+	margin-left: 5px;
+	float: left;
+	width: 130px;
+	height: 50px;
+}
+.bankbottom{
+	width: 1000px;
+	height: 50px;
+	margin-top:200px ;
+	background-color:rgb(233,233,233);
+}
+.bankbottom .bankbleft{
+	width: 300px;
+	height: 30px;
+	
+}
+.bankbottom .bankbleft .left{
+	float: left;
+	font-size: 13px;
+	margin-top:10px ;
+	margin-left:5px;
+	color: rgb(124,124,124);
+}
+.bankbottom .bankbleft b{
+	font-size: 13px;
+	margin-top:15px ;
+	margin-left: 0px;
+	color: rgb(14,161,232);
+}
+.bankbottom .bankbright{
+	float: right;
+	width: 100px;
+	margin-top:-30px ;
+	height: 30px;
+	color: rgb(124,124,124);
+}
+.bankbottom .bankbright button{
+	font-size: 18px;
+	width:100px;
+	height:30px;
+	color: rgb(124,124,124);
+	background-color: rgb(14,161,232);
+	border-bottom:none ;
+	border-radius: 5px;
+}
+.bankbottom .bankbright a{
+	text-decoration: none;
+	color: rgb(190,190,190);
+}

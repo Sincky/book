@@ -1,0 +1,130 @@
+
+*,body,div,p,ul,li,a{
+	font-family: "微软雅黑";
+	text-decoration: none; 
+}
+.button input{
+	border: 1px;
+
+}
+
+
+.registMainDiv{
+	height: 600px;
+	width: 1000px;
+	align-content: center;
+	margin: 0px auto;
+}
+.registMainDiv .TopDiv{
+	width: 1000px;
+	height: 120px;
+}
+.registMainDiv .registCenterDiv{
+	margin-top: 20px;
+	height: 600px;
+	width: 1000px;
+	background: url(../img/regist.jpg) no-repeat;
+}
+.registCenterDiv .registMessageDiv{
+	float: right;
+	margin-right: 30px;
+	margin-top: 130px;
+	height: 400px;
+	width: 500px;
+	background: rgba(0,0,0,0.3);
+}
+.registMessageDiv .registMessageTopDiv{
+	float: left;
+	height: 50px;
+	width: 500px;
+	
+}
+.registMessageTopDiv .LMTopLeft{
+	float: left;
+	color:white;
+	margin-left: 5px;
+	height: 30px;
+	width: 100px;
+	margin-top: 10px;
+	
+	
+}
+.registMessageTopDiv .LMTopRight{
+	float: left;
+	color: white;
+	height: 20px;
+	width:80px;
+	margin-top: 20px;
+	font-size: 15px;
+	margin-left: 300px;
+}
+.registMessageTopDiv .LMTopBottom{
+	color: white;
+	border: dotted 1px;
+	width: 450px;
+	margin-top: 48px;
+}
+.registMessageDiv .registMessageCenterDiv{
+	width: 500px;
+	margin-left: 50px;
+	
+}
+.registMessageDiv .registInput{
+	float: left;
+}
+.registInput .inputvalue{
+	padding-top: 10px;
+	text-align: right;
+	height: 50px;
+	margin: 5px;
+	float: left;
+	width: 80px;
+	color: white;
+}
+.registInput .inputDiv{
+	float: left;
+	width: 250px;
+	height: 50px;
+}
+.registInput .inputDiv input{
+	float: left;
+	margin: 5px;
+	width: 250px;
+	height: 30px;
+}
+.registInput .inputDiv .button input{
+	float: left;
+	margin: 5px;
+	width: 250px;
+	height: 30px;
+}
+
+.registMessageDiv .errDiv{
+	text-align: left;
+	margin-left: 8px;
+	float: left;
+	width: 80px;
+	height: 40px;
+	
+}
+ .registMessageBottomDiv{
+ 	
+ }
+.registMessageDiv .registMessageBottomDiv input{
+	width: 200px;
+	background-color: skyblue;
+	
+}
+.registMainDiv .BottomDiv{
+	height: 580px;
+	width: 1000px;
+}
+.errDiv span{
+	
+}
+.errDiv .okspan{
+	color:#00FF00;
+}
+.errDiv .nospan{
+	color: #FF0000;
+}

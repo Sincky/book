@@ -1,0 +1,78 @@
+*,body,div,p,ul,li,a,input{
+	margin: 0px;	/*上下左右 都是0px*/
+	padding: 0px;	/**/
+	font-family: "微软雅黑";
+	border: 1px;
+	text-decoration: none; 
+}
+
+
+.mainDiv {
+	width: 1000px;
+	height: 800px;
+	margin: 0px auto;
+}
+
+.collectTopDiv {
+	width: 100px;
+	height: 50px;
+	margin-top: 20px;
+	text-align: center;
+	font-size: 25px;
+}
+
+.collectListDiv {
+	height: 1000px;
+	margin-top: 0px;
+	margin-left: 0px;
+	border: 2px solid rgba(169, 169, 169, 0.7);
+	border-radius: 5px;
+	box-shadow: 5px 5px 20px #D3D3D3;
+	background-color: rgba(255, 255, 255, 1);
+}
+
+.collectListDiv .collectItemDiv {
+	float: left;
+	width: 230px;
+	margin-top: 10px;
+	margin-left: 5px;
+	padding: 5px;
+	border: 1px solid rgba(169, 169, 169, 0.6);
+}
+
+.collectListDiv .collectItemDiv .collectItemNameDiv {
+	width: 200px;
+	margin-left: 10px;
+	text-align: left;
+}
+
+.collectListDiv .collectItemDiv .collectItemBottomDiv {
+	width: 200px;
+}
+
+.collectListDiv .collectItemDiv .collectItemBottomDiv .collectItemPriceDiv {
+	float: left;
+	margin-top: 20px;
+	margin-left: 10px;
+	text-align: center;
+}
+
+.collectListDiv .collectItemDiv .collectItemBottomDiv .collectItemCheckDiv {
+	float: right;
+	margin-top: 20px;
+	margin-right: 0px;
+	text-align: right;
+}
+
+.collectListDiv .collectItemDiv .collectItemBottomDiv .collectItemCheckDiv a {
+	color: #696969;
+	text-decoration: none;
+}
+
+.collectItemDiv img:hover {
+	transform: scale(1.1);
+	transition: 0.5s;
+}
+.collectItemDiv img{
+	transition: 0.5s;
+}

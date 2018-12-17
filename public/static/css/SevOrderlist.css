@@ -1,0 +1,52 @@
+.SevOLMainDiv{
+	background-color: lightskyblue;
+	height: 750px;
+}
+.SevOLTopDiv{
+	float: right;
+	height: 50px;
+	width: 220px;
+}
+.SevOLTopDiv span{
+	margin-left: 5px;
+	float: left;
+	margin-top: 10px;
+}
+.SevOLTopDiv p{
+	margin-left: 5px;
+	float: left;
+	margin-top: 12px;
+	font-size: 15px;
+	color: slategray;
+}
+.SevOLTopimg1Div{
+	float: left;
+	margin-top: 10px;
+}
+.SevOLTopimg2Div{
+	float: left;
+	padding-top: 10px;
+}
+.SevOLTopvalueDiv{
+	padding-top: 15px;
+	float: left;
+}
+.SevOLCenterDiv{
+	
+	height: 700px;
+}
+.SevOLCenterTopDiv{
+	margin-top: 50px;
+	height: 550px;
+	/*background-color: deepskyblue;*/
+}
+.SevOLCenterBottomDiv{
+}
+.SevOLCenterBottomleftDiv{
+	float: left;
+}
+.SevOLCenterBottomrightDiv input{
+	float: right;
+	width: 45px;
+	height: 45px;
+}
