@@ -1,0 +1,192 @@
+drop database book;
+create database book;
+use book;
+CREATE TABLE customer(
+	custID  int  auto_increment,
+	email char(30) UNIQUE NOT NULL,
+	username char(10),
+                password char(10),
+	phone char(11),
+                identity char(11),
+	address char(200),
+	cdefault char(2),
+       PRIMARY KEY(custID)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8;
+delete from customer;
+
+insert into customer(email,username,password,phone,identity,address,cdefault) values('aaa@163.com','李筱雯','123','18012889889','Manager','佛山市南海区狮山大学城','1');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('bbb@163.com','方凯西','123','18022735825','Manager','佛山市南海区狮山大学城','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('ccc@163.com','陈小花','123','18912123212','Manager','佛山市南海区狮山大学城','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('ddd@163.com','王红霞','123','13522132124','VIP','广州市新港东路144号','1');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('eee@163.com','李梅','123','18921214244','VIP','广州市华南师范大学','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('fff@163.com','李丽','123','18927712112','VIP','广东省佛山市南海区狮山大学城','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('ggg@163.com','李明','123','18923212321','VIP','佛山南海狮山大学城','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('hhh@163.com','张德海','123','13399899898','VIP','广州市天河区天河路89号','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('iii@163.com','李白','123','13323232321','VIP','佛山南海狮山华南师范大学南海学院','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('jjj@163.com','陈浩','123','18923221212','User','佛山南海狮山大学城','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('kkk@163.com','方迪','123','18923121321','User','佛山南海狮山大学城','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('lll@163.com','张民奚','123','18923232321','User','华南师范大学南海校区','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('mmm@163.com','许烁娜','123','1122121','User','华南师范大学南海学院','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('nn@163.com','方定威','123','18923234343','User','佛山南海狮山大学城','1');
+
+select * from customer;
+
+CREATE TABLE book(
+	bookID char(100),
+	bookname varchar(120),
+                author varchar(300),
+                price float,
+	press varchar(200),
+                edition int,
+	pressdate varchar(200),
+                pages int,
+                wordnum int,
+                package varchar(20),
+                booksize varchar(20),
+                paper varchar(20),
+	collectP varchar(50),
+	detail1P varchar(50),
+	detail1bigP varchar(50),
+	indexP varchar(50),
+	introP varchar(50),
+        PRIMARY KEY(bookID) 
+	)ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+delete from book;
+insert into book values('9787111213826','Java编程思想','[美] Bruce Eckel 著，陈昊鹏 译',86.4,'机械工业出版社',4,'2007-06-01',880,null,'平装','16开','胶板纸','img/goods/9787111213826/collect.jpg','img/goods/9787111213826/detail1.jpg','img/goods/9787111213826/detail1big.jpg','img/goods/9787111213826/index.jpg','img/goods/9787111213826/intro.jpg');
+insert into book values('9787111526285','Go程序设计语言','[美] 艾伦A.A.多诺万 等著',64.7,'机械工业出版社',1,'2016-01-01',336,null,'平装','16开','胶板纸','img/goods/9787111526285/collect.jpg','img/goods/9787111526285/detail1.jpg','img/goods/9787111526285/detail1big.jpg','img/goods/9787111526285/index.jpg','img/goods/9787111526285/intro.jpg');
+insert into book values('9787111532644','架构即未来','[美] MartinL.Abbott，MichaelT.Fisher 著，陈斌 译',81.0,'机械工业出版社',1,'2016-04-01',660,null,'平装','32开','胶板纸','img/goods/9787111532644/collect.jpg','img/goods/9787111532644/detail1.jpg','img/goods/9787111532644/detail1big.jpg','img/goods/9787111532644/index.jpg','img/goods/9787111532644/intro.jpg');
+insert into book values('9787111545682','Linux运维最佳实践','胥峰，杨俊俊 著',56.5,'机械工业出版社',1,'2016-09-01',null,null,'平装','16开','胶板纸','img/goods/9787111545682/collect.jpg','img/goods/9787111545682/detail1.jpg','img/goods/9787111545682/detail1big.jpg','img/goods/9787111545682/index.jpg','img/goods/9787111545682/intro.jpg');
+insert into book values('9787111563891','面向机器智能Tensorflow实践','[美]  Sam Abrahams 等著，段菲，陈澎 译',56.5,'机械工业出版社',1,'2017-05-01',212,'平装','16开','胶板纸','img/goods/9787111563891/collect.jpg','img/goods/9787111563891/detail1.jpg','img/goods/9787111563891/detail1big.jpg','img/goods/9787111563891/index.jpg','img/goods/9787111563891/intro.jpg');
+insert into book values('9787111564805','企业IT架构转型之道','钟华 著',53.8,'机械工业出版社',1,'2017-05-01',null,null,'平装','16开','胶板纸','img/goods/9787111564805/collect.jpg','img/goods/9787111564805/detail1.jpg','img/goods/9787111564805/detail1big.jpg','img/goods/9787111564805/index.jpg','img/goods/9787111564805/intro.jpg');
+insert into book values('9787115130228','Primer Plus','[美]  Prata S. 著',49.8,'人民邮电出版社',1,'2005-02-01',626,null,'平装','16开','胶板纸','img/goods/9787115130228/collect.jpg','img/goods/9787115130228/detail1.jpg','img/goods/9787115130228/detail1big.jpg','img/goods/9787115130228/index.jpg','img/goods/9787115130228/intro.jpg');
+insert into book values('9787115335500','深入浅出Node.js','朴灵 著',86.4,'人民邮电出版社',1,'2013-12-01',348,null,'平装','16开','胶板纸','img/goods/9787115335500/collect.jpg','img/goods/9787115335500/detail1.jpg','img/goods/9787115335500/detail1big.jpg','img/goods/9787115335500/index.jpg','img/goods/9787115335500/intro.jpg');
+insert into book values('9787115353528','Python基础教程','Magnus Lie Hetland 著，袁国忠 译',65.5,'人民邮电出版社',2,'2018-02-01',null,null,'平装','16开','胶板纸','img/goods/9787115353528/collect.jpg','img/goods/9787115353528/detail1.jpg','detail1big.jpg','img/goods/9787115353528/index.jpg','img/goods/9787115353528/intro.jpg');
+insert into book values('9787115386397','Spring MVC学习指南','[美]  戴克 著',40.7,'人民邮电出版社',1,'2015-05-01',274,null,'平装','16开','胶板纸','img/goods/9787115386397/collect.jpg','img/goods/9787115386397/detail1.jpg','img/goods/9787115386397/detail1big.jpg','img/goods/9787115386397/index.jpg','img/goods/9787115386397/intro.jpg');
+insert into book values('9787115388025','图解机器学习','[日] 杉山将 著，许永伟 译',40.7,'人民邮电出版社',1,'2015-04-01',226,null,'平装','16开','胶板纸','img/goods/9787115388025/collect.jpg','img/goods/9787115388025/detail1.jpg','img/goods/9787115388025/detail1big.jpg','img/goods/9787115388025/index.jpg','img/goods/9787115388025/intro.jpg');
+insert into book values('9787115435101','Python数据科学指南','印度 Gopi,Subramanian,萨伯拉曼尼安 著;方延风，刘丹译',66.20,'人民邮电出版社',1,'2016-11-01',300,'平装','16开','胶板纸','img/goods/9787115435101/collect.jpg','img/goods/9787115435101/detail1.jpg','img/goods/9787115435101/detail1big.jpg','img/goods/9787115435101/index.jpg','img/goods/9787115435101/intro.jpg');
+insert into book values('9787121281556','Hadoop 2.X HDFS源码剖析','徐鹏',86.40,'电子工业出版社',1,'2016-03-01',null,null,'平装','16开','胶板纸','img/goods/9787121281556/collect.jpg','img/goods/9787121281556/detail1.jpg','img/goods/9787121281556/detail1big.jpg','img/goods/9787121281556/index.jpg','img/goods/9787121281556/intro.jpg');
+insert into book values('9787121291609','Go语言学习笔记','雨痕',73.90,'电子工业出版社',1,'2016-07-01',468,552000,'平装','16开','胶板纸','img/goods/9787121291609/collect.jpg','img/goods/9787121291609/detail1.jpg','img/goods/9787121291609/detail1big.jpg','img/goods/9787121291609/index.jpg','img/goods/9787121291609/intro.jpg');
+insert into book values('9787302383666','MongoDB大数据处理权威指南','[美]  戴维·豪斯（DavidHows）等著 ',42.0,'清华大学出版社',1,'2017-03-01',285,511000,'平装','16开','胶板纸','img/goods/9787302383666/collect.jpg','img/goods/9787302383666/detail1.jpg','img/goods/9787302383666/detail1big.jpg','img/goods/9787302383666/index.jpg','img/goods/9787302383666/intro.jpg');
+insert into book values('9787302435167','大数据架构师指南','朱进云，陈坚，王德政 著 ',36.3,'清华大学出版社',1,'2016-05-01',296,320000,'平装','16开','胶板纸','img/goods/9787302435167/collect.jpg','img/goods/9787302435167/detail1.jpg','img/goods/9787302435167/detail1big.jpg','img/goods/9787302435167/index.jpg','img/goods/9787302435167/intro.jpg');
+insert into book values('9787302459873','数据挖掘与预测分析','[美]Daniel T. Larose，Chantal D. Larose 著 王念滨 宋敏 裴大茗 译 ',84.1,'清华大学出版社',2,'2017-02-01',725,1144000,'平装','16开','胶板纸','img/goods/9787302459873/collect.jpg','img/goods/9787302459873/detail1.jpg','img/goods/9787302459873/detail1big.jpg','img/goods/9787302459873/index.jpg','img/goods/9787302459873/intro.jpg');
+insert into book values('9787508344980','Head First Java','[美]Sierra K等著OReilly Taiwan公司译 ',53.9,'中国电力出版社',1,'2007-02-01',689,983000,'平装','16开','胶板纸','img/goods/9787508344980/collect.jpg','img/goods/9787508344980/detail1.jpg','img/goods/9787508344980/detail1big.jpg','img/goods/9787508344980/index.jpg','img/goods/9787508344980/intro.jpg');
+
+select * from book;
+
+CREATE TABLE cart(
+	cartID int auto_increment,
+	custID int,
+	bookID char(100), 
+	bookNum int,
+       	PRIMARY KEY(cartID),
+	FOREIGN KEY(custID) REFERENCES customer(custID),
+	FOREIGN KEY(bookID) REFERENCES book(bookID)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8;
+delete from cart;
+
+insert into cart(custID,bookID,bookNum) values('1','9787508344980','1');
+insert into cart(custID,bookID,bookNum) values('1','9787302459873','2');
+insert into cart(custID,bookID,bookNum) values('1','9787302435167','3');
+insert into cart(custID,bookID,bookNum) values('2','9787508344980','1');
+insert into cart(custID,bookID,bookNum) values('2','9787302459873','2');
+
+
+create view vcart
+as
+select bookname,detail1P,author,price,bookNum,cart.bookID
+from book,cart
+where book.bookID=cart.bookID;
+
+CREATE TABLE receiver(
+	receID int auto_increment,
+	custID int,
+	receName char(10),
+	receAdd char(200),
+	recePhone char(11),
+       	PRIMARY KEY(receID),
+	FOREIGN KEY(custID) REFERENCES customer(custID)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8;
+delete from receiver;
+
+insert into receiver(custID,receName,receAdd,recePhone) values('1','大娜娜','王者峡谷','123456789');
+insert into receiver(custID,receName,receAdd,recePhone) values('1','新奇','王者峡谷','123456799');
+insert into receiver(custID,receName,receAdd,recePhone) values('1','瓶子','正佳广场外婆家','123456689');
+insert into receiver(custID,receName,receAdd,recePhone) values('2','兰兰','秦时明月','987644321');
+insert into receiver(custID,receName,receAdd,recePhone) values('2','小娜娜','新浪微博','987655321');
+
+CREATE TABLE Neworder(
+	orderID int auto_increment,
+	custID int,
+	bookID char(100),
+	payway char(100),
+	recename char(10),
+	receadd char(200),
+	recephone char(11),
+	createtime char(20),
+	orderstate char(20),
+       	PRIMARY KEY(orderID),
+	FOREIGN KEY(custID) REFERENCES customer(custID),
+	FOREIGN KEY(bookID) REFERENCES book(bookID)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8;
+delete from Neworder;
+
+insert into Neworder(custID,bookID,payway,recename,receadd,recephone,createtime,orderstate) values('1','9787302435167','网上支付','娜娜','王者峡谷','123456789','2018-12-17','处理中');
+insert into Neworder(custID,bookID,payway,recename,receadd,recephone,createtime,orderstate) values('1','9787302459873','网上支付','娜娜','王者峡谷','123456789','2018-12-17','处理中');
+insert into Neworder(custID,bookID,payway,recename,receadd,recephone,createtime,orderstate) values('1','9787508344980','网上支付','娜娜','王者峡谷','123456789','2018-12-17','处理中');
+insert into Neworder(custID,bookID,payway,recename,receadd,recephone,createtime,orderstate) values('2','9787508344980','线下支付','兰兰','秦时明月','987654321','2018-12-14','已收货');
+insert into Neworder(custID,bookID,payway,recename,receadd,recephone,createtime,orderstate) values('2','9787302459873','线下支付','兰兰','秦时明月','987654321','2018-12-14','已收货');
+
+
+create view vorder
+as
+select custID,bookname,detail1P,press,price,payway,recename,receadd,recephone,createtime,orderstate,Neworder.bookID
+from book,Neworder
+where book.bookID=Neworder.bookID;
+
+
+CREATE TABLE collect(
+	collectID int auto_increment,
+	custID int,
+	bookID char(100), 
+       	PRIMARY KEY(collectID),
+	FOREIGN KEY(custID) REFERENCES customer(custID),
+	FOREIGN KEY(bookID) REFERENCES book(bookID)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8;
+delete from collect;
+
+insert into collect(custID,bookID) values('1','9787302435167');
+insert into collect(custID,bookID) values('1','9787302459873');
+insert into collect(custID,bookID) values('1','9787508344980');
+insert into collect(custID,bookID) values('2','9787302459873');
+insert into collect(custID,bookID) values('2','9787508344980');
+
+
+create view vcollect
+as
+select custID,price,bookname,collectP,collect.bookID
+from book,collect
+where book.bookID=collect.bookID;
+
+
+CREATE TABLE comment(
+	commentID  int  auto_increment,
+	custID  int,
+	bookID char(100),
+	comment varchar(500),
+	time char(100),
+       	PRIMARY KEY(commentID),
+	FOREIGN KEY(custID) REFERENCES customer(custID),
+	FOREIGN KEY(bookID) REFERENCES book(bookID)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8;
+delete from comment;
+
+insert into comment(custID,bookID,comment,time) values('1','9787302435167','正品','2018-12-18');
+insert into comment(custID,bookID,comment,time) values('1','9787302459873','内容丰富','2018-12-18');
+insert into comment(custID,bookID,comment,time) values('1','9787508344980','浅显易懂','2018-12-18');
+insert into comment(custID,bookID,comment,time) values('2','9787302459873','到货快','2018-12-15');
+insert into comment(custID,bookID,comment,time) values('2','9787508344980','服务好','2018-12-15');
+
+
+
+
