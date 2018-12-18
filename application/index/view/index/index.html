@@ -43,7 +43,7 @@
 	        		<div class = "poster-btn poster-next-btn"></div>
 	   			</div>	
 				<p>
-	  			<script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
+	  			<script src="__STATIC__/js/jquery-1.11.1.min.js"></script>
 	  			<script src="__STATIC__/js/jquery.carousel.js"></script>
 	  			<script>Caroursel.init($('.caroursel'))</script>
 				</p>
@@ -58,7 +58,7 @@
         	<div class="indexContent">
         		{foreach $goods as $good}
         		<div class="ContentBox">
-        			<div class="Content1" ><a href="detail.html"><img src="__STATIC__/img/goods/{$good.bookID}/index.jpg"/></a></div>
+        			<div class="Content1" ><a href="{:url('Detail/detail')}?bookID={$good.bookID}"><img src="__STATIC__/img/goods/{$good.bookID}/index.jpg"/></a></div>
         			<div class="Content2">{$good.bookname}</div>
         			<div class="Content3">价格：￥{$good.price}</div>
  					<div class="Content3">出版社:{$good.press}</div>

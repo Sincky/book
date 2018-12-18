@@ -57,3 +57,20 @@ window.onload = function() {
 function detailBuy(){
 	window.document.location.href="payment.html";
 }
+
+function showComment() {
+
+	$(".productParameterDiv,.productIntroduceDiv,.productAfterSaleDiv").hide();
+	$(".productCommentDiv").show();
+	$(".productDetails").removeClass("select");
+	$(".productComment").addClass("select");
+	$(".menuDiv").hide();
+}
+
+function showDetail() {
+	$(".productCommentDiv").hide();
+	$(".productParameterDiv,.productIntroduceDiv,.productAfterSaleDiv").show();
+	$(".productComment").removeClass("select");
+	$(".productDetails").addClass("select");
+	$(".menuDiv").show();
+}
