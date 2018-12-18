@@ -15,42 +15,76 @@ use think\Paginator;
 
 class Bootstrap extends Paginator
 {
-
-    /**
+    /*
      * 上一页按钮
      * @param string $text
      * @return string
      */
-    protected function getPreviousButton($text = "&laquo;")
+    protected function getPreviousButton($text = "上一页")
     {
-
+    
         if ($this->currentPage() <= 1) {
             return $this->getDisabledTextWrapper($text);
         }
-
+    
         $url = $this->url(
             $this->currentPage() - 1
-        );
-
+            );
+    
         return $this->getPageLinkWrapper($url, $text);
     }
-
+    
     /**
      * 下一页按钮
      * @param string $text
      * @return string
      */
-    protected function getNextButton($text = '&raquo;')
+    protected function getNextButton($text = '下一页')
     {
         if (!$this->hasMore) {
             return $this->getDisabledTextWrapper($text);
         }
-
+    
         $url = $this->url($this->currentPage() + 1);
-
+    
         return $this->getPageLinkWrapper($url, $text);
     }
-
+    
+    /**
+     * 首页按钮
+     * @param string $text
+     * @return string
+     */
+    protected function getFirstButton($text = '首页')
+    {
+        $nowPage = $this->rollPage;//计算分页临时变量
+        //当  总页数大于定义的页数时  且  当前页数大于前几页时  显示首页
+        if ($this->lastPage > $this->showPage && $this->currentPage > $nowPage) {
+    
+            $url = $this->url(1);
+    
+            return $this->getPageLinkWrapper($url, $text);
+        }
+    }
+    
+    /**
+     * 末页按钮
+     * @param string $text
+     * @return string
+     */
+    protected function getLastButton($text = '末页')
+    {
+        $nowPage = $this->rollPage;//计算分页临时变量
+    
+        //当  总页数大于定义的页数时  且  当前页数小于最后的几页时  显示末页
+        if ($this->lastPage > $this->showPage && $this->currentPage < ($this->lastPage - $nowPage)) {
+    
+            $url = $this->url($this->lastPage);
+    
+            return $this->getPageLinkWrapper($url, $text);
+        }
+    }
+    
     /**
      * 页码按钮
      * @return string
@@ -59,49 +93,49 @@ class Bootstrap extends Paginator
     {
         if ($this->simple)
             return '';
-
-        $block = [
-            'first'  => null,
-            'slider' => null,
-            'last'   => null
-        ];
-
-        $side   = 3;
-        $window = $side * 2;
-
-        if ($this->lastPage < $window + 6) {
-            $block['first'] = $this->getUrlRange(1, $this->lastPage);
-        } elseif ($this->currentPage <= $window) {
-            $block['first'] = $this->getUrlRange(1, $window + 2);
-            $block['last']  = $this->getUrlRange($this->lastPage - 1, $this->lastPage);
-        } elseif ($this->currentPage > ($this->lastPage - $window)) {
-            $block['first'] = $this->getUrlRange(1, 2);
-            $block['last']  = $this->getUrlRange($this->lastPage - ($window + 2), $this->lastPage);
-        } else {
-            $block['first']  = $this->getUrlRange(1, 2);
-            $block['slider'] = $this->getUrlRange($this->currentPage - $side, $this->currentPage + $side);
-            $block['last']   = $this->getUrlRange($this->lastPage - 1, $this->lastPage);
-        }
-
-        $html = '';
-
-        if (is_array($block['first'])) {
-            $html .= $this->getUrlLinks($block['first']);
-        }
-
-        if (is_array($block['slider'])) {
-            $html .= $this->getDots();
-            $html .= $this->getUrlLinks($block['slider']);
-        }
-
-        if (is_array($block['last'])) {
-            $html .= $this->getDots();
-            $html .= $this->getUrlLinks($block['last']);
-        }
-
-        return $html;
+    
+            $block = [
+                'first'  => null,
+                'slider' => null,
+                'last'   => null
+            ];
+    
+            $side   = 3;
+            $window = $side * 2;
+    
+            if ($this->lastPage < $window + 6) {
+                $block['first'] = $this->getUrlRange(1, $this->lastPage);
+            } elseif ($this->currentPage <= $window) {
+                $block['first'] = $this->getUrlRange(1, $window + 2);
+                $block['last']  = $this->getUrlRange($this->lastPage - 1, $this->lastPage);
+            } elseif ($this->currentPage > ($this->lastPage - $window)) {
+                $block['first'] = $this->getUrlRange(1, 2);
+                $block['last']  = $this->getUrlRange($this->lastPage - ($window + 2), $this->lastPage);
+            } else {
+                $block['first']  = $this->getUrlRange(1, 2);
+                $block['slider'] = $this->getUrlRange($this->currentPage - $side, $this->currentPage + $side);
+                $block['last']   = $this->getUrlRange($this->lastPage - 1, $this->lastPage);
+            }
+    
+            $html = '';
+    
+            if (is_array($block['first'])) {
+                $html .= $this->getUrlLinks($block['first']);
+            }
+    
+            if (is_array($block['slider'])) {
+                $html .= $this->getDots();
+                $html .= $this->getUrlLinks($block['slider']);
+            }
+    
+            if (is_array($block['last'])) {
+                $html .= $this->getDots();
+                $html .= $this->getUrlLinks($block['last']);
+            }
+    
+            return $html;
     }
-
+    
     /**
      * 渲染分页html
      * @return mixed
@@ -111,21 +145,21 @@ class Bootstrap extends Paginator
         if ($this->hasPages()) {
             if ($this->simple) {
                 return sprintf(
-                    '<ul class="pager">%s %s</ul>',
+                    '%s %s',
                     $this->getPreviousButton(),
                     $this->getNextButton()
-                );
+                    );
             } else {
                 return sprintf(
-                    '<ul class="pagination">%s %s %s</ul>',
+                    '%s %s %s',
                     $this->getPreviousButton(),
                     $this->getLinks(),
                     $this->getNextButton()
-                );
+                    );
             }
         }
     }
-
+    
     /**
      * 生成一个可点击的按钮
      *
@@ -135,9 +169,9 @@ class Bootstrap extends Paginator
      */
     protected function getAvailablePageWrapper($url, $page)
     {
-        return '<li><a href="' . htmlentities($url) . '">' . $page . '</a></li>';
+        return '&nbsp;&nbsp;<a href="' . htmlentities($url) . '">' . $page . '</a>&nbsp;&nbsp;';
     }
-
+    
     /**
      * 生成一个禁用的按钮
      *
@@ -146,9 +180,9 @@ class Bootstrap extends Paginator
      */
     protected function getDisabledTextWrapper($text)
     {
-        return '<li class="disabled"><span>' . $text . '</span></li>';
+        return '<span>&nbsp;&nbsp;' . $text . '&nbsp;&nbsp;</span>';
     }
-
+    
     /**
      * 生成一个激活的按钮
      *
@@ -157,9 +191,9 @@ class Bootstrap extends Paginator
      */
     protected function getActivePageWrapper($text)
     {
-        return '<li class="active"><span>' . $text . '</span></li>';
+        return '<span>&nbsp;&nbsp;' . $text . '&nbsp;&nbsp;</span>';
     }
-
+    
     /**
      * 生成省略号按钮
      *
@@ -169,7 +203,7 @@ class Bootstrap extends Paginator
     {
         return $this->getDisabledTextWrapper('...');
     }
-
+    
     /**
      * 批量生成页码按钮.
      *
@@ -179,14 +213,14 @@ class Bootstrap extends Paginator
     protected function getUrlLinks(array $urls)
     {
         $html = '';
-
+    
         foreach ($urls as $page => $url) {
             $html .= $this->getPageLinkWrapper($url, $page);
         }
-
+    
         return $html;
     }
-
+    
     /**
      * 生成普通页码按钮
      *
@@ -199,7 +233,7 @@ class Bootstrap extends Paginator
         if ($page == $this->currentPage()) {
             return $this->getActivePageWrapper($page);
         }
-
+    
         return $this->getAvailablePageWrapper($url, $page);
     }
-}
+    }

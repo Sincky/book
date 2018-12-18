@@ -32,21 +32,23 @@
 				<!--<iframe class="TopDiv" src="header.html" frameborder="0" scrolling="no"></iframe><!--这是头-->
 				<div class="loginCenterDiv">
 					<div class="loginMessageDiv">
+					<form action="{:url('login/doLogin')}" method="post" name=f>
 						<div class="loginMessageTopDiv">
 							<div class="LMTopLeft">登录学子商城</div>
-							<div id="newRegist" class="LMTopRight" onclick="onnewRegist();">新用户注册</div>
+							<div id="newRegist" class="LMTopRight" >新用户注册</div>
 							<div class="LMTopBottom">
 							</div>
 						</div>
 						<div class="loginInput">
-							<input type="text" id="name" name="name" placeholder="请输入您的用户名" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的用户名'" />
+							<input type="text" id="email" name="email" placeholder="请输入您的邮箱" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的邮箱'" />
 						</div>
 						<div class="loginInput">
 							<input type="password" id="pwd" name="pwd" placeholder="请输入您的密码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的密码'" />
 						</div>
 						<div class="loginInput loginMessageBottomDiv">
-							<input type="submit" />
+							<input type="submit" value="登录"/>
 						</div>
+					</form>>
 					</div>
 
 				</div>

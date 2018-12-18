@@ -48,6 +48,33 @@
 	  			<script>Caroursel.init($('.caroursel'))</script>
 				</p>
         	</div>
+        	
+        	<div class="indexMiddle"> 
+        		<!---->
+        		<div class="iconDiv">
+        			<img src="__STATIC__/img/banner/icon.png"/>
+        		</div>
+        		<div class="iconNameDiv">分类查找</div>
+        	</div>
+        	
+        	<div class="search_div" align="center">
+			<form method="post" action="{:url('index/index')}">
+				<span class="input_span">商品名：<input type="text" name="bookname"/></span>
+				<span class="input_span">商品出版社：
+				<select name="bookclass">
+				<Option value="">不限</option>
+				{foreach $bclass as $bookclass}
+					<Option value="{$bookclass.press}">{$bookclass.press}</Option>
+				{/foreach}
+				</select>
+				</span>
+				<span class="price">商品价格区间：
+				<input type="text" name="minprice"/> - <input type="text" name="maxprice"/></span>
+				<input type="submit" value="查 询">
+			</form>
+			</div>
+        	
+        	
         	<div class="indexMiddle"> 
         		<!---->
         		<div class="iconDiv">
@@ -65,6 +92,7 @@
         		</div>
         		{/foreach}
         	</div>
+        	<div class="page" align="center">{$page}</div>
         </div>
         
         <!--
