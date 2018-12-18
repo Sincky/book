@@ -15,22 +15,76 @@
 		<link rel="stylesheet" href="__STATIC__/css/foot.css" />
 		<link rel="stylesheet" href="__STATIC__/css/cart.css" />
 		<script type="text/javascript" src="__STATIC__/js/header.js"></script>
-		<script type="text/javascript" src="__STATIC__/js/cart.js"></script>
+		<script type="text/javascript" src="__STATIC_/js/jquery-1.4.2.js"></script>
+		<script type="text/javascript">
+$(function(){
+	sum();
+	total();
+	chk();
+});
+
+function sum(){
+	$('#goods tr').each(function(){
+		var price = parseFloat($(this).find("td:eq(4)").text());
+		var num	= parseInt($(this).find("input[name='num']").val());
+		$(this).find("td:eq(6)").text(price * num);
+	})
+}
+function total(){
+	var s=0;
+	$('#goods tr').each(function(){
+		if($(this).find("input[type='checkbox']").attr('checked')){
+			var prices = parseFloat($(this).find("td:eq(6)").text());
+			s+=prices;
+		}		
+	})
+	$("#total").text(s);
+}
+function change(btn,o){
+    var num = 0;
+    num = $('#'+o).val();
+    var flag=0;
+    for(var i=0;i<num.length;i++)
+		if((num.charCodeAt(i)>57 || num.charCodeAt(i)<48) && num.charAt(i)!=32)
+		{
+			flag=1;
+			break;
+		}
+	if(flag==1)
+	{
+		alert("数量只能是数字！");
+		return false;
+	}
+	else{
+		var tds=$(btn).parent().siblings();
+		var yourprice = tds.eq(4).text();	
+		tds.eq(5).text(price * num);	
+		total();	
+        $.get("{:url('cart/updateCart')}",{"cartID":o,"num":num});
+	}
+} 
+
+function del(btn,cid){
+	$(btn).parent().parent().remove();
+	total();
+	$.get("{:url('cart/deleteCart')}",{"cartID":cid});
+}
+
+function chk(){
+	total();
+}
+
+</script> 
 	</head>
 	
 	<body>
-		<!--
-        	作者：杨富宙
-        	时间：2018-10-09
-        	描述：页面顶部
-        -->
 		{include file="common/header.html"/}
   		<!--
           	作者：Bluesky
           	时间：2018-10-09
           	描述：页面中部示例
           -->
-        <div class="mainDiv">
+		<div class="mainDiv">
         
 		<div class="cartDiv">
 			<div class="wordDiv">
@@ -43,11 +97,48 @@
 					<div class="statisticsDiv">元</div>
 				</div>
 			</div>
-			<div>
+			<form action="{:url('order/order')}" name="form1" method="post">
+			<table>
+			<tr class="headDiv">
+				<td>
+					<input type="checkbox" id="goodsAll1" name="goods" onclick="allClick(this);"/>全选
+				</td>
+				<td>商品编号</td>
+				<td>商品</td>
+				<td>单价(元)</td>
+				<td>数量</td>
+				<td>金额</td>
+				<td>操作</td>
+			</tr>
+			<tbody class="listDiv">
+			{assign name="sum" value="0" /}
+			{foreach $result as $cart}
+			{assign name="sum" value="$sum + $cart.price * $cart.num " /}
+				<tr>
+				<td><input type='checkbox' name='cartID[]' value='{$cart.cartID}' checked onclick="chk()"></td>
+				<td>{$cart.bookID}</td>
+				<td><div style='height:50px; float:left;'>
+						<img src='__STATIC_/img/{$cart.detail1P}' width=48 height=51 border=0></div>
+					<div style='height:50px; float:left;'>{$cart.fname}</div>
+				</td>
+				<td>{$cart.price}</td>
+				<td><input type='text' id='{$cart.cartID}' size='1' value='{$cart.num}' name='num'>
+					<input type='button' onclick='change(this,{$cart.cartID})' value='更新' /></td>
+				<td></td>
+				<td>
+					<input type="image" onclick="del(this,{$cart.cartID});" width="41" height="20" src="__STATIC_/img/04shop_deleteID.gif">
+				</td>
+				</tr>
+			{/foreach}
+			</tbody>
+			</table>
+			</form>
+			<!--<div>
 				<ul class="headDiv">
 					<li>
 						<input type="checkbox" id="goodsAll1" name="goods" onclick="allClick(this);"/>全选
 					</li>
+					<li>商品编号</li>
 					<li>商品</li>
 					<li>单价(元)</li>
 					<li>数量</li>
@@ -56,109 +147,34 @@
 				</ul>
 			</div>
 			<div class="listDiv">
+			
+			{assign name="sum" value="0" /}
+			{foreach $result as $cart}
+			{assign name="sum" value="$sum + $cart.price * $cart.num " /}	
 				<div  id="addItem" class="itemDiv color">
-					<div class="choseDiv"><input type="checkbox" name="goods" id="goods" class="checkInput" onclick="checkOnclick(this);"/> </div>
+					<div class="choseDiv"><input type="checkbox" name='cartID[]' id='{$cart.cartID}' class="checkInput" onclick="checkOnclick(this);"/> </div>
+					<div class="publishDiv">{$cart.bookID}</div>
 					<div class="goodsDiv">
-						<div class="pictureDiv"><img src="__STATIC__/img/goods/9787115130228/detail1.jpg" /></div> 
+						<div class="pictureDiv"><img src="_STATIC_/img/goods/9787115130228/detail1.jpg" /></div> 
 						<div class="publishDiv">
-							<div class="bookNameDiv">C Primer Plus</div>
-							<div class="authorDiv">作者:[美]普拉塔 著；云巅工作室 编</div>
+							<div class="bookNameDiv">{$cart.bookname}</div>
+							<div class="authorDiv">{$cart.author}</div>
 						</div>						
 					</div>
 					<div class="onePriceDiv">
 						<div class="CNYDiv">￥</div>
-						<div class="priceDiv"><span>20</span></div>
+						<div class="priceDiv"><span>{$cart.price}</span></div>
 					</div>
 					
 					<div class="numberDiv">
-							<span onclick="oneClick(this);" ><b class="symbolDiv"><img src="__STATIC__/img/cart_sub.png"/></b></span><input type="text" class="numberValue" value="5" disabled="disabled"/><span onclick="addClick(this);"><img src="__STATIC__/img/cart_add.png"/></span>
+							<span onclick="oneClick(this);" ><b class="symbolDiv"><img src="_STATIC_/img/cart_sub.png"/></b></span><input type="text" class="numberValue" value="5" disabled="disabled"/><span onclick="addClick(this);"><img src="_STATIC_/img/cart_add.png"/></span>
 					</div>
 					<div class="sumCNYDiv">￥</div>
-					<div class="sumDiv"><span>100</span></div>
-					<div class="deleteDiv" onclick="deleteItem(this);"><a href="#">删除</a></div>
-				</div>
-				<div  id="addItem" class="itemDiv">
-					<div class="choseDiv"><input type="checkbox" name="goods" id="goods" class="checkInput" onclick="checkOnclick(this);"/></div>
-					<div class="goodsDiv">
-						<div class="pictureDiv"><img src="__STATIC__/img/goods/9787111526285/detail1.jpg" /></div> 
-						<div class="publishDiv">
-							<div class="bookNameDiv">Go程序设计语言</div>
-							<div class="authorDiv">作者:[美]艾伦A.A 多诺万 等 著</div>
-						</div>						
-					</div>
-					<div class="onePriceDiv">
-						<div class="CNYDiv">￥</div>
-						<div class="priceDiv"><span>30</span></div>
-					</div>
-					<div class="numberDiv">
-							<span onclick="oneClick(this);" ><b class="symbolDiv"><img src="__STATIC__/img/cart_sub.png"/></b></span><input type="text" class="numberValue" value="5" disabled="disabled"/><span onclick="addClick(this);"><img src="__STATIC__/img/cart_add.png"/></span>
-					</div>
-					<div class="sumCNYDiv">￥</div>
-					<div class="sumDiv"><span>150</span></div>
-					<div class="deleteDiv" onclick="deleteItem(this);"><a href="#">删除</a></div>
-				</div>
-				<div  id="addItem" class="itemDiv color">
-					<div class="choseDiv"><input type="checkbox" name="goods" id="goods" class="checkInput" onclick="checkOnclick(this);"/></div>
-					<div class="goodsDiv">
-						<div class="pictureDiv"><img src="__STATIC__/img/goods/9787111213826/detail1.jpg" /></div> 
-						<div class="publishDiv">
-							<div class="bookNameDiv">Java思想</div>
-							<div class="authorDiv">作者:[美]埃克尔 译者:陈昊鹏 著</div>
-						</div>						
-					</div>
-					<div class="onePriceDiv">
-						<div class="CNYDiv">￥</div>
-						<div class="priceDiv"><span>10</span></div>
-					</div>
-					<div class="numberDiv">
-						<span onclick="oneClick(this);" ><b class="symbolDiv"><img src="__STATIC__/img/cart_sub.png"/></b></span><input type="text" class="numberValue" value="3" disabled="disabled"/><span onclick="addClick(this);"><img src="__STATIC__/img/cart_add.png"/></span>
-					</div>
-					<div class="sumCNYDiv">￥</div>
-					<div class="sumDiv"><span>30</span></div>
-					<div class="deleteDiv" onclick="deleteItem(this);"><a href="#">删除</a></div>
-				</div>
-				<div  id="addItem" class="itemDiv">
-					<div class="choseDiv"><input type="checkbox" name="goods" id="goods" class="checkInput" onclick="checkOnclick(this);"/></div>
-					<div class="goodsDiv">
-						<div class="pictureDiv"><img src="__STATIC__/img/goods/9787111532644/detail1.jpg" /></div> 
-						<div class="publishDiv">
-							<div class="bookNameDiv">架构即未来</div>
-							<div class="authorDiv">作者:[美]马丁L.阿伯特 迈克尔T.费舍尔 著；陈斌 译</div>
-						</div>						
-					</div>
-					<div class="onePriceDiv">
-						<div class="CNYDiv">￥</div>
-						<div class="priceDiv"><span>30</span></div>
-					</div>
-					<div class="numberDiv">
-						<span onclick="oneClick(this);" ><b class="symbolDiv"><img src="__STATIC__/img/cart_sub.png"/></b></span><input type="text" class="numberValue" value="4" disabled="disabled"/><span onclick="addClick(this);"><img src="__STATIC__/img/cart_add.png"/></span>
-					</div>
-					<div class="sumCNYDiv">￥</div>
-					<div class="sumDiv"><span>120</span></div>
-					<div class="deleteDiv" onclick="deleteItem(this);"><a href="#">删除</a></div>
-				</div>
-				<div  id="addItem" class="itemDiv color">
-					<div class="choseDiv"><input type="checkbox" name="goods" id="goods" class="checkInput" onclick="checkOnclick(this);"/></div>
-					<div class="goodsDiv">
-						<div class="pictureDiv"><img src="__STATIC__/img/goods/9787115435101/detail1.jpg" disabled="disabled"/></div> 
-						<div class="publishDiv">
-							<div class="bookNameDiv">Python数据科学指南</div>
-							<div class="authorDiv">作者:印度，Gopi，Subramanian，萨伯拉曼尼安 著；方延风 刘丹 译</div>
-						</div>						
-					</div>
-					<div class="onePriceDiv">
-						<div class="CNYDiv">￥</div>
-						<div class="priceDiv"><span>40</span></div>
-					</div>
-					<div class="numberDiv">
-						<span onclick="oneClick(this);" ><b class="symbolDiv"><img src="__STATIC__/img/cart_sub.png"/></b></span><input type="text" class="numberValue" value="2" disabled="disabled"/><span onclick="addClick(this);"><img src="__STATIC__/img/cart_add.png"/></span>
-					</div>
-					<div class="sumCNYDiv">￥</div>
-					<div class="sumDiv"><span>80</span></div>
-					
+					<div class="sumDiv"><span id='{$cart.cartID}'>{$cart.num}</span></div>
 					<div class="deleteDiv" onclick="deleteItem(this);"><a href="#">删除</a></div>
 				</div>
 			</div>
+			{/foreach}-->
 			<div class="commitDiv">
 				<div class="choseAllDiv"><input type="checkbox" id="goodsAll2" name="goods" onclick="allClick(this);"/>全选</div>
 				<div class="middleDiv">
@@ -172,12 +188,6 @@
 		
        </div>
         </div>
- 		<!--
-        	作者：lajiaopingzi@163.com
-        	时间：2018-10-09
-        	描述：网页的尾部      大标签： FootTop
-        -->
-		{include file="common/foot.html"/}	
-			
+{include file="common/foot.html"/}			
 	</body>
 </html>

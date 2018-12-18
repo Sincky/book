@@ -88,7 +88,7 @@ body{
 	-webkit-padding-start: 0px;
 	
 }
-.headDiv li{
+.headDiv td{
 	float: left;
 	margin-left: -10px;
 	/*width: 40px;*/
