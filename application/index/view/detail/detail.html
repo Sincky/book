@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="__STATIC__/css/scnu.css"/>
+    <link rel="stylesheet" href="__STATIC__/css/detail.css"/>
+    <link rel="stylesheet" href="__STATIC__/css/book.css"/>
+    <link rel="stylesheet" href="__STATIC__/css/header.css">
+    <link rel="stylesheet" href="__STATIC__/css/foot.css"/>
+    <script type="text/javascript" src="__STATIC__/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/detail.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/header.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/index.js"></script>
+
+
+</head>
+<body>
+<!--
+    作者：杨富宙
+    时间：2018-10-09
+    描述：页面顶部
+-->
+{include file="common/header.html"/}
+<!--
+      作者：Sincky
+      时间：2018-10-09
+      描述：页面中部示例
+-->
+<div class="mainDiv">
+    <!-- 商品标题 -->
+    <div class="productTitleDiv">
+        <span id="productTitle">{$good.bookname}</span>>
+    </div>
+    <!-- 商品展示区域-->
+    <div class="productMainDiv">
+        <!-- 商品图片区域-->
+        <div class="picInfoDiv">
+            <div class="picDiv">
+                <img class="pictureBig" src="__STATIC__/img/goods/{$good.bookID}/detail1big.jpg"/>
+            </div>
+            <div class="otherPicDiv">
+                <img class="otherPicture" src="__STATIC__/img/goods/{$good.bookID}/detail1.jpg"/>
+            </div>
+        </div>
+        <!-- 商品信息区域 -->
+        <div class="showInfoDiv">
+            <div class="productNameDiv">
+                <h1 class="productName1">{$good.bookname}</h1>
+                <h5 class="productName2">({$good.author})</h5>
+            </div>
+            <div class="productPriceDiv">
+                <div class="productPriceInfo">
+                    价格:<span class="productPrice">￥{$good.price}</span>
+                </div>
+                <div class="productPriceOtherInfo">
+                    服务承诺:<span class="productPriceOther">*退货补运费  *30天无忧退换货 *48消失快速退款 *72小时发货</span>
+                </div>
+            </div>
+            <div class="messboxInfoDiv">
+                <div class="messboxInfo">
+                    <p class="title">客服:<span class="contactSer">联系客服</span><img
+                            src="__STATIC__/img/product_detail/kefuf.gif"></p>
+                    <p class="title">出版社:<span class="publishHouse">{$good.press}</span></p>
+                    <p class="title">出版日期:<span class="publishDate">{$good.pressdate}</span></p>
+                    <p class="title">数量:
+                        <input class="numberSub" id="numberSub" type="button" value="-" onclick="subNum();"/>
+                        <input class="number" id="number" type="text" min="1" max="99" value="1"
+                               onchange="changeNum();"/>
+                        <input class="numberAdd" id="numberAdd" type="button" value="+" onclick="addNum();"/>
+                    </p>
+                </div>
+            </div>
+            <div class="productBuyDiv">
+                <div class="productBuyBDiv">
+                    <input class="productBuyB" type="button" value="立即购买"/>
+                </div>
+                <div class="productAddPartDiv">
+                    <a href=""><img class="productAddPartI"
+                                    src="__STATIC__/img/product_detail/product_detail_img9.png"/></a>
+                </div>
+                <div class="productCollectionDiv">
+                    <a href="">
+                        <div class="productCollectionDiv2">
+
+                            <img class="productCollectionI"
+                                 src="__STATIC__/img/product_detail/product_detail_img62.png"/>
+                            <p>收藏</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--推荐区域-->
+    <div class="recommendDiv">
+        <div class="recommendTitle">
+            <span class="recommendTitleS">为你推荐</span><span class="recommendTitleS2">大家都在看</span>
+        </div>
+        <div class="recommendProductList">
+            <div class="recommendProduct" id="recommendProduct1">
+                <div class="ProductPic">
+                    <img class="ProductPicI" src="__STATIC__/img/goods/9787111532644/collect.jpg"/>
+                </div>
+                <div class="ProductTitle">
+                    <span class="ProductTitleS">架构即未来</span>
+                </div>
+            </div>
+            <div class="recommendProduct" id="recommendProduct2">
+                <div class="ProductPic">
+                    <img class="ProductPicI" src="__STATIC__/img/goods/9787111526285/index.jpg"/>
+                </div>
+                <div class="ProductTitle">
+                    <span class="ProductTitleS">Go程序设计语言</span>
+                </div>
+            </div>
+            <div class="recommendProduct" id="recommendProduct3">
+                <div class="ProductPic">
+                    <img class="ProductPicI" src="__STATIC__/img/goods/9787111545682/detail1big.jpg"/>
+                </div>
+                <div class="ProductTitle">
+                    <span class="ProductTitleS">Linux运维思想</span>
+                </div>
+            </div>
+            <div class="recommendProduct" id="recommendProduct4">
+                <div class="ProductPic">
+                    <img class="ProductPicI" src="__STATIC__/img/goods/9787111563891/collect.jpg"/>
+                </div>
+                <div class="ProductTitle">
+                    <span class="ProductTitleS">Tensorflow实践</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--商品详情-->
+    <div class="productContentDiv">
+        <!--右边导航栏-->
+        <div class="rightMenuDiv" id="rightMenu">
+            <a href="">
+                <div class="AddPartDiv">
+                    <img class="AddPartI" src="__STATIC__/img/product_detail/product_detail_img9.png"/>
+                </div>
+            </a>
+            <div class="menuDiv">
+                <div class="menuElement">
+                    <a href="#parameterTitle">
+                        <div class="title">
+                            <img src="__STATIC__/img/product_detail/product_detail_icon_1.png"/>
+                            <span>规格参数</span>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="menuElement">
+                    <a href="#introduceTitle">
+                        <div class="title">
+                            <img src="__STATIC__/img/product_detail/product_detail_icon_4.png"/>
+                            <span>商品介绍</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="menuElement">
+                    <a href="#AfterSaleTitle">
+                        <div class="title">
+                            <img src="__STATIC__/img/product_detail/product_detail_icon_3.png"/>
+                            <span>售后保障</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="menuElement">
+                    <a href="#top">
+                        <div class="title">
+                            <img src="__STATIC__/img/product_detail/product_detail_icon_up_1.png"/>
+                            <span>回到顶部</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--左边内容-->
+        <div class="leftContentDiv">
+
+            <div class="contentTitleDiv">
+                <a href="javascript:void(0)" onclick="showDetail()">
+                    <div class="productDetails title select" >
+                        <p>商品详情</p>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" onclick="showComment()">
+                    <div class="productComment title" >
+                        <p>商品评价</p>
+                    </div>
+                </a>
+            </div>
+            <div class="productParameterDiv">
+                <div class="parameterTitleDiv title2" id="parameterTitle">
+                    <div class="parameterTitle">
+                        <span>规格参数</span>
+                        <img src="__STATIC__/img/product_detail/product_detail_icon_1.png"/>
+                    </div>
+                </div>
+                <div class="parameterTable">
+                    <table>
+                        <tr>
+                            <td>图书编号：{$good.bookID}</td>
+                            <td>图书名称：{$good.bookname}</td>
+                            <td>作者：{$good.author}</td>
+                        </tr>
+                        <tr>
+                            <td>价格：￥{$good.price}</td>
+                            <td>出版社：{$good.press}</td>
+                            <td>版次：{$good.edition}</td>
+                        </tr>
+                        <tr>
+                            <td>出版日期：{$good.pressdate}</td>
+                            <td>页数：{$good.pages}</td>
+                            <td>字数：{$good.wordnum}</td>
+                        </tr>
+                        <tr>
+                            <td>包装：{$good.package}</td>
+                            <td>开本：{$good.booksize}</td>
+                            <td>{$good.paper}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="productIntroduceDiv">
+                <div class="introduceTitleDiv title2" id="introduceTitle">
+                    <div class="parameterTitle">
+                        <span>商品介绍</span>
+                        <img src="__STATIC__/img/product_detail/product_detail_icon_4.png"/>
+                    </div>
+                </div>
+                <div class="introduceImgDiv">
+                    <img src="__STATIC__/img/goods/{$good.bookID}/intro.jpg"/>
+                </div>
+            </div>
+            <!--售后保障 -->
+            <div class="productAfterSaleDiv">
+
+                <div class="AfterSaleTitleDiv title2" id="AfterSaleTitle">
+                    <div class="parameterTitle">
+                        <span>售后保障</span>
+                        <img src="__STATIC__/img/product_detail/product_detail_icon_3.png"/>
+                    </div>
+                </div>
+
+                <div class="AfterSaleElementDiv">
+                    <div class="ElementDiv">
+                        <div class="ElementTitleDiv">
+                            <img src="__STATIC__/img/product_detail/product_detail_img16.png"/>
+                            <span>正品保障</span>
+                        </div>
+                        <div class="ElementContentDiv">
+                            <p>达内学子商城向您保证所售商品均为正品行货，达内自营商品开具机打发票或电子发票</p>
+                        </div>
+                    </div>
+                    <div class="ElementDiv">
+                        <div class="ElementTitleDiv">
+                            <img src="__STATIC__/img/product_detail/product_detail_img16.png"/>
+                            <span>全国联保</span>
+                        </div>
+                        <div class="ElementContentDiv">
+                            <p>凭质保证书及达内商城发票，可享受全国联保服务，与您亲临商城选购的商品享受 相同的质量保证，达内商城还为您提供具有竞争力的商品价格与运费政策，请您放心购买！
+                                注：因厂家会在没有任何提前通知的情况下更改产品包装，产地或者一些附件，本司不能确保客户收到的货物
+                                与商场图片、产地、附件说明完全一致，只能确保为原厂正货！并且保证与当时市场上同样的主流新品一致， 若本商场没有及时更新，请大家原谅。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--评论区-->
+            <div class="productCommentDiv" style="display: none">
+                <div class="commentDiv">
+                    {if condition="empty($comments)"}
+                    <div class="comments">
+                        <div class="commentInfo">
+                            还没有评论哟~
+                        </div>
+                    </div>
+                    {/if}
+                    {foreach $comments as $comment}
+                    <div class="comments">
+                        <div class="commentName">
+                            <img src="__STATIC__/img/nana/nanauser.png" height="21px"/>
+                            {$comment.name}:
+                        </div>
+                        <div class="commentInfo">
+                            <p>{$comment.comment}</p>
+                        </div>
+                        <div class="commentTime">{$comment.time}</div>
+
+                    </div>
+                    {/foreach}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--
+    作者：lajiaopingzi@163.com
+    时间：2018-10-09
+    描述：页面尾部
+-->
+{include file="common/foot.html"/}
+
+</body>
+
+</html>

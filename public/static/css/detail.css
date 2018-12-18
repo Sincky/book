@@ -258,8 +258,9 @@
 	display: table-cell;
 	vertical-align: middle;
 }
-.productContentDiv .contentTitleDiv  .select{
+.productContentDiv .contentTitleDiv .select{
 	border-bottom: solid cornflowerblue 4px;
+	transition: 0.2s;
 }
 /*商品参数*/
 .productContentDiv .productParameterDiv{
@@ -343,6 +344,50 @@
 	margin: 5px 0px;
 	font-size: 14px;
 	
+}
+
+/*评论区*/
+.productCommentDiv{
+	margin: 10px;
+	margin-right: 45px;
+	height: auto;
+}
+.productCommentDiv .commentDiv{
+	margin: 10px;
+	height: auto;
+
+}
+
+.productCommentDiv .commentDiv .comments{
+	position: relative;
+	margin: 20px;
+	height: auto;
+	border-bottom: 1px #dddddd solid;
+}
+
+.productCommentDiv .commentDiv .comments .commentName{
+	margin: 5px;
+	height: auto;
+	font-size: 16px;
+	font-weight: bolder;
+}
+.productCommentDiv .commentDiv .comments .commentName img{
+	float: left;
+
+}
+.productCommentDiv .commentDiv .comments .commentInfo{
+	margin: 5px;
+	margin-left: 50px;
+	margin-bottom: 30px;
+	height: auto;
+	font-size: 14px;
+
+}
+.productCommentDiv .commentDiv .comments .commentTime{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	font-size: 14px;
 }
 
 
