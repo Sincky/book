@@ -27,11 +27,13 @@ class Login extends Controller
 	    else if($has['password'] != $passw){
 	        $this->error('密码错误');
 	    }
+	    session('identity',$has['identity']);
 	    session('email',$has['email']);
 	    $this->redirect(url('index/index'));
 	}
 	
 	public  function LogOut(){
+	    session('identity',null);
 	    session('email',null);
 	    $this->redirect(url('index/index'));
 	}
