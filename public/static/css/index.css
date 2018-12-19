@@ -1,6 +1,6 @@
 .mainDiv{
 	width: 1000px;
-	height: 1500px;
+	height: 1400px;
 	margin: 0px auto;
 }
 
@@ -76,7 +76,7 @@
 
 /*书本内容*/
 .mainDiv .indexContent{
-	height: 1100px;	
+	height: 950px;	
 	border: solid whitesmoke 2px;
 }
 .mainDiv .indexContent .ContentBox{
