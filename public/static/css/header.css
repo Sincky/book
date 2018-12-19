@@ -19,14 +19,14 @@ body{
 	width:120px;
 	height: 50px;
 	margin-left:0px;
-	margin-top: 25px;
+	margin-top: 20px;
 }
 /*头部中间搜索栏*/
 .headerTop .HTopDiv{
 	float: left;
 	width:450px;
 	height:50px;
-	margin-left: 100px;
+	margin-left: 140px;
 	margin-top: 20px;
 }
 .headerTop .HTopDiv .searchDiv{
@@ -63,22 +63,6 @@ body{
 	
 }
 
-/*用户名*/
-.headerDiv .UserName{
-	float:right;
-	width: 150px;
-	margin-top: 35px;
-	margin-left: 50px;
-	display:table-cell;
-	vertical-align:middle;
-	text-align:"center";
-}
-
-.headerDiv .UserName span{
-	float:left;
-	font-size:14px;
-}
-
 
 .headerTop .UlTopDiv li{
 	float:left;
@@ -92,6 +76,5 @@ body{
 /*设置链接的下划线*/
 .headerTop .UlTopDiv a{
 	text-decoration: none;
-	color: gray;
 	
 }

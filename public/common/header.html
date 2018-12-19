@@ -13,54 +13,52 @@
 			<div class="FindPic"><img src="__STATIC__/img/header/search.png" /></div>
 		</div>
 		
-		<div class="UserName">
-				{if condition="$Think.session.email neq '' "}
-					{if condition="$Think.session.identity neq 'VIP' "}
-						<span style="color: blue;">{$Think.session.email}</span>
-					{/if}
-					{if condition="$Think.session.identity eq 'VIP' "}
-						<span style="color: red;">{$Think.session.email}</span>
-					{/if}
-				{/if}
-				{if condition="$Think.session.email eq '' "}
-     			<span>欢迎来到学子书城</span>
-     			{/if}
-     	</div>
-		
 		<ul class="UlTopDiv">
 			<li>
-				<a href="{:url('Index/index')}" title="首页">首页</a>
+				<a style="color: gray;" href="{:url('Index/index')}" title="首页">首页</a>
 			</li>
 			<li><b>|</b></li>
 			<li>
-				<a href="{:url('Collect/collect')}" title="我的收藏">收藏</a>
+				<a style="color: gray;" href="{:url('Collect/collect')}" title="我的收藏">收藏</a>
 			</li>
 			<li><b>|</b></li>
 			<li>
-				<a href="{:url('Order/order')}" title="我的订单">订单</a>
+				<a style="color: gray;" href="{:url('Order/order')}" title="我的订单">订单</a>
 			</li>
 			<li><b>|</b></li>
 			<li>
-				<a href="{:url('Cart/Cart')}" title="我的购物车">购物车</a>
+				<a style="color: gray;" href="{:url('Cart/Cart')}" title="我的购物车">购物车</a>
 			</li>
 			<li><b>|</b></li>
 			<li>
-				<a href="{:url('Setting/setting')}" title="我的设置">设置</a>
+				<a style="color: gray;" href="{:url('Setting/setting')}" title="我的设置">设置</a>
 			</li>
+			
+			{if condition="$Think.session.email eq '' "}
+			<li><b>|</b></li>
+			<li>
+				<a style="color: gray;" href="{:url('Register/register')}" title="注册新用户">注册</a>
+			</li>
+			<li><b>|</b></li>
+			<li>
+				<a style="color: gray;" href="{:url('Login/login')}" title="用户登录">登录</a>
+			</li>
+			{/if}
 			{if condition="$Think.session.email neq '' "}
 			<li><b>|</b></li>
 			<li>
-				<a href="{:url('Login/LogOut')}" title="退出">退出</a>
+				{if condition="$Think.session.identity neq 'VIP' "}
+				<a style="color: green;" href="" title="">{$Think.session.email}</a>
+				{/if}
+				{if condition="$Think.session.identity eq 'VIP' "}
+				<a style="color: mediumslateblue;" href="" title="">{$Think.session.email}</a>
+				{/if}
+			</li>
+			<li><b>|</b></li>
+			<li>
+				<a style="color: gray;" href="{:url('Login/LogOut')}" title="退出">退出</a>
 			</li>
 			{/if}
-			<li><b>|</b></li>
-			<li>
-				<a href="{:url('Register/register')}" title="注册新用户">注册</a>
-			</li>
-			<li><b>|</b></li>
-			<li>
-				<a href="{:url('Login/login')}" title="用户登录">登录</a>
-			</li>
 		</ul>
 	</div>
 </div>
