@@ -18,12 +18,7 @@
 	</head>
 	
 	<!--需要删去，仅为示例所用-->
-	<style>
-		.mainDiv{
-			margin: 0px auto;
-			width: 1000px;
-		}
-	</style>
+	
 	
 	<body>
 		<!--
@@ -86,8 +81,8 @@
 					<p>确认商品信息</p>
 				</div>
 				<div class="CFPtableDiv">
-				{foreach $vcarts as $vcart}
-					<table width="1000px">
+				
+					<table width="1000px" >
 						<tr bgcolor=gainsboro class="" height="40px">
 							<td align="center">   </td>
 							<td align="center">商品信息</td>
@@ -95,18 +90,18 @@
 							<td align="center">数量</td>
 							<td align="center">金额</td>
 						</tr>
-						
+						{foreach $vcarts as $vcart}
 						<tr height="100px">
-							<td align="center"><img align="center" width="60px" src="__ROOT__/public/static/image/{$vcart.detail1P}"> </td>
+							<td align="center"><img align="center" width="60px" src="__ROOT__/static/{$vcart.detail1P}"> </td>
 							<td>{$vcart.author}</td>
 							<td>{$vcart.price}</td>
 							<td>{$vcart.bookNum}</td>
 							<td>{$vcart.price}*{$vcart.bookNum}</td>
 						</tr>
-						
+						{/foreach}
 						
 					</table>
-				{/foreach}
+				
 				</div>
 				<div class="OCCBottomDiv">
 					<div class="OCCBottomleftDiv"><span onclick="onOCClickcart();" ><<返回购物车</span></div>
