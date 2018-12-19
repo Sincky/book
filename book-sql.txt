@@ -141,7 +141,6 @@ insert into receiver(custID,receName,receAdd,recePhone) values('2','Ğ¡ÄÈÄÈ','ĞÂÀ
 CREATE TABLE Neworder(
 	orderID int auto_increment,
 	custID int,
-	bookID char(100),
 	payway char(100),
 	recename char(10),
 	receadd char(200),
@@ -149,24 +148,36 @@ CREATE TABLE Neworder(
 	createtime char(20),
 	orderstate char(20),
        	PRIMARY KEY(orderID),
-	FOREIGN KEY(custID) REFERENCES customer(custID),
-	FOREIGN KEY(bookID) REFERENCES book(bookID)
+	FOREIGN KEY(custID) REFERENCES customer(custID)
 )ENGINE=MyISAM DEFAULT CHARSET=utf8;
 delete from Neworder;
 
-insert into Neworder(custID,bookID,payway,recename,receadd,recephone,createtime,orderstate) values('1','9787302435167','ÍøÉÏÖ§¸¶','ÄÈÄÈ','ÍõÕßÏ¿¹È','123456789','2018-12-17','´¦ÀíÖĞ');
-insert into Neworder(custID,bookID,payway,recename,receadd,recephone,createtime,orderstate) values('1','9787302459873','ÍøÉÏÖ§¸¶','ÄÈÄÈ','ÍõÕßÏ¿¹È','123456789','2018-12-17','´¦ÀíÖĞ');
-insert into Neworder(custID,bookID,payway,recename,receadd,recephone,createtime,orderstate) values('1','9787508344980','ÍøÉÏÖ§¸¶','ÄÈÄÈ','ÍõÕßÏ¿¹È','123456789','2018-12-17','´¦ÀíÖĞ');
-insert into Neworder(custID,bookID,payway,recename,receadd,recephone,createtime,orderstate) values('2','9787508344980','ÏßÏÂÖ§¸¶','À¼À¼','ÇØÊ±Ã÷ÔÂ','987654321','2018-12-14','ÒÑÊÕ»õ');
-insert into Neworder(custID,bookID,payway,recename,receadd,recephone,createtime,orderstate) values('2','9787302459873','ÏßÏÂÖ§¸¶','À¼À¼','ÇØÊ±Ã÷ÔÂ','987654321','2018-12-14','ÒÑÊÕ»õ');
+insert into Neworder(custID,payway,recename,receadd,recephone,createtime,orderstate) values('1','ÍøÉÏÖ§¸¶','ÄÈÄÈ','ÍõÕßÏ¿¹È','123456789','2018-12-17','´¦ÀíÖĞ');
+insert into Neworder(custID,payway,recename,receadd,recephone,createtime,orderstate) values('2','ÏßÏÂÖ§¸¶','À¼À¼','ÇØÊ±Ã÷ÔÂ','987654321','2018-12-14','ÒÑÊÕ»õ');
 
+CREATE TABLE OrderInfor(
+	OrderInforID int auto_increment,
+	orderID int,
+	bookID char(100), 
+       	PRIMARY KEY(OrderInforID),
+	FOREIGN KEY(orderID) REFERENCES Neworder(orderID),
+	FOREIGN KEY(bookID) REFERENCES book(bookID)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8;
+delete from OrderInfor;
 
-create view vorder
+insert into OrderInfor(orderID,bookID) values('1','9787302435167');
+insert into OrderInfor(orderID,bookID) values('1','9787302459873');
+insert into OrderInfor(orderID,bookID) values('1','9787508344980');
+insert into OrderInfor(orderID,bookID) values('2','9787302459873');
+insert into OrderInfor(orderID,bookID) values('2','9787508344980');
+
+create view VorderInfor
 as
-select custID,bookname,detail1P,press,price,payway,recename,receadd,recephone,createtime,orderstate,Neworder.bookID
-from book,Neworder
-where book.bookID=Neworder.bookID;
+select OrderInfor.orderID,bookname,detail1P,press,price,payway,recename,receadd,recephone,createtime,orderstate,OrderInfor.bookID
+from book,Neworder,OrderInfor
+where book.bookID=OrderInfor.bookID AND OrderInfor.orderID=Neworder.orderID;
 
+select * from VorderInfor;
 
 CREATE TABLE collect(
 	collectID int auto_increment,
