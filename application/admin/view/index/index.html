@@ -15,26 +15,23 @@
 				<div class="title">
 					<h1 >书城管理系统</h1>
 				</div>	
-				
+				<form action="{:url('index/doLogin')}" method="post" name=f>
 				<div class="SlMMDiv">
 					<div class="title">
 						<h3>管理员登录</h3>
 					</div>	
 					<div class="inputDiv1">
-						<input type="text" id="name" name="name" placeholder="Name" onfocus="this.placeholder=''" onblur="this.placeholder='Name'"/>
-					
+						<input type="text" id="username" name="username" placeholder="请输入您的账号" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的账号'" />
 					</div>
 					<div class="inputDiv2">
-						<input type="password" id="passw" name="passw" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'"/>
-					
-					
+						<input type="password" id="passw" name="passw" placeholder="请输入您的密码" onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的密码'" />
 					</div>
 					<div class="submitDiv">
 						<input type="submit" id="denglu" name="denglu" value="登录" onclick="SevtoIndex();" />
 						<span class="passwSpanDiv">忘记密码？</span>
 					</div>
 				</div>
-				
+				</form>
 			</div>
 		</div>
 	</body>
