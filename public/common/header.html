@@ -12,6 +12,21 @@
 			</div>
 			<div class="FindPic"><img src="__STATIC__/img/header/search.png" /></div>
 		</div>
+		
+		<div class="UserName">
+				{if condition="$Think.session.email neq '' "}
+					{if condition="$Think.session.identity neq 'VIP' "}
+						<span style="color: blue;">{$Think.session.email}</span>
+					{/if}
+					{if condition="$Think.session.identity eq 'VIP' "}
+						<span style="color: red;">{$Think.session.email}</span>
+					{/if}
+				{/if}
+				{if condition="$Think.session.email eq '' "}
+     			<span>欢迎来到学子书城</span>
+     			{/if}
+     	</div>
+		
 		<ul class="UlTopDiv">
 			<li>
 				<a href="{:url('Index/index')}" title="首页">首页</a>
@@ -32,10 +47,12 @@
 			<li>
 				<a href="{:url('Setting/setting')}" title="我的设置">设置</a>
 			</li>
+			{if condition="$Think.session.email neq '' "}
 			<li><b>|</b></li>
 			<li>
-				<a href="{:url('Lookforword/lookforword')}" title="退出">退出</a>
+				<a href="{:url('Login/LogOut')}" title="退出">退出</a>
 			</li>
+			{/if}
 			<li><b>|</b></li>
 			<li>
 				<a href="{:url('Register/register')}" title="注册新用户">注册</a>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="__STATIC__/css/book.css" />		
+		<link rel="stylesheet" href="__STATIC__/css/header.css">
+		<link rel="stylesheet" href="__STATIC__/css/foot.css" />
+		<script type="text/javascript" src="__STATIC__/js/header.js"></script>
+		<script type="text/javascript" src="__STATIC__/js/index.js" ></script>
+		<link rel="stylesheet" href="__STATIC__/css/orderConfirm.css" />
+		<script type="text/javascript" src="__STATIC__/js/orderConfirm.js" ></script>
+	<script>
+		$(function(){
+			
+		})
+	</script>
+	</head>
+	
+	<!--需要删去，仅为示例所用-->
+	
+	
+	<body>
+		<!--
+        	作者：杨富宙
+        	时间：2018-10-09
+        	描述：页面顶部
+        -->
+		{include file="common/header.html"/}
+  		<!--
+          	作者：XXX
+          	时间：2018-10-09
+          	描述：页面中部示例
+          -->
+		
+		<div class="mainDiv">
+			<div class="orderConfirmMainDiv">
+			<div class="navlist">
+    				<ul>
+        				<li class="navlist_blue_left"></li>
+        				<li class="navlist_blue" onclick="onOCClickconfirm();">确认订单信息</li>
+        				<li class="navlist_blue_arrow"><canvas id="canvas_blue" width="20" height="38"></canvas>
+        				</li>
+        				<li class="navlist_gray" onclick="onOCClickpay();">支付订单<b></b></li>
+        				<li class="navlist_gray_arrow"><canvas id="canvas_gray" width="20" height="38"></canvas>
+        				</li>
+        				<li class="navlist_gray" onclick="onOCClickpaysuccess();">支付完成<b></b></li>
+        				<li class="navlist_gray_right"></li>
+    				</ul>
+			</div>
+			<div class="orderConfirmChooseAdDiv">
+				<div class="OCCTopDiv">
+					<p>选择收货地址</p>
+				</div>
+				<div class="OCCborderDiv"></div>
+				<div class="OCCCenterDiv">
+					<div class="OCCCenterradioDiv">
+						<input name="address" type="radio" />
+					</div>
+					<p>小娜娜</p>
+					<div class="OCCCenteraddressDiv">
+						<span>广东省 佛山市 南海区 狮山镇 华南师范大学南海校区</span>
+					</div>
+				</div>
+				<div class="OCCCenterDiv">
+					<div class="OCCCenterradioDiv">
+						<input name="address" type="radio"  />
+					</div>
+					<p>大娜娜</p>
+					<div class="OCCCenteraddressDiv">
+						<span>广东省 佛山市 南海区 狮山镇 华南师范大学南海校区</span>
+					</div>
+				</div>
+				<div class="OCCBottom">
+					更多地址>>
+				</div>
+			</div>
+			
+			<div class="confirmProductDiv">
+				<div class="OCCTopDiv">
+					<p>确认商品信息</p>
+				</div>
+				<div class="CFPtableDiv">
+				
+					<table width="1000px" >
+						<tr bgcolor=gainsboro class="" height="40px">
+							<td align="center">   </td>
+							<td align="center">商品信息</td>
+							<td align="center">单价（元）</td>
+							<td align="center">数量</td>
+							<td align="center">金额</td>
+						</tr>
+						{foreach $vcarts as $vcart}
+						<tr height="100px">
+							<td align="center"><img align="center" width="60px" src="__ROOT__/static/{$vcart.detail1P}"> </td>
+							<td>{$vcart.author}</td>
+							<td>{$vcart.price}</td>
+							<td>{$vcart.bookNum}</td>
+							<td>{$vcart.price}*{$vcart.bookNum}</td>
+						</tr>
+						{/foreach}
+						
+					</table>
+				
+				</div>
+				<div class="OCCBottomDiv">
+					<div class="OCCBottomleftDiv"><span onclick="onOCClickcart();" ><<返回购物车</span></div>
+					<div class="OCCBottomrightDiv buttoDiv">
+						<input type="button" value=" 确认并付款" onclick="onOCClickPay();" />
+					</div>
+					<div class="OCCBottomrightDiv">
+						已选<span>2</span>件商品 合计（不含运费）:￥<span>1800</span>元
+					</div>
+					
+					
+				</div>
+			</div>
+		</div>
+		</div>
+        
+    
+        
+        <!--
+        	作者：lajiaopingzi@163.com
+        	时间：2018-10-09
+        	描述：页面尾部
+        -->
+        {include file="common/foot.html"/}	
+	</body>
+</html>

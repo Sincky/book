@@ -1,5 +1,5 @@
 function onnewLogin(){
-	window.location.href="login.html";
+	window.location.href="{:url('Login/login')}";
 }
 function summitClick(){
 	if (  (nameOnblur($("name"))) &&(pwdOnblur($("pwd")))   ){

@@ -58,6 +58,12 @@ function detailBuy(){
 	window.document.location.href="payment.html";
 }
 
+//加入购物车
+function addCart(bookID) {
+	var bookNum = $("#number").val();
+	window.location.href = "addCart?bookID=" + bookID + "&bookNum=" + bookNum;
+}
+
 function showComment() {
 
 	$(".productParameterDiv,.productIntroduceDiv,.productAfterSaleDiv").hide();
