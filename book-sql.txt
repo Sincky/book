@@ -14,22 +14,45 @@ CREATE TABLE customer(
 )ENGINE=MyISAM DEFAULT CHARSET=utf8;
 delete from customer;
 
-insert into customer(email,username,password,phone,identity,address,cdefault) values('aaa@163.com','李筱雯','123','18012889889','Manager','佛山市南海区狮山大学城','1');
-insert into customer(email,username,password,phone,identity,address,cdefault) values('bbb@163.com','方凯西','123','18022735825','Manager','佛山市南海区狮山大学城','0');
-insert into customer(email,username,password,phone,identity,address,cdefault) values('ccc@163.com','陈小花','123','18912123212','Manager','佛山市南海区狮山大学城','0');
-insert into customer(email,username,password,phone,identity,address,cdefault) values('ddd@163.com','王红霞','123','13522132124','VIP','广州市新港东路144号','1');
-insert into customer(email,username,password,phone,identity,address,cdefault) values('eee@163.com','李梅','123','18921214244','VIP','广州市华南师范大学','0');
-insert into customer(email,username,password,phone,identity,address,cdefault) values('fff@163.com','李丽','123','18927712112','VIP','广东省佛山市南海区狮山大学城','0');
-insert into customer(email,username,password,phone,identity,address,cdefault) values('ggg@163.com','李明','123','18923212321','VIP','佛山南海狮山大学城','0');
-insert into customer(email,username,password,phone,identity,address,cdefault) values('hhh@163.com','张德海','123','13399899898','VIP','广州市天河区天河路89号','0');
-insert into customer(email,username,password,phone,identity,address,cdefault) values('iii@163.com','李白','123','13323232321','VIP','佛山南海狮山华南师范大学南海学院','0');
-insert into customer(email,username,password,phone,identity,address,cdefault) values('jjj@163.com','陈浩','123','18923221212','User','佛山南海狮山大学城','0');
-insert into customer(email,username,password,phone,identity,address,cdefault) values('kkk@163.com','方迪','123','18923121321','User','佛山南海狮山大学城','0');
-insert into customer(email,username,password,phone,identity,address,cdefault) values('lll@163.com','张民奚','123','18923232321','User','华南师范大学南海校区','0');
-insert into customer(email,username,password,phone,identity,address,cdefault) values('mmm@163.com','许烁娜','123','1122121','User','华南师范大学南海学院','0');
-insert into customer(email,username,password,phone,identity,address,cdefault) values('nn@163.com','方定威','123','18923234343','User','佛山南海狮山大学城','1');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('aaa@163.com','李筱雯','123456','18012889889','Manager','佛山市南海区狮山大学城','1');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('bbb@163.com','方凯西','123456','18022735825','Manager','佛山市南海区狮山大学城','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('ccc@163.com','陈小花','123456','18912123212','Manager','佛山市南海区狮山大学城','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('ddd@163.com','王红霞','123456','13522132124','VIP','广州市新港东路144号','1');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('eee@163.com','李梅','123456','18921214244','VIP','广州市华南师范大学','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('fff@163.com','李丽','123456','18927712112','VIP','广东省佛山市南海区狮山大学城','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('ggg@163.com','李明','123456','18923212321','VIP','佛山南海狮山大学城','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('hhh@163.com','张德海','123456','13399899898','VIP','广州市天河区天河路89号','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('iii@163.com','李白','123456','13323232321','VIP','佛山南海狮山华南师范大学南海学院','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('jjj@163.com','陈浩','123456','18923221212','User','佛山南海狮山大学城','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('kkk@163.com','方迪','123456','18923121321','User','佛山南海狮山大学城','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('lll@163.com','张民奚','123456','18923232321','User','华南师范大学南海校区','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('mmm@163.com','许烁娜','123456','1122121','User','华南师范大学南海学院','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('nn@163.com','方定威','123456','18923234343','User','佛山南海狮山大学城','1');
 
 select * from customer;
+
+create table admin(
+
+	adminID int auto_increment,
+
+	username char(10),
+
+	password char(10),
+ 
+	PRIMARY KEY(adminID)
+
+ )ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+delete from admin;
+
+insert into admin(username,password)values('admin','admin');
+
+insert into admin(username,password)values('nanajiang','nanajiang');
+
+insert into admin(username,password)values('lanlan','lanlan');
+
+select * from admin;
+
 
 CREATE TABLE book(
 	bookID char(100),
