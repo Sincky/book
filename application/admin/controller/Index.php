@@ -27,7 +27,7 @@ class Index extends Controller
            $this->error('密码错误');
        }
        session('username',$has['username']);
-       $this->redirect(url('Serindex/Serindex'));
+       $this->redirect(url('Serindex/serindex'));
       
    }
 }
