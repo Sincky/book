@@ -1,42 +1,31 @@
 /****** ** ** ** ** ** 左边附加导航切换 ** ** ** ** ** ** ** ** **/
+function jump($url){
+	setTimeout(function () {
+		$("#frame").attr("src",$url);
+	},350);
+}
 
 $(function() {
-	var Accordion = function(el, multiple) {
-		this.el = el || {};
-		this.multiple = multiple || false;
+	$("#accordion").accordion({
+		collapsible: true,
+		active: false,
+		icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" },
+		activate: function( event, ui ) {
+			if(ui.newHeader.length){
+				if(ui.newHeader[0].id == "ui-id-1"){
+					$("#imgLeft0").css("transform","rotate(-90deg)");
+				}else{
+					$("#imgLeft1").css("transform","rotate(-90deg)");
+				}
+			}
+			if(ui.oldHeader.length){
+				if(ui.oldHeader[0].id == "ui-id-1"){
+					$("#imgLeft0").css("transform","rotate(0deg)");
+				}else{
+					$("#imgLeft1").css("transform","rotate(0deg)");
+				}
+			}
+		},
+	});
 
-		// Variables privadas
-		var link1 = this.el.find('.link1');
-		var link2 = this.el.find('.link2');
-
-		// Evento
-		link1.on('click', {el: this.el,multiple: this.multiple,imgI:"imgLeft0"}, this.dropdown);
-		link2.on('click', {el: this.el,multiple: this.multiple,imgI:"imgLeft1"}, this.dropdown);
-		//links.on('click', {el: this.el,multiple: this.multiple,imgI:"imgLeft1"}, this.dropdown);
-	}
-
-	Accordion.prototype.dropdown = function(e) {
-		var $el = e.data.el;
-		$this = $(this),
-			$next = $this.next();
-		$next.slideToggle();
-		$this.parent().toggleClass('open');
-		
-		var imgId = e.data.imgI;
-		if($("#"+imgId).attr("title") != "1"){
-			$("#"+imgId).css("transform","rotate(-90deg)");
-			$("#"+imgId).attr("title","1");
-		}else{
-			$("#"+imgId).css("transform","rotate(0deg)");
-			$("#"+imgId).attr("title","0");
-		}
-		if(!e.data.multiple) {
-			$el.find('.submenu').not($next).slideUp().parent().removeClass('open');
-			$el.find('.submenu').not($next).slideUp().parent().find('img').css("transform","rotate(0deg)");
-			$el.find('.submenu').not($next).slideUp().parent().find('img').attr("title",0);
-		};
-		
-	}
-
-	var accordion = new Accordion($('#accordion'), false);
 });

@@ -54,14 +54,12 @@
 
 }
 .SevDownLeftDiv{
-	
 	float: left;
 	width: 350px;
 	/*height:calc(100vh - 60px);*/
 	background-color:gray;
 }
 .SDLeftLiDiv{
-	width: 350px;
 	height: 30px;
 }
 .SDLeftLiDiv span{
@@ -76,6 +74,11 @@
 .SDLeftLi{
 	margin-top: 10px;
 }
+
+.SDLeftLi h3{
+    display: contents;
+}
+
 .SDLeftLiyouDiv{
 	float: right;
 }

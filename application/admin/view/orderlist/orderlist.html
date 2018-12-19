@@ -4,17 +4,17 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="css/book.css" />
-		<link rel="stylesheet" href="css/order-list.css" />
-		<link rel="stylesheet" href="css/bootstrap.css" />
-		<link rel="stylesheet" href="css/hide.css" />	
-		<script type="text/javascript" src="js/order-list.js" ></script>
+		<link rel="stylesheet" href="__STATIC__/css/book.css" />
+		<link rel="stylesheet" href="__STATIC__/css/order-list.css" />
+		<link rel="stylesheet" href="__STATIC__/css/bootstrap.css" />
+		<link rel="stylesheet" href="__STATIC__/css/hide.css" />
+		<script type="text/javascript" src="__STATIC__/js/order-list.js" ></script>
 	</head>
 	<body>	
 		<div class="bodyDiv">
 			<div class="orderBarDiv">
 				<div class="orderBar">
-					<img src="img/header/set.png" />
+					<img src="__STATIC__/img/header/set.png" />
 					<span>订单管理</span>
 					<span>> 所有订单</span>
 				</div>
@@ -35,8 +35,8 @@
 							<td>2014-11-7 11:31</td>
 							<td>￥50.00</td>
 							<td>
-								<a href="order-Detail.html">查看</a>|
-								<a href="order-Process.html">处理</a>
+								<a href="{:url('orderdetail/orderdetail')}">查看</a>|
+								<a href="{:url('orderprocess/orderprocess')}">处理</a>
 							</td>
 						</tr>
 						<tr>

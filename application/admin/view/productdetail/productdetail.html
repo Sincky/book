@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="__STATIC__/css/book.css" />
+		<link rel="stylesheet" href="__STATIC__/css/product-detail.css" />
+	<script type="text/javascript" src="__STATIC__/js/product-add.js"></script>
+	</head>
+	<body>
+		<div class="orderBarDiv">
+			<div class="orderBar">
+				<img src="__STATIC__/img/header/set.png" />
+				<a href="{:url('productlist/productlist')}"><span>商品管理</span></a>
+				><a href="{:url('productlist/productlist')}"><span> 所有商品</span></a>
+				<span>> 商品详情</span>
+			</div>
+		</div>
+		<div class="inputInforDiv">
+			<div class="titleDiv">详细信息</div>
+			<div class="inforDiv">
+				<div class="valueDiv"><b>图书编号</b><input type="text" name="bookNumber" id="bookNumber" disabled="disabled" value="1234567890123"/></div>
+				<div class="valueDiv"><b>书名</b><input type="text" name="bookName" id="bookName" disabled="disabled" value="java"/></div>
+				<div class="valueDiv"><b>作者</b><input type="text" name="bookAuthor" id="bookAuthor" disabled="disabled" value="小明"/></div>
+				
+				<div class="valueDiv"><b>价格</b><input type="text" name="bookPrice" id="bookPrice" disabled="disabled" value="9.9"/></div>
+				<div class="valueDiv"><b>页数</b><input type="text" name="bookPages" id="bookPages" disabled="disabled" value="50"/></div>
+				<div class="valueDiv"><b>字数</b><input type="text" name="bookWords" id="bookWords" disabled="disabled" value="120000"/></div>
+				
+				<div class="valueDiv"><b>出版社</b><input type="text" name="publishComoany" id="publishComoany" disabled="disabled" value="XXX出版社"/></div>
+				<div class="valueDiv"><b>版次</b><input type="text" name="publishEdition" id="publishEdition" disabled="disabled" value="3"/></div>
+				<div class="valueDiv"><b>出版日期</b><input type="text" name="publishDate" id="publishDate" disabled="disabled" value="2017-10-20"/></div>
+			
+				<div class="listDiv"><b>开本</b><select name="format" disabled="disabled" value="16开">
+					<option>16开</option>
+					<option>A4</option>
+					<option>A5</option>
+					<option>B4</option>
+				</select> </div>
+				
+				<div class="listDiv"><b>包装</b><select name="packaging" disabled="disabled" value="平装">
+					<option>钉装 </option>
+					<option>平装 </option>
+					<option>胶装</option>
+					<option>现状线装</option>
+				</select> </div>
+				
+				<div class="listDiv"><b>用纸</b><select name="paper" disabled="disabled" value="胶装纸">
+					<option>拷贝纸</option>
+					<option>打字纸</option>
+					<option>书写纸</option>
+					<option>胶装纸</option>
+				</select> </div>
+				
+				<!--<div class="buttonDiv"><input type="button" id="indexImg" name="indexImg" value="索引图"/> </div>-->
+				<div class="img1Div">
+					<!--<img src="img/goods/9787111532644/detail1big.jpg" />-->
+					<!--<input type="button" id="introImg" name="introImg" value="介绍图"/>--> 
+				</div>
+				<!--<div class="buttonDiv"><input type="button" id="collectImg" name="collectImg" value="收集图"/> </div>-->
+			
+				<!--<div class="buttonDiv"><input type="button" id="detailImg1" name="detailImg1" value="详图1"/> </div>-->
+				<div class="img2Div">
+					<!--<img src="img/goods/9787111532644/detail2big.jpg" />-->
+					<!--<input type="button" id="detailImg2" name="detailImg2" value="详图2"/>--> 
+				</div>
+				<!--<div class="buttonDiv"><input type="button" id="detailImg3" name="detailImg3" value="详图3"/> </div>-->
+				
+				<!--<div class="buttonDiv"><input type="button" id="bigImg1" name="bigImg1" value="大图1"/> </div>-->
+				<div class="img3Div">
+					<!--<img src="img/goods/9787111532644/detail3big.jpg" />-->
+					<!--<input type="button" id="bigImg2" name="bigImg2" value="大图2"/>--> 
+				</div>
+				<!--<div class="buttonDiv"><input type="button" id="bigImg3" name="bigImg3" value="大图3"/> </div>-->
+		</div>
+		</div>
+		
+	</body>
+</html>
