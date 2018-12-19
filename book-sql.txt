@@ -117,9 +117,9 @@ insert into cart(custID,bookID,bookNum) values('2','9787302459873','2');
 
 create view vcart
 as
-select bookname,detail1P,author,price,bookNum,cart.bookID
-from book,cart
-where book.bookID=cart.bookID;
+select bookname,detail1P,author,price,bookNum,cart.bookID,cart.custID,email
+from book,cart,customer
+where book.bookID=cart.bookID and cart.custID=customer.custID;
 
 CREATE TABLE receiver(
 	receID int auto_increment,
