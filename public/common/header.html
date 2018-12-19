@@ -32,10 +32,12 @@
 			<li>
 				<a href="{:url('Setting/setting')}" title="我的设置">设置</a>
 			</li>
+			{if condition="$Think.session.email neq '' "}
 			<li><b>|</b></li>
 			<li>
-				<a href="{:url('Lookforword/lookforword')}" title="退出">退出</a>
+				<a href="{:url('Login/LogOut')}" title="退出">退出</a>
 			</li>
+			{/if}
 			<li><b>|</b></li>
 			<li>
 				<a href="{:url('Register/register')}" title="注册新用户">注册</a>
