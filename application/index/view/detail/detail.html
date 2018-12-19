@@ -13,8 +13,6 @@
     <script type="text/javascript" src="__STATIC__/js/detail.js"></script>
     <script type="text/javascript" src="__STATIC__/js/header.js"></script>
     <script type="text/javascript" src="__STATIC__/js/index.js"></script>
-
-
 </head>
 <body>
 <!--
@@ -77,8 +75,9 @@
                     <input class="productBuyB" type="button" value="立即购买"/>
                 </div>
                 <div class="productAddPartDiv">
-                    <a href=""><img class="productAddPartI"
-                                    src="__STATIC__/img/product_detail/product_detail_img9.png"/></a>
+                    <a href="javascript:void(0)" onclick="addCart('{$good.bookID}')">
+                        <img class="productAddPartI" src="__STATIC__/img/product_detail/product_detail_img9.png"/>
+                    </a>
                 </div>
                 <div class="productCollectionDiv">
                     <a href="">
