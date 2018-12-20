@@ -53,24 +53,18 @@
 					<p>选择收货地址</p>
 				</div>
 				<div class="OCCborderDiv"></div>
+				{foreach $Receivers as $Receiver}
 				<div class="OCCCenterDiv">
 					<div class="OCCCenterradioDiv">
 						<input name="address" type="radio" />
 					</div>
-					<p>小娜娜</p>
+					<p>{$Receiver.receName}</p>
 					<div class="OCCCenteraddressDiv">
-						<span>广东省 佛山市 南海区 狮山镇 华南师范大学南海校区</span>
+						<span>{$Receiver.receAdd}</span>
 					</div>
 				</div>
-				<div class="OCCCenterDiv">
-					<div class="OCCCenterradioDiv">
-						<input name="address" type="radio"  />
-					</div>
-					<p>大娜娜</p>
-					<div class="OCCCenteraddressDiv">
-						<span>广东省 佛山市 南海区 狮山镇 华南师范大学南海校区</span>
-					</div>
-				</div>
+				{/foreach}
+				
 				<div class="OCCBottom">
 					更多地址>>
 				</div>
