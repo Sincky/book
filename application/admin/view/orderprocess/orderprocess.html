@@ -5,6 +5,7 @@
 		<title></title>
 		<link rel="stylesheet" href="__STATIC__/css/book.css" />
 		<link rel="stylesheet" href="__STATIC__/css/Sev_orderDetail.css" />
+		<script type="text/javascript" src="__STATIC__/js/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript" src="__STATIC__/js/order-Process.js" ></script>
 		
 	</head>
@@ -20,37 +21,37 @@
       				<li><a href="{:url('orderlist/orderlist')}" title="所有订单">所有订单</a></li>
       				<li><b>></b></li>
       				<li><a title="查看订单">查看订单</a></li>
-      			<ul>
+      			</ul>
 			</div>
+
 			<div class="SevODMid">
 				<div class="MidDiv1">
 					<span>订单详情</span>
-					<p>日期：2017-10-10</p>
+					<p>日期：{$order[0]['createtime']}</p>
 					<div class="Line"></div>
 				</div>
 				<div class="MidDiv2">
 					<div class="Mid2_left">
 						<div class="Mid2_left_title"><span>收件人</span></div>
 						<div class="Mid2_left_detail">
-							<div><span>姓名：</span><p>王翠花</p></div>
-							<div><span>地址：</span><p>上海市黄浦区南京路步行街666号</p></div>
-							<div><span>电话：</span><a href="order-list.html" title="电话">021-63502606</a></div>
+							<div><span>姓名：</span><p>{$order[0]['recename']}</p></div>
+							<div><span>地址：</span><p>{$order[0]['receadd']}</p></div>
+							<div><span>电话：</span><a href="#" title="电话">{$order[0]['recephone']}</a></div>
 						</div>
 					</div>
 					<div class="Mid2_left color1">
-						<div class="Mid2_left_title"><span>#183</span></div>
+						<div class="Mid2_left_title"><span>#{$order[0]['orderID']}</span></div>
 						<div class="Mid2_left_detail">
-							<div><span>创建时间：</span><p>2014-11-7 11:31</p></div>
-							<div><span>订单总额：</span><p>￥265.22</p></div>
-							<div>
-								<span>订单状态：</span>
-								<div class="inputDiv">
-									<input class="radioinput" type="radio" name="sex"  onclick="radioinput(this);" />待处理
-									<input class="radioinput" type="radio" name="sex"  checked="true" onclick="radioinput(this)";/>处理中
-									<input class="radioinput" type="radio" name="sex"  onclick="radioinput(this)"; />已发货
-									<input class="radioinput" type="radio" name="sex"  onclick="radioinput(this)"; />已交付
-									<input type="button" value="保存" id="save" class="Sbutton" />
-								</div>
+							<div><span>创建时间：</span><p>{$order[0]['createtime']}</p></div>
+							<div><span>订单总额：</span><p>￥{$order[0]['priceNum']}</p></div>
+							<div><span>订单状态：</span><p>{$order[0]['orderstate']}</p></div>
+							<div class="inputDiv">
+
+								<input class="radioinput" type="radio" name="sex" value="待处理" {if condition="$order[0]['orderstate'] eq '待处理'"} checked="checked"{/if}  />待处理
+								<input class="radioinput" type="radio" name="sex" value="处理中" {if condition="$order[0]['orderstate'] eq '处理中'"} checked="checked"{/if} />处理中
+								<input class="radioinput" type="radio" name="sex" value="已发货" {if condition="$order[0]['orderstate'] eq '已发货'"} checked="checked"{/if} />已发货
+								<input class="radioinput" type="radio" name="sex" value="已交付" {if condition="$order[0]['orderstate'] eq '已交付'"} checked="checked"{/if} />已交付
+								<input type="button" value="保存" id="save" class="Sbutton" onclick="saveStatus('{$order[0][\'orderID\']}')" />
 							</div>
 						</div>
 					</div>
@@ -63,50 +64,17 @@
 						<div class="detail">商品描述</div>
 						<div class="price">单价</div>
 					</div>
-					<div class="content">
-						<div class="Num">1</div>
-						<div class="Name">Call of Duty</div>
-						<div class="Id">455-981-211</div>
-						<div class="detail">EI snort testosterone trophy friving gloves handsome</div>
-						<div class="price">$64.5</div>
+					{foreach $order as $key => $book}
+					<div class="content{if condition='($key)%2 eq 1'} color1{/if}" >
+						<div class="Num">{$book.bookNum}</div>
+						<div class="Name">{$book.bookname}</div>
+						<div class="Id"><a href="{:url('productdetail/productdetail')}?bookID={$book.bookID}">{$book.bookID}</a></div>
+						<div class="detail">暂无商品描述</div>
+						<div class="price">￥{$book.price}</div>
 					</div>
-					<div class="content color1" >
-						<div class="Num">1</div>
-						<div class="Name">Call of Duty</div>
-						<div class="Id">455-981-211</div>
-						<div class="detail">EI snort testosterone trophy friving gloves handsome</div>
-						<div class="price">$64.5</div>
-					</div>
-					<div class="content">
-						<div class="Num">1</div>
-						<div class="Name">Call of Duty</div>
-						<div class="Id">455-981-211</div>
-						<div class="detail">EI snort testosterone trophy friving gloves handsome</div>
-						<div class="price">$64.5</div>
-					</div>
-					<div class="content color1">
-						<div class="Num">1</div>
-						<div class="Name">Call of Duty</div>
-						<div class="Id">455-981-211</div>
-						<div class="detail">EI snort testosterone trophy friving gloves handsome</div>
-						<div class="price">$64.5</div>
-					</div>
-					<div class="content">
-						<div class="Num">1</div>
-						<div class="Name">Call of Duty</div>
-						<div class="Id">455-981-211</div>
-						<div class="detail">EI snort testosterone trophy friving gloves handsome</div>
-						<div class="price">$64.5</div>
-					</div>
-					<div class="content color1">
-						<div class="Num">1</div>
-						<div class="Name">Call of Duty</div>
-						<div class="Id">455-981-211</div>
-						<div class="detail">EI snort testosterone trophy friving gloves handsome</div>
-						<div class="price">$64.5</div>
-					</div>
+					{/foreach}
 				</div>
-			</div>
+
 		</div>
 		
 	</body>

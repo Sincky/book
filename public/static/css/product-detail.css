@@ -3,6 +3,7 @@
 	font-size:16px ;
 	border: 1px;
 }
+
 a{
 	text-decoration: none; 
 }
@@ -12,8 +13,12 @@ body{
 	/*background-color: lightgoldenrodyellow;*/
 	background-color: whitesmoke;
 	height: auto;
+	margin: auto;
 }
-
+.orderMain{
+	/*height: 1000px;*/
+	margin: 10px auto;
+}
 .orderBarDiv{
 	margin-top: 0px;
 	margin: 10px;
@@ -42,9 +47,10 @@ body{
 }
 .inforDiv{
 	/*margin: 0px auto;*/
-	height: 650px;
+	height: auto;
 	padding-top:10px;
 	border:solid lightgrey 1px;
+	overflow: hidden;
 }
 
 .inforDiv div{
@@ -113,33 +119,26 @@ body{
 	float: left;
 	width: 0%;
 }
-.inforDiv .img1Div{
-	float: left;
-	height: 350px;
-	width: 30%;
-	margin-top: 0px;
-	background-image: url(../img/goods/9787111532644/detail1big.jpg);
-	background-repeat: no-repeat;
-	background-position: 0px -5px;
-} 
-.inforDiv .img2Div{
-	float: left;
-	margin-top: 0px;
-	height: 350px;
-	width: 30%;
-	background-image: url(../img/goods/9787111532644/detail2big.jpg);
-	background-repeat: no-repeat;
-	background-position: 0px 0px;
-	margin-left: 50px;
-}
-.inforDiv .img3Div{
-	float: left;
-	margin-top: 0px;
-	height: 350px;
-	width: 30%;
-	background-image: url(../img/goods/9787111532644/detail3big.jpg);
-	background-repeat: no-repeat;
-	background-position: 0px -20px;
+
+
+.inforDiv .imgDiv{
+	margin: 20px;
+	width: 320px;
+	height: 300px;
 }
 
+.img{
+	float: left;
+	margin: 30px;
+	width: 320px;
+}
+
+.inforDiv .imgF{
+	margin: 20px;
+	margin-bottom: 30px;
+	height: auto;
+	clear: both;
+	width: 90%;
+	overflow: hidden;
+}
 

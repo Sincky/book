@@ -3,28 +3,29 @@
 	font-size:16px ;
 	border: 1px;
 }
+
 a{
 	text-decoration: none;
 }
+
 body{
 	width: 80%;
 	/*background-color: lightgoldenrodyellow;*/
 	background-color: whitesmoke;
+	height: auto;
 	margin: auto;
 }
 .orderMain{
 	/*height: 1000px;*/
 	margin: 10px auto;
-
 }
 .orderBarDiv{
-
 	margin-top: 0px;
-	margin: 10px auto;
+	margin: 10px;
 	height: 50px;
 }
 .orderBarDiv .orderBar{
-
+	font-size: 20px;
 	color: darkslategray;
 	margin-top: 10px;
 	margin-right: 5px;
@@ -38,52 +39,64 @@ body{
 	background-color: white;
 	box-shadow: 1px 1px 5px 1px #D3D3D3;
 	border-top: steelblue 4px solid;
-	overflow: hidden;
 }
 .titleDiv{
-	margin: 5px;
-	margin-left: 20px;
-	font-size: 20px;
+	margin:10px;
+	font-size: 25px;
 	font-weight: bold;
-
 }
 .inforDiv{
 	/*margin: 0px auto;*/
 	height: auto;
-	overflow: hidden;
-	padding: 10px;
-
+	padding-top:10px;
 	border:solid lightgrey 1px;
+	overflow: hidden;
 }
 
 .inforDiv div{
 	float: left;
 	width: 30%;
 	height: 40px;
-	margin-left: 32px;
-	margin-top: 20px;
-	margin-right: 10px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.inforDiv .valueDiv b{
+	font-size: 15px;
+	float: right;
+	margin-right: 75%;
+	margin-top: 5px;
 }
 .inforDiv .valueDiv input{
-	width: 100%;
+	width: 70%;
 	height: 90%;
+	float: right;
 	text-align: left;
-	border:solid lightgrey 1px;
-
+	font-size: 15px;
+	margin-right: 0px;
+	margin-top: -33px;
+}
+.inforDiv .listDiv b{
+	font-size: 15px;
+	float: right;
+	margin-right: 75%;
+	margin-top: 5px;
 }
 .inforDiv .listDiv select{
-	width: 100%;
+	width: 70%;
 	height: 90%;
 	text-align: left;
-
+	font-size: 16px;
+	float: right;
+	margin-right: 0px;
+	margin-top: -33px;
 }
 .buttonDiv{
 	float: left;
 	width: 30%;
 	height: 40px;
-	margin: 20px;
-
-	}
+	margin-left: 35px;
+	margin-top: 20px;
+}
 .inforDiv .buttonDiv input{
 	vertical-align:middle;
 	margin:0;
@@ -101,29 +114,44 @@ body{
 	border:1px solid #CDCDCD;
 	height:40px;
 	width:24%;
-	color: white;
 }
 .file{
 	float: left;
 	width: 0%;
 }
-.inforDiv .commitButtonDiv{
-	float: right;
-	width: auto;
+
+
+.inforDiv .imgDiv{
+	margin: 20px;
+	width: 320px;
+	height: 300px;
+}
+
+.img{
+	float: left;
+	margin: 30px;
+	width: 320px;
+}
+
+.inforDiv .imgF{
+	margin: 20px;
+	margin-bottom: 30px;
 	height: auto;
+	clear: both;
+	width: 90%;
+	overflow: hidden;
+}
+.inforDiv .editButtonDiv{
+	float: right;
 	margin-right: 20px;
-	margin-bottom: 10px;
+	margin-bottom: 30px;
 
 }
-.inforDiv .commitButtonDiv input{
-	width: 100px;
-	height: 60px;
+.inforDiv .editButtonDiv input{
+	float: right;
+	width: 80px;
+	height: 50px;
 	text-align:center;
+	background-color: steelblue;
 	color: white;
-	background-color: cornflowerblue;
-
 }
-
-
-
-
