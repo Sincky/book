@@ -113,16 +113,16 @@ function chk(){
 			<tbody class="listDiv">
 			{assign name="sum" value="0" /}
 			{foreach $result as $cart}
-			{assign name="sum" value="$sum + $cart.price * $cart.num " /}
-				<tr>
-				<td><input type='checkbox' name='cartID[]' value='{$cart.cartID}' checked onclick="chk()"></td>
-				<td>{$cart.bookID}</td>
-				<td><div style='height:50px; float:left;'>
+			{assign name="sum" value="$sum + $cart.price * $cart.bookNum " /}
+				<tr id="addItem" class="itemDiv color">
+				<td class="choseDiv"><input type='checkbox' name='cartID[]' value='{$cart.cartID}' checked onclick="chk()"></td>
+				<td class="publishDiv">{$cart.bookID}</td>
+				<td class="goodsDiv"><div style='height:50px; float:left;'>
 						<img src='__STATIC_/img/{$cart.detail1P}' width=48 height=51 border=0></div>
-					<div style='height:50px; float:left;'>{$cart.fname}</div>
+					<div style='height:50px; float:left;'>{$cart.bookname}</div>
 				</td>
-				<td>{$cart.price}</td>
-				<td><input type='text' id='{$cart.cartID}' size='1' value='{$cart.num}' name='num'>
+				<td class="priceDiv">{$cart.price}</td>
+				<td><input type='text' id='{$cart.cartID}' size='1' value='{$cart.bookNum}' name='num'>
 					<input type='button' onclick='change(this,{$cart.cartID})' value='更新' /></td>
 				<td></td>
 				<td>
@@ -133,48 +133,7 @@ function chk(){
 			</tbody>
 			</table>
 			</form>
-			<!--<div>
-				<ul class="headDiv">
-					<li>
-						<input type="checkbox" id="goodsAll1" name="goods" onclick="allClick(this);"/>全选
-					</li>
-					<li>商品编号</li>
-					<li>商品</li>
-					<li>单价(元)</li>
-					<li>数量</li>
-					<li>金额</li>
-					<li>操作</li>
-				</ul>
-			</div>
-			<div class="listDiv">
 			
-			{assign name="sum" value="0" /}
-			{foreach $result as $cart}
-			{assign name="sum" value="$sum + $cart.price * $cart.num " /}	
-				<div  id="addItem" class="itemDiv color">
-					<div class="choseDiv"><input type="checkbox" name='cartID[]' id='{$cart.cartID}' class="checkInput" onclick="checkOnclick(this);"/> </div>
-					<div class="publishDiv">{$cart.bookID}</div>
-					<div class="goodsDiv">
-						<div class="pictureDiv"><img src="_STATIC_/img/goods/9787115130228/detail1.jpg" /></div> 
-						<div class="publishDiv">
-							<div class="bookNameDiv">{$cart.bookname}</div>
-							<div class="authorDiv">{$cart.author}</div>
-						</div>						
-					</div>
-					<div class="onePriceDiv">
-						<div class="CNYDiv">￥</div>
-						<div class="priceDiv"><span>{$cart.price}</span></div>
-					</div>
-					
-					<div class="numberDiv">
-							<span onclick="oneClick(this);" ><b class="symbolDiv"><img src="_STATIC_/img/cart_sub.png"/></b></span><input type="text" class="numberValue" value="5" disabled="disabled"/><span onclick="addClick(this);"><img src="_STATIC_/img/cart_add.png"/></span>
-					</div>
-					<div class="sumCNYDiv">￥</div>
-					<div class="sumDiv"><span id='{$cart.cartID}'>{$cart.num}</span></div>
-					<div class="deleteDiv" onclick="deleteItem(this);"><a href="#">删除</a></div>
-				</div>
-			</div>
-			{/foreach}-->
 			<div class="commitDiv">
 				<div class="choseAllDiv"><input type="checkbox" id="goodsAll2" name="goods" onclick="allClick(this);"/>全选</div>
 				<div class="middleDiv">
