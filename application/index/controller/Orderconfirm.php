@@ -17,15 +17,15 @@ class Orderconfirm extends Controller{
         $Custo = Customer::get(session('email'));
         $this->assign('cust', $Custo);
         
-//         $cartIDs = input('post.cartID/a');
-//         session('cartIDs',$cartIDs);
+        $cartIDs = input('post.cartID/a');
+        session('cartIDs',$cartIDs);
         
-//         session('cartIDs', $cartIDs);
+        session('cartIDs', $cartIDs);
         
-//         $vcart = Db::table('vcart')->where('cartID', 'in', $cartIDs)->select();
-//         $this->assign('vcart', $vcart);
-          $vcart = Db::table('vcart')->select();
-          $this->assign('vcarts', $vcart);
+        $vcart = Db::table('vcart')->where('cartID', 'in', $cartIDs)->select();
+        $this->assign('vcarts', $vcart);
+//           $vcart = Db::table('vcart')->select();
+//           $this->assign('vcarts', $vcart);
 
         return $this->fetch();
     }

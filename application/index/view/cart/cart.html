@@ -97,7 +97,7 @@ function chk(){
 					<div class="statisticsDiv">元</div>
 				</div>
 			</div>
-			<form action="{:url('order/order')}" name="form1" method="post">
+			<form action="{:url('orderconfirm/orderconfirm')}" name="form1" method="post">
 			<table>
 			<tr class="headDiv">
 				<td>
@@ -142,7 +142,7 @@ function chk(){
 					<div class="statisticsDiv">件商品&nbsp;合计(不含运费):</div>
 					<div class="amountDiv"><input type="text" id="amount2" name="amount2" value="0" disabled="disabled"/></div>
 					<div class="statisticsDiv">元</div></div>
-				<div class="commitButtonDiv"><a href="{:url('orderconfirm/orderconfirm')}"><input type="submit" name="commit" id="commit" value="提交订单"/></a> </div>
+				<div class="commitButtonDiv"><input type="submit" name="commit" id="commit" value="提交订单" onclick='javascript:form1.submit()'/></a> </div>
 			</div>
 		
        </div>
