@@ -124,7 +124,7 @@ where book.bookID=cart.bookID and cart.custID=customer.custID;
 
 CREATE TABLE receiver(
 	receID int auto_increment,
-	custID int,
+	email char(30), 
 	receName char(10),
 	receAdd char(200),
 	recePhone char(11),
@@ -133,11 +133,11 @@ CREATE TABLE receiver(
 )ENGINE=MyISAM DEFAULT CHARSET=utf8;
 delete from receiver;
 
-insert into receiver(custID,receName,receAdd,recePhone) values('1','大娜娜','王者峡谷','123456789');
-insert into receiver(custID,receName,receAdd,recePhone) values('1','新奇','王者峡谷','123456799');
-insert into receiver(custID,receName,receAdd,recePhone) values('1','瓶子','正佳广场外婆家','123456689');
-insert into receiver(custID,receName,receAdd,recePhone) values('2','兰兰','秦时明月','987644321');
-insert into receiver(custID,receName,receAdd,recePhone) values('2','小娜娜','新浪微博','987655321');
+insert into receiver(email,receName,receAdd,recePhone) values('aaa@163.com','大娜娜','王者峡谷','123456789');
+insert into receiver(email,receName,receAdd,recePhone) values('aaa@163.com','新奇','王者峡谷','123456799');
+insert into receiver(email,receName,receAdd,recePhone) values('aaa@163.com','瓶子','正佳广场外婆家','123456689');
+insert into receiver(email,receName,receAdd,recePhone) values('bbb@163.com','兰兰','秦时明月','987644321');
+insert into receiver(email,receName,receAdd,recePhone) values('bbb@163.com','小娜娜','新浪微博','987655321');
 
 CREATE TABLE Neworder(
 	orderID int auto_increment,
