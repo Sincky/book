@@ -72,28 +72,29 @@ CREATE TABLE book(
 	detail1bigP varchar(50),
 	indexP varchar(50),
 	introP varchar(50),
+	stock int,
         PRIMARY KEY(bookID) 
 	)ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 delete from book;
-insert into book values('9787111213826','Java编程思想','[美] Bruce Eckel 著，陈昊鹏 译',86.4,'机械工业出版社',4,'2007-06-01',880,null,'平装','16开','胶板纸','img/goods/9787111213826/collect.jpg','img/goods/9787111213826/detail1.jpg','img/goods/9787111213826/detail1big.jpg','img/goods/9787111213826/index.jpg','img/goods/9787111213826/intro.jpg');
-insert into book values('9787111526285','Go程序设计语言','[美] 艾伦A.A.多诺万 等著',64.7,'机械工业出版社',1,'2016-01-01',336,null,'平装','16开','胶板纸','img/goods/9787111526285/collect.jpg','img/goods/9787111526285/detail1.jpg','img/goods/9787111526285/detail1big.jpg','img/goods/9787111526285/index.jpg','img/goods/9787111526285/intro.jpg');
-insert into book values('9787111532644','架构即未来','[美] MartinL.Abbott，MichaelT.Fisher 著，陈斌 译',81.0,'机械工业出版社',1,'2016-04-01',660,null,'平装','32开','胶板纸','img/goods/9787111532644/collect.jpg','img/goods/9787111532644/detail1.jpg','img/goods/9787111532644/detail1big.jpg','img/goods/9787111532644/index.jpg','img/goods/9787111532644/intro.jpg');
-insert into book values('9787111545682','Linux运维最佳实践','胥峰，杨俊俊 著',56.5,'机械工业出版社',1,'2016-09-01',null,null,'平装','16开','胶板纸','img/goods/9787111545682/collect.jpg','img/goods/9787111545682/detail1.jpg','img/goods/9787111545682/detail1big.jpg','img/goods/9787111545682/index.jpg','img/goods/9787111545682/intro.jpg');
-insert into book values('9787111563891','面向机器智能Tensorflow实践','[美]  Sam Abrahams 等著，段菲，陈澎 译',56.5,'机械工业出版社',1,'2017-05-01',212,'平装','16开','胶板纸','img/goods/9787111563891/collect.jpg','img/goods/9787111563891/detail1.jpg','img/goods/9787111563891/detail1big.jpg','img/goods/9787111563891/index.jpg','img/goods/9787111563891/intro.jpg');
-insert into book values('9787111564805','企业IT架构转型之道','钟华 著',53.8,'机械工业出版社',1,'2017-05-01',null,null,'平装','16开','胶板纸','img/goods/9787111564805/collect.jpg','img/goods/9787111564805/detail1.jpg','img/goods/9787111564805/detail1big.jpg','img/goods/9787111564805/index.jpg','img/goods/9787111564805/intro.jpg');
-insert into book values('9787115130228','Primer Plus','[美]  Prata S. 著',49.8,'人民邮电出版社',1,'2005-02-01',626,null,'平装','16开','胶板纸','img/goods/9787115130228/collect.jpg','img/goods/9787115130228/detail1.jpg','img/goods/9787115130228/detail1big.jpg','img/goods/9787115130228/index.jpg','img/goods/9787115130228/intro.jpg');
-insert into book values('9787115335500','深入浅出Node.js','朴灵 著',86.4,'人民邮电出版社',1,'2013-12-01',348,null,'平装','16开','胶板纸','img/goods/9787115335500/collect.jpg','img/goods/9787115335500/detail1.jpg','img/goods/9787115335500/detail1big.jpg','img/goods/9787115335500/index.jpg','img/goods/9787115335500/intro.jpg');
-insert into book values('9787115353528','Python基础教程','Magnus Lie Hetland 著，袁国忠 译',65.5,'人民邮电出版社',2,'2018-02-01',null,null,'平装','16开','胶板纸','img/goods/9787115353528/collect.jpg','img/goods/9787115353528/detail1.jpg','detail1big.jpg','img/goods/9787115353528/index.jpg','img/goods/9787115353528/intro.jpg');
-insert into book values('9787115386397','Spring MVC学习指南','[美]  戴克 著',40.7,'人民邮电出版社',1,'2015-05-01',274,null,'平装','16开','胶板纸','img/goods/9787115386397/collect.jpg','img/goods/9787115386397/detail1.jpg','img/goods/9787115386397/detail1big.jpg','img/goods/9787115386397/index.jpg','img/goods/9787115386397/intro.jpg');
-insert into book values('9787115388025','图解机器学习','[日] 杉山将 著，许永伟 译',40.7,'人民邮电出版社',1,'2015-04-01',226,null,'平装','16开','胶板纸','img/goods/9787115388025/collect.jpg','img/goods/9787115388025/detail1.jpg','img/goods/9787115388025/detail1big.jpg','img/goods/9787115388025/index.jpg','img/goods/9787115388025/intro.jpg');
-insert into book values('9787115435101','Python数据科学指南','印度 Gopi,Subramanian,萨伯拉曼尼安 著;方延风，刘丹译',66.20,'人民邮电出版社',1,'2016-11-01',300,'平装','16开','胶板纸','img/goods/9787115435101/collect.jpg','img/goods/9787115435101/detail1.jpg','img/goods/9787115435101/detail1big.jpg','img/goods/9787115435101/index.jpg','img/goods/9787115435101/intro.jpg');
-insert into book values('9787121281556','Hadoop 2.X HDFS源码剖析','徐鹏',86.40,'电子工业出版社',1,'2016-03-01',null,null,'平装','16开','胶板纸','img/goods/9787121281556/collect.jpg','img/goods/9787121281556/detail1.jpg','img/goods/9787121281556/detail1big.jpg','img/goods/9787121281556/index.jpg','img/goods/9787121281556/intro.jpg');
-insert into book values('9787121291609','Go语言学习笔记','雨痕',73.90,'电子工业出版社',1,'2016-07-01',468,552000,'平装','16开','胶板纸','img/goods/9787121291609/collect.jpg','img/goods/9787121291609/detail1.jpg','img/goods/9787121291609/detail1big.jpg','img/goods/9787121291609/index.jpg','img/goods/9787121291609/intro.jpg');
-insert into book values('9787302383666','MongoDB大数据处理权威指南','[美]  戴维·豪斯（DavidHows）等著 ',42.0,'清华大学出版社',1,'2017-03-01',285,511000,'平装','16开','胶板纸','img/goods/9787302383666/collect.jpg','img/goods/9787302383666/detail1.jpg','img/goods/9787302383666/detail1big.jpg','img/goods/9787302383666/index.jpg','img/goods/9787302383666/intro.jpg');
-insert into book values('9787302435167','大数据架构师指南','朱进云，陈坚，王德政 著 ',36.3,'清华大学出版社',1,'2016-05-01',296,320000,'平装','16开','胶板纸','img/goods/9787302435167/collect.jpg','img/goods/9787302435167/detail1.jpg','img/goods/9787302435167/detail1big.jpg','img/goods/9787302435167/index.jpg','img/goods/9787302435167/intro.jpg');
-insert into book values('9787302459873','数据挖掘与预测分析','[美]Daniel T. Larose，Chantal D. Larose 著 王念滨 宋敏 裴大茗 译 ',84.1,'清华大学出版社',2,'2017-02-01',725,1144000,'平装','16开','胶板纸','img/goods/9787302459873/collect.jpg','img/goods/9787302459873/detail1.jpg','img/goods/9787302459873/detail1big.jpg','img/goods/9787302459873/index.jpg','img/goods/9787302459873/intro.jpg');
-insert into book values('9787508344980','Head First Java','[美]Sierra K等著OReilly Taiwan公司译 ',53.9,'中国电力出版社',1,'2007-02-01',689,983000,'平装','16开','胶板纸','img/goods/9787508344980/collect.jpg','img/goods/9787508344980/detail1.jpg','img/goods/9787508344980/detail1big.jpg','img/goods/9787508344980/index.jpg','img/goods/9787508344980/intro.jpg');
+insert into book values('9787111213826','Java编程思想','[美] Bruce Eckel 著，陈昊鹏 译',86.4,'机械工业出版社',4,'2007-06-01',880,null,'平装','16开','胶板纸','img/goods/9787111213826/collect.jpg','img/goods/9787111213826/detail1.jpg','img/goods/9787111213826/detail1big.jpg','img/goods/9787111213826/index.jpg','img/goods/9787111213826/intro.jpg',100);
+insert into book values('9787111526285','Go程序设计语言','[美] 艾伦A.A.多诺万 等著',64.7,'机械工业出版社',1,'2016-01-01',336,null,'平装','16开','胶板纸','img/goods/9787111526285/collect.jpg','img/goods/9787111526285/detail1.jpg','img/goods/9787111526285/detail1big.jpg','img/goods/9787111526285/index.jpg','img/goods/9787111526285/intro.jpg',100);
+insert into book values('9787111532644','架构即未来','[美] MartinL.Abbott，MichaelT.Fisher 著，陈斌 译',81.0,'机械工业出版社',1,'2016-04-01',660,null,'平装','32开','胶板纸','img/goods/9787111532644/collect.jpg','img/goods/9787111532644/detail1.jpg','img/goods/9787111532644/detail1big.jpg','img/goods/9787111532644/index.jpg','img/goods/9787111532644/intro.jpg',100);
+insert into book values('9787111545682','Linux运维最佳实践','胥峰，杨俊俊 著',56.5,'机械工业出版社',1,'2016-09-01',null,null,'平装','16开','胶板纸','img/goods/9787111545682/collect.jpg','img/goods/9787111545682/detail1.jpg','img/goods/9787111545682/detail1big.jpg','img/goods/9787111545682/index.jpg','img/goods/9787111545682/intro.jpg',100);
+insert into book values('9787111563891','面向机器智能Tensorflow实践','[美]  Sam Abrahams 等著，段菲，陈澎 译',56.5,'机械工业出版社',1,'2017-05-01',212,'平装','16开','胶板纸','img/goods/9787111563891/collect.jpg','img/goods/9787111563891/detail1.jpg','img/goods/9787111563891/detail1big.jpg','img/goods/9787111563891/index.jpg','img/goods/9787111563891/intro.jpg',50);
+insert into book values('9787111564805','企业IT架构转型之道','钟华 著',53.8,'机械工业出版社',1,'2017-05-01',null,null,'平装','16开','胶板纸','img/goods/9787111564805/collect.jpg','img/goods/9787111564805/detail1.jpg','img/goods/9787111564805/detail1big.jpg','img/goods/9787111564805/index.jpg','img/goods/9787111564805/intro.jpg',50);
+insert into book values('9787115130228','Primer Plus','[美]  Prata S. 著',49.8,'人民邮电出版社',1,'2005-02-01',626,null,'平装','16开','胶板纸','img/goods/9787115130228/collect.jpg','img/goods/9787115130228/detail1.jpg','img/goods/9787115130228/detail1big.jpg','img/goods/9787115130228/index.jpg','img/goods/9787115130228/intro.jpg',50);
+insert into book values('9787115335500','深入浅出Node.js','朴灵 著',86.4,'人民邮电出版社',1,'2013-12-01',348,null,'平装','16开','胶板纸','img/goods/9787115335500/collect.jpg','img/goods/9787115335500/detail1.jpg','img/goods/9787115335500/detail1big.jpg','img/goods/9787115335500/index.jpg','img/goods/9787115335500/intro.jpg',50);
+insert into book values('9787115353528','Python基础教程','Magnus Lie Hetland 著，袁国忠 译',65.5,'人民邮电出版社',2,'2018-02-01',null,null,'平装','16开','胶板纸','img/goods/9787115353528/collect.jpg','img/goods/9787115353528/detail1.jpg','detail1big.jpg','img/goods/9787115353528/index.jpg','img/goods/9787115353528/intro.jpg',100);
+insert into book values('9787115386397','Spring MVC学习指南','[美]  戴克 著',40.7,'人民邮电出版社',1,'2015-05-01',274,null,'平装','16开','胶板纸','img/goods/9787115386397/collect.jpg','img/goods/9787115386397/detail1.jpg','img/goods/9787115386397/detail1big.jpg','img/goods/9787115386397/index.jpg','img/goods/9787115386397/intro.jpg',50);
+insert into book values('9787115388025','图解机器学习','[日] 杉山将 著，许永伟 译',40.7,'人民邮电出版社',1,'2015-04-01',226,null,'平装','16开','胶板纸','img/goods/9787115388025/collect.jpg','img/goods/9787115388025/detail1.jpg','img/goods/9787115388025/detail1big.jpg','img/goods/9787115388025/index.jpg','img/goods/9787115388025/intro.jpg',50);
+insert into book values('9787115435101','Python数据科学指南','印度 Gopi,Subramanian,萨伯拉曼尼安 著;方延风，刘丹译',66.20,'人民邮电出版社',1,'2016-11-01',300,'平装','16开','胶板纸','img/goods/9787115435101/collect.jpg','img/goods/9787115435101/detail1.jpg','img/goods/9787115435101/detail1big.jpg','img/goods/9787115435101/index.jpg','img/goods/9787115435101/intro.jpg',50);
+insert into book values('9787121281556','Hadoop 2.X HDFS源码剖析','徐鹏',86.40,'电子工业出版社',1,'2016-03-01',null,null,'平装','16开','胶板纸','img/goods/9787121281556/collect.jpg','img/goods/9787121281556/detail1.jpg','img/goods/9787121281556/detail1big.jpg','img/goods/9787121281556/index.jpg','img/goods/9787121281556/intro.jpg',100);
+insert into book values('9787121291609','Go语言学习笔记','雨痕',73.90,'电子工业出版社',1,'2016-07-01',468,552000,'平装','16开','胶板纸','img/goods/9787121291609/collect.jpg','img/goods/9787121291609/detail1.jpg','img/goods/9787121291609/detail1big.jpg','img/goods/9787121291609/index.jpg','img/goods/9787121291609/intro.jpg',100);
+insert into book values('9787302383666','MongoDB大数据处理权威指南','[美]  戴维·豪斯（DavidHows）等著 ',42.0,'清华大学出版社',1,'2017-03-01',285,511000,'平装','16开','胶板纸','img/goods/9787302383666/collect.jpg','img/goods/9787302383666/detail1.jpg','img/goods/9787302383666/detail1big.jpg','img/goods/9787302383666/index.jpg','img/goods/9787302383666/intro.jpg',100);
+insert into book values('9787302435167','大数据架构师指南','朱进云，陈坚，王德政 著 ',36.3,'清华大学出版社',1,'2016-05-01',296,320000,'平装','16开','胶板纸','img/goods/9787302435167/collect.jpg','img/goods/9787302435167/detail1.jpg','img/goods/9787302435167/detail1big.jpg','img/goods/9787302435167/index.jpg','img/goods/9787302435167/intro.jpg',100);
+insert into book values('9787302459873','数据挖掘与预测分析','[美]Daniel T. Larose，Chantal D. Larose 著 王念滨 宋敏 裴大茗 译 ',84.1,'清华大学出版社',2,'2017-02-01',725,1144000,'平装','16开','胶板纸','img/goods/9787302459873/collect.jpg','img/goods/9787302459873/detail1.jpg','img/goods/9787302459873/detail1big.jpg','img/goods/9787302459873/index.jpg','img/goods/9787302459873/intro.jpg',100);
+insert into book values('9787508344980','Head First Java','[美]Sierra K等著OReilly Taiwan公司译 ',53.9,'中国电力出版社',1,'2007-02-01',689,983000,'平装','16开','胶板纸','img/goods/9787508344980/collect.jpg','img/goods/9787508344980/detail1.jpg','img/goods/9787508344980/detail1big.jpg','img/goods/9787508344980/index.jpg','img/goods/9787508344980/intro.jpg',100);
 
 select * from book;
 
@@ -117,7 +118,7 @@ insert into cart(custID,bookID,bookNum) values('2','9787302459873','2');
 
 create view vcart
 as
-select bookname,detail1P,author,price,bookNum,cart.bookID,cart.custID,email
+select cartID,bookname,detail1P,author,price,bookNum,cart.bookID,cart.custID,email
 from book,cart,customer
 where book.bookID=cart.bookID and cart.custID=customer.custID;
 
@@ -155,29 +156,30 @@ delete from Neworder;
 insert into Neworder(custID,payway,recename,receadd,recephone,createtime,orderstate) values('1','网上支付','娜娜','王者峡谷','123456789','2018-12-17','处理中');
 insert into Neworder(custID,payway,recename,receadd,recephone,createtime,orderstate) values('2','线下支付','兰兰','秦时明月','987654321','2018-12-14','已收货');
 
-CREATE TABLE OrderInfor(
-	OrderInforID int auto_increment,
+CREATE TABLE OrderInfo(
+	OrderInfoID int auto_increment,
 	orderID int,
 	bookID char(100), 
-       	PRIMARY KEY(OrderInforID),
+	bookNum int,
+       	PRIMARY KEY(OrderInfoID),
 	FOREIGN KEY(orderID) REFERENCES Neworder(orderID),
 	FOREIGN KEY(bookID) REFERENCES book(bookID)
 )ENGINE=MyISAM DEFAULT CHARSET=utf8;
-delete from OrderInfor;
+delete from OrderInfo;
 
-insert into OrderInfor(orderID,bookID) values('1','9787302435167');
-insert into OrderInfor(orderID,bookID) values('1','9787302459873');
-insert into OrderInfor(orderID,bookID) values('1','9787508344980');
-insert into OrderInfor(orderID,bookID) values('2','9787302459873');
-insert into OrderInfor(orderID,bookID) values('2','9787508344980');
+insert into OrderInfo(orderID,bookID,bookNum) values('1','9787302435167',2);
+insert into OrderInfo(orderID,bookID,bookNum) values('1','9787302459873',1);
+insert into OrderInfo(orderID,bookID,bookNum) values('1','9787508344980',1);
+insert into OrderInfo(orderID,bookID,bookNum) values('2','9787302459873',3);
+insert into OrderInfo(orderID,bookID,bookNum) values('2','9787508344980',1);
 
-create view VorderInfor
+create view VorderInfo
 as
-select OrderInfor.orderID,bookname,detail1P,press,price,payway,recename,receadd,recephone,createtime,orderstate,OrderInfor.bookID
-from book,Neworder,OrderInfor
-where book.bookID=OrderInfor.bookID AND OrderInfor.orderID=Neworder.orderID;
+select OrderInfo.orderID,OrderInfo.bookID,bookname,detail1P,press,price,payway,recename,receadd,recephone,createtime,orderstate,bookNum
+from book,Neworder,OrderInfo
+where book.bookID=OrderInfo.bookID AND OrderInfo.orderID=Neworder.orderID;
 
-select * from VorderInfor;
+select * from VorderInfo;
 
 CREATE TABLE collect(
 	collectID int auto_increment,
