@@ -26,57 +26,26 @@
         <div class="mainDiv">
         	<div class="collectTopDiv">收藏商品</div>
 			<div class="collectListDiv">
+			 {if condition="empty($goods)"}
+                    <div >
+                        <div class=class="collectItemNameDiv">
+                            还没有收藏商品哟~
+                        </div>
+                    </div>
+                    {/if}
+			{foreach $goods as $good}
 				<div class="collectItemDiv">
-					<div ><img src="__STATIC__/img/goods/9787115353528/collect.jpg" /></div>
+					<div text-align="center"><img width=200px src="__STATIC__/img/goods/{$good.bookID}/index.jpg" /></div>
 					<div class="collectItemWordDiv">
-						<div class="collectItemNameDiv">Python数据科学指南</div>
+						<div class="collectItemNameDiv">{$good.bookname}</div>
 						<div class="collectItemBottomDiv">
-							<div class="collectItemPriceDiv">￥66.2</div>
-							<div class="collectItemCheckDiv" ><a href="detail.html">查看</a></div>
+							<div class="collectItemPriceDiv">价格：￥{$good.price}</div>
+							<div class="collectItemCheckDiv" ><a href="{:url('Detail/detail')}?bookID={$good.bookID}">查看</a></div>
 						</div>
 					</div>
 				</div>
-				<div class="collectItemDiv">
-					<div ><img src="__STATIC__/img/goods/9787111213826/collect.jpg" /></div>
-					<div class="collectItemWordDiv">
-						<div class="collectItemNameDiv">Java编程思想</div>
-						<div class="collectItemBottomDiv">
-							<div class="collectItemPriceDiv">￥66.2</div>
-							<div class="collectItemCheckDiv"><a href="detail.html">查看</a></div>
-						</div>
-					</div>
-				</div>
+			{/foreach}
 			
-				<div class="collectItemDiv">
-					<div ><img src="__STATIC__/img/goods/9787115388025/collect.jpg" /></div>
-					<div class="collectItemWordDiv">
-						<div class="collectItemNameDiv">图解机器学习</div>
-						<div class="collectItemBottomDiv">
-							<div class="collectItemPriceDiv">￥66.2</div>
-							<div class="collectItemCheckDiv"><a href="detail.html">查看</a></div>
-						</div>
-					</div>
-				</div>
-				<div class="collectItemDiv">
-					<div ><img src="__STATIC__/img/goods/9787115130228/collect.jpg" /></div>
-					<div class="collectItemWordDiv">
-						<div class="collectItemNameDiv">C Primer Plus</div>
-						<div class="collectItemBottomDiv">
-							<div class="collectItemPriceDiv">￥66.2</div>
-							<div class="collectItemCheckDiv"><a href="detail.html">查看</a></div>
-						</div>
-					</div>
-				</div>
-				<div class="collectItemDiv">
-					<div ><img src="__STATIC__/img/goods/9787115386397/collect.jpg" /></div>
-					<div class="collectItemWordDiv">
-						<div class="collectItemNameDiv">Spring MVC 学习指南</div>
-						<div class="collectItemBottomDiv">
-							<div class="collectItemPriceDiv">￥66.2</div>
-							<div class="collectItemCheckDiv"><a href="detail.html">查看</a></div>
-						</div>
-					</div>
-				</div>
         </div>
         
         <!--

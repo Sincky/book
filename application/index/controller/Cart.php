@@ -19,14 +19,14 @@ class Cart extends Controller
         if(empty(session('email'))){
             $this->error('请先登录!','login/login');
         }
-        if(empty(input('get.flowerID'))){
+        if(empty(input('get.bookID'))){
             $this->error('请选择商品!','index/index');
         }
-        $cart=CartModel::where('email',session('email'))->where('flowerID',input('get.flowerID'))->find();
+        $cart=CartModel::where('email',session('email'))->where('bookID',input('get.bookID'))->find();
         if(empty($cart)){
             $cartn=new CartModel();
             $cartn->email=session('email');
-            $cartn->flowerID=input('get.flowerID');
+            $cartn->bookID=input('get.bookID');
             $cartn->num=1;
             $cartn->save();
         }else{
