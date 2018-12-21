@@ -50,7 +50,6 @@ function addProduct() {
 			var bool = data;
 			console.log(bool);
 			if(bool){
-				//添加数据库成功，下面上传图片
 				alert("添加商品成功！即将跳转到商品列表~");
 				window.location.href = "../productlist/productlist";
 			}else{
@@ -63,4 +62,32 @@ function addProduct() {
 		}
 
 	});
+}
+
+function update()
+{
+	var data = {};
+	data['bookID'] = $('#bookNumber').val();
+	data['price'] = $('#bookPrice').val();
+	data['stock'] = $('#stock').val();
+
+	$.ajax({
+		type:'POST',
+		url:'productUpdate',
+		data: data,
+		success:function (data) {
+			var bool = data;
+			if(bool){
+				alert("更新商品信息成功！即将跳转到商品列表~");
+				window.location.href = "../productlist/productlist";
+			}else{
+				alert("添加失败，请重试~");
+			}
+		},
+		error:function (data) {
+			console.log(data);
+			alert("添加失败，请重试~");
+		}
+	});
+
 }

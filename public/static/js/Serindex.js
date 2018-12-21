@@ -9,7 +9,6 @@ $(function() {
 	$("#accordion").accordion({
 		collapsible: true,
 		active: false,
-		icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" },
 		activate: function( event, ui ) {
 			if(ui.newHeader.length){
 				if(ui.newHeader[0].id == "ui-id-1"){
