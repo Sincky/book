@@ -60,7 +60,7 @@ class Detail extends Controller
             });
 
             //跳转到购物车
-            //$this->redirect(url('cart/cart'));
+            $this->redirect(url('cart/cart'));
         }else{
             $dbbookNum = $dbBook->getData('bookNum') + $bookNum;
             //如果查询不为空，则说明已经有商品加入到购物车中
@@ -69,7 +69,7 @@ class Detail extends Controller
             $dbBook->save();
 
             //跳转到购物车
-            //$this->redirect(url('cart/cart'));
+            $this->redirect(url('cart/cart'));
 
         }
         echo '加入购物车成功！~';

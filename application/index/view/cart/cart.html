@@ -15,34 +15,51 @@
 		<link rel="stylesheet" href="__STATIC__/css/foot.css" />
 		<link rel="stylesheet" href="__STATIC__/css/cart.css" />
 		<script type="text/javascript" src="__STATIC__/js/header.js"></script>
-		<script type="text/javascript" src="__STATIC_/js/jquery-1.4.2.js"></script>
+		<script type="text/javascript" src="__STATIC__/js/jquery-1.4.2.js"></script>
 		<script type="text/javascript">
+		
 $(function(){
+	$("#goodsAll").click(function(){
+		$("input[type='checkbox']").attr("checked",$("#goodsAll").attr("checked"));
+	});
+	$("#goodsAll2").click(function(){
+		$("input[type='checkbox']").attr("checked",$("#goodsAll2").attr("checked"));
+	});
+	
 	sum();
 	total();
 	chk();
 });
 
 function sum(){
+	
 	$('#goods tr').each(function(){
-		var price = parseFloat($(this).find("td:eq(4)").text());
+	
+		var price = parseFloat($(this).find("td:eq(3)").text());
 		var num	= parseInt($(this).find("input[name='num']").val());
-		$(this).find("td:eq(6)").text(price * num);
+		$(this).find("td:eq(5)").text(price * num);
 	})
 }
 function total(){
 	var s=0;
+	var piece=0;
 	$('#goods tr').each(function(){
 		if($(this).find("input[type='checkbox']").attr('checked')){
-			var prices = parseFloat($(this).find("td:eq(6)").text());
+			var prices = parseFloat($(this).find("td:eq(5)").text());
+			var num	= parseInt($(this).find("input[name='num']").val());
+			piece+=num;
 			s+=prices;
 		}		
-	})
-	$("#total").text(s);
+	});
+	$("#amount").val(s);
+	$("#piece").val(piece);
+	$("#amount2").val(s);
+	$("#piece2").val(piece);
 }
 function change(btn,o){
     var num = 0;
     num = $('#'+o).val();
+    //alert(num);
     var flag=0;
     for(var i=0;i<num.length;i++)
 		if((num.charCodeAt(i)>57 || num.charCodeAt(i)<48) && num.charAt(i)!=32)
@@ -57,8 +74,8 @@ function change(btn,o){
 	}
 	else{
 		var tds=$(btn).parent().siblings();
-		var yourprice = tds.eq(4).text();	
-		tds.eq(5).text(price * num);	
+		var price = tds.eq(3).text();	
+		tds.eq(4).text(price * num);	
 		total();	
         $.get("{:url('cart/updateCart')}",{"cartID":o,"num":num});
 	}
@@ -71,7 +88,24 @@ function del(btn,cid){
 }
 
 function chk(){
+	var flag=true;
+	$('#goods tr').each(function(){
+		if($(this).find("input[type='checkbox']").attr('checked')){
+			//flag=false;
+			//alert("ttt");
+		}else{
+			flag=false;
+			$("#goodsAll").attr("checked",false);
+			$("#goodsAll2").attr("checked",false);
+		}	
+	});
+	if(flag==true){
+		$("#goodsAll").attr("checked",true);
+		$("#goodsAll2").attr("checked",true);
+	}
+	
 	total();
+	
 }
 
 </script> 
@@ -85,7 +119,7 @@ function chk(){
           	描述：页面中部示例
           -->
 		<div class="mainDiv">
-        
+        <form action="{:url('orderconfirm/orderconfirm')}" name="form1" method="post">
 		<div class="cartDiv">
 			<div class="wordDiv">
 				<div class="leftWordDiv">购物车</div>
@@ -97,12 +131,10 @@ function chk(){
 					<div class="statisticsDiv">元</div>
 				</div>
 			</div>
-			<form action="{:url('orderconfirm/orderconfirm')}" name="form1" method="post">
-			<table>
-			<tr class="headDiv">
-				<td>
-					<input type="checkbox" id="goodsAll1" name="goods" onclick="allClick(this);"/>全选
-				</td>
+			
+			<table style="width:100%;background-color:rgba(255,255,255,1);border-width:1px; border-style:groove;font-size: 16px;">
+			<tr style="text-align:center;font-weight:bold; border-width:1px; border-style:groove;height:50px">
+				<td><input type="checkbox" id="goodsAll" />全选</td>
 				<td>商品编号</td>
 				<td>商品</td>
 				<td>单价(元)</td>
@@ -110,32 +142,34 @@ function chk(){
 				<td>金额</td>
 				<td>操作</td>
 			</tr>
-			<tbody class="listDiv">
+			<tbody id="goods" style="background-color: lightyellow;text-align:center;">
 			{assign name="sum" value="0" /}
 			{foreach $result as $cart}
 			{assign name="sum" value="$sum + $cart.price * $cart.bookNum " /}
-				<tr id="addItem" class="itemDiv color">
-				<td class="choseDiv"><input type='checkbox' name='cartID[]' value='{$cart.cartID}' checked onclick="chk()"></td>
-				<td class="publishDiv">{$cart.bookID}</td>
-				<td class="goodsDiv"><div style='height:50px; float:left;'>
-						<img src='__STATIC_/img/{$cart.detail1P}' width=48 height=51 border=0></div>
-					<div style='height:50px; float:left;'>{$cart.bookname}</div>
+				<tr >
+				<td ><input type='checkbox' id='cartID[]' name='cartID[]' value='{$cart.cartID}' unchecked onclick="chk()"></td>
+				<td >{$cart.bookID}</td>
+				<td ><div style='height:50px; float:left;'>
+						<img src='__STATIC__/img/goods/{$cart.bookID}/detail1.jpg' width=48 height=51 border=0></div>
+					<div >{$cart.bookname}</div>
+					<div >{$cart.author}</div>
 				</td>
-				<td class="priceDiv">{$cart.price}</td>
-				<td><input type='text' id='{$cart.cartID}' size='1' value='{$cart.bookNum}' name='num'>
-					<input type='button' onclick='change(this,{$cart.cartID})' value='更新' /></td>
+				<td >{$cart.price}</td>
+				<td><input type='text' id="{$cart.cartID}" size='1' value='{$cart.bookNum}' name='num'>
+					<input type='button' onclick='change(this,{$cart.cartID})' value='更新' />
+				</td>
 				<td></td>
 				<td>
-					<input type="image" onclick="del(this,{$cart.cartID});" width="41" height="20" src="__STATIC_/img/04shop_deleteID.gif">
+					<input type="image" onclick="del(this,{$cart.cartID});" width=41 height=20 src='__STATIC__/img/04shop_deleteID.gif'>
 				</td>
 				</tr>
 			{/foreach}
 			</tbody>
 			</table>
-			</form>
+			
 			
 			<div class="commitDiv">
-				<div class="choseAllDiv"><input type="checkbox" id="goodsAll2" name="goods" onclick="allClick(this);"/>全选</div>
+				<div class="choseAllDiv"><input type="checkbox" id="goodsAll2" "/>全选</div>
 				<div class="middleDiv">
 					<div class="statisticsDiv">已选</div>
 					<div class="pieceDiv"><input type="text" id="piece2" name="piece2" value="0" disabled="disabled"/></div>
@@ -146,6 +180,7 @@ function chk(){
 			</div>
 		
        </div>
+       </form>
         </div>
 {include file="common/foot.html"/}			
 	</body>
