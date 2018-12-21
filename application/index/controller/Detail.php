@@ -55,8 +55,8 @@ class Detail extends Controller
         if(empty($dbBook)){
             //如果查询为空,则说没有相关商品加入到购物车中
             //加入商品条目到购物车
-            Db::transaction(function () use ($custID,$bookID){
-                CartModel::create(['custID'=>$custID,'bookID'=>$bookID,'bookNum'=>1]);
+            Db::transaction(function () use ($custID,$bookID,$bookNum){
+                CartModel::create(['custID'=>$custID,'bookID'=>$bookID,'bookNum'=>$bookNum]);
             });
 
             //跳转到购物车
