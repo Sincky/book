@@ -1,38 +1,66 @@
-function $(id){//依据id获取element对象
-	return document.getElementById(id);
-}
-function $F(id){//依据id获取element对象中的value值
-	return document.getElementById(id).value;
-}
-function nameOnblur(obj){//传入this对象
-//	var name=$("name");//document.getElementById(id);
-//	name.placeholder="请输入用户名";
-//	$("name").placeholder="请输入用户名";
-//	obj.placeholder="书名";
-//	alert(obj.placeholder);
-//	alert(obj.value)
+function addProduct() {
+	var bookID = $('#bookNumber').val();
+	var bookName = $('#bookName').val();
+	var bookAuthor = $('#bookAuthor').val();
+	var bookPrice = $('#bookPrice').val();
+	var bookPages = $('#bookPages').val();
+	var bookWords = $('#bookWords').val();
+	var publishCompany = $('#publishCompany').val();
+	var publishEdition = $('#publishEdition').val();
+	var publishDate = $('#publishDate').val();
+	var stock = $('#stock').val();
+	var booksize = $('#format option:selected').val();
+	var packaging =  $('#packaging option:selected').val();
+	var paper =  $('#paper option:selected').val();
+	var book = {};
 
-	var namevalue=obj.value;
-	var txt = new RegExp(/^\w{1,20}$/);//使用正则表达式来进行字符串的匹配
-//	alert(txt.test(namevalue));//txt对象 通过test函数匹配namevalue
-//  \w 0-9a-zA-Z ^以  为开头  $以 为结尾  \w{6,12}
-	if(txt.test(namevalue)){
-//		alert(11);
-		$("errName").innerHTML="符合要求";//js控制样式的切换 html css js
-		$("errName").className="okSpan";
+	book['bookID']= bookID;
+	book['bookname']= bookName;
+	book['author']= bookAuthor;
+	book['price']= bookPrice;
+	book['wordnum']= bookWords;
+	book['pages']= bookPages;
+	book['press']= publishCompany;
+	book['edition']= publishEdition;
+	book['pressdate']= publishDate;
+	book['stock']= stock;
+	book['booksize']= booksize;
+	book['package']= packaging;
+	book['paper']= paper;
 
-	}else{
-		$("errName").innerHTML="1-20个字符";
-		$("errName").className="noSpan";
-	}
+	//文件
+	var files= new FormData();
+	files.append('files[]',$('#fileField')[0].files[0],'index');
+	files.append('files[]',$('#fileField2')[0].files[0],'intro');
+	files.append('files[]',$('#fileField3')[0].files[0],'collect');
+	files.append('files[]',$('#fileField4')[0].files[0],'detail1');
+	files.append('files[]',$('#fileField5')[0].files[0],'detail2');
+	files.append('files[]',$('#fileField6')[0].files[0],'detail3');
+	files.append('files[]',$('#fileField7')[0].files[0],'detail1big');
+	files.append('files[]',$('#fileField8')[0].files[0],'detail2big');
+	files.append('files[]',$('#fileField9')[0].files[0],'detail3big');
+	files.append('book',JSON.stringify(book));
+	$.ajax({
+		type:'POST',
+		url:'addproduct',
+		processData: false,
+		contentType: false,
+		data:files,
+		success:function (data) {
+			var bool = data;
+			console.log(bool);
+			if(bool){
+				//添加数据库成功，下面上传图片
+				alert("添加商品成功！即将跳转到商品列表~");
+				window.location.href = "../productlist/productlist";
+			}else{
+				alert("添加失败，请重试~");
+			}
+		},
+		error:function (data) {
+			console.log(data);
+			alert("添加失败，请重试~");
+		}
 
-}
-
-function allClick(obj){
-	var bl=obj.checked;
-	var lists=document.getElementsByClassName("checkInput");
-	for(i in lists){
-		lists[i].checked=obj.cheecked;
-	}
-//	alert(bl);
+	});
 }
