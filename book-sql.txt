@@ -4,7 +4,7 @@ use book;
 CREATE TABLE customer(
 	custID  int  auto_increment,
 	email char(30) UNIQUE NOT NULL,
-	username char(10),
+	username char(15),
                 password char(10),
 	phone char(11),
                 identity char(11),
@@ -221,6 +221,7 @@ insert into comment(custID,bookID,comment,time) values('1','9787302459873','内容
 insert into comment(custID,bookID,comment,time) values('1','9787508344980','浅显易懂','2018-12-18');
 insert into comment(custID,bookID,comment,time) values('2','9787302459873','到货快','2018-12-15');
 insert into comment(custID,bookID,comment,time) values('2','9787508344980','服务好','2018-12-15');
+
 
 
 

@@ -34,11 +34,10 @@
 					<div class="registMessageDiv">
 						<div class="registMessageTopDiv">
 							<div class="LMTopLeft">新用户注册</div>
-							<div id="logist" class="LMTopRight" onclick="onnewLogin();">直接登录</div>
 							<div class="LMTopBottom">
 							</div>
 						</div>
-						<form action="{:url('Login/login')}" method="get" onsubmit="return summitClick();">
+						<form action="{:url('Register/doregister')}" method="post" onsubmit="return summitClick();">
 							<div class="registMessageCenterDiv">
 								<div class="registInput">
 									<div class="inputvalue">用户名：</div>
@@ -53,7 +52,8 @@
 								<div class="registInput">
 									<div class="inputvalue">邮箱：</div>
 									<div class="inputDiv"><input type="email" id="email" name="email" placeholder="请输入邮箱地址" onfocus="this.placeholder=''" onblur="this.placeholder='请 输入邮箱地址'" /></div>
-									<div class="errDiv"><span id="errEmail"></span></div>
+									<div class="errDiv"><span id="errEmail">
+									</span></div>
 								</div>
 								<div class="registInput">
 									<div class="inputvalue">手机号：</div>
@@ -63,7 +63,7 @@
 								<div class="registInput registMessageBottomDiv">
 									<div class="inputvalue"></div>
 									<div class="inputDiv">
-										<div class="button"><input type="submit" value="提交注册信息" /></div>
+										<div class="button"><input type="submit" value="提交注册信息"/></div>
 									</div>
 								</div>
 							</div>
