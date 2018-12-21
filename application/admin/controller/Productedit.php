@@ -27,4 +27,15 @@ class Productedit extends Controller
             echo false;
         }
     }
+
+    public function productdelete()
+    {
+        $bookID = input('post.bookID');
+        try{
+            Db::table('book')->where('bookID',$bookID)->delete();
+            echo true;
+        }catch (Exception $e){
+            echo false;
+        }
+    }
 }

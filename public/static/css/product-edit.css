@@ -147,11 +147,21 @@ body{
 	margin-bottom: 30px;
 
 }
-.inforDiv .editButtonDiv input{
+.inforDiv .editButtonDiv #inforEdit{
 	float: right;
 	width: 80px;
 	height: 50px;
 	text-align:center;
 	background-color: steelblue;
+	color: white;
+}
+
+.inforDiv .editButtonDiv #inforDelete{
+	float: right;
+	margin-right: 5px;
+	width: 80px;
+	height: 50px;
+	text-align:center;
+	background-color: deeppink;
 	color: white;
 }
