@@ -33,7 +33,9 @@
 						{foreach $orders as $order}
 						<tr>
 							<td>{$order.orderID}</td>
-							<td><input class="btn btn-danger" value="{$order.orderstate}" onclick="showdetail(this);"/></td>
+							<td><input class="btn
+							{php} switch($order['orderstate']){ case '待处理': echo 'btn-danger'; break; case '处理中': echo 'btn-info'; break; case '已发货': echo ' btn-warning'; break; case '已交付': echo 'btn-success'; break; default: echo 'btn-danger'; break; } {/php}
+							" value="{$order.orderstate}" onclick="showdetail(this);"/></td>
 							<td>{$order.createtime}</td>
 							<td>￥{$order.priceNum}</td>
 							<td>

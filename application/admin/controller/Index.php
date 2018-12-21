@@ -6,7 +6,8 @@ use think\Db;
 class Index extends Controller
 {
    public function index(){
-   
+       session_start();
+       session_destroy();
        return $this->fetch();
    }
    public function doLogin(){
@@ -28,6 +29,7 @@ class Index extends Controller
        }
        session('username',$has['username']);
        $this->redirect(url('Serindex/serindex'));
-      
    }
 }
+
+
