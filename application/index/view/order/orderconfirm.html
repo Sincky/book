@@ -7,12 +7,32 @@
 		<link rel="stylesheet" href="__STATIC__/css/header.css">
 		<link rel="stylesheet" href="__STATIC__/css/foot.css" />
 		<script type="text/javascript" src="__STATIC__/js/header.js"></script>
-		<script type="text/javascript" src="__STATIC__/js/index.js" ></script>
+		
 		<link rel="stylesheet" href="__STATIC__/css/orderConfirm.css" />
 		<script type="text/javascript" src="__STATIC__/js/orderConfirm.js" ></script>
+		<script src="__STATIC__/js/jquery-1.8.3.min.js"></script>	
 	<script>
 		$(function(){
-			
+			//点击提交
+			$(".submit").click(function(event){
+				var custID=$("input[name='custID']").val();
+				var total = $("#total_price").text();
+				
+				
+				
+				
+				$.post('{:url('order/addOrder')}',{
+						custID:custID, 
+						total:total,
+						
+					},function(data){
+			//			alert(data);
+						
+						if(data=="success"){
+							window.location.href="{:url('order/payment')}";	
+						}				
+					});
+			});	
 		})
 	</script>
 	</head>
@@ -84,13 +104,18 @@
 							<td align="center">数量</td>
 							<td align="center">金额</td>
 						</tr>
+						{assign name="total" value="0" /}	
+						{assign name="sum" value="0" /}	
 						{foreach $vcarts as $vcart}
+						{assign name="total" value="$total + $vcart.price * $vcart.bookNum " /}
+				
+						{assign name="sum" value="$sum + $vcart.bookNum " /}
 						<tr height="100px">
-							<td align="center"><img align="center" width="60px" src="__ROOT__/static/{$vcart.detail1P}"> </td>
-							<td>{$vcart.author}</td>
-							<td>{$vcart.price}</td>
-							<td>{$vcart.bookNum}</td>
-							<td>{$vcart.price}*{$vcart.bookNum}</td>
+							<td  align="center"><img align="center" width="60px" src="__ROOT__/static/{$vcart.detail1P}"> </td>
+							<td id="author">{$vcart.author}</td>
+							<td id="price">{$vcart.price}</td>
+							<td id="bookNum">{$vcart.bookNum}</td>
+							<td id="t">{$vcart.price*$vcart.bookNum}</td>
 						</tr>
 						{/foreach}
 						
@@ -100,10 +125,10 @@
 				<div class="OCCBottomDiv">
 					<div class="OCCBottomleftDiv"><span onclick="onOCClickcart();" ><<返回购物车</span></div>
 					<div class="OCCBottomrightDiv buttoDiv">
-						<input type="button" value=" 确认并付款" onclick="onOCClickPay();" />
+						<input id="submit" class="submit" type="button" value=" 确认并付款" />
 					</div>
 					<div class="OCCBottomrightDiv">
-						已选<span>2</span>件商品 合计（不含运费）:￥<span>1800</span>元
+						已选<span>{$sum}</span>件商品 合计（不含运费）:￥<span id="total_price">{$total}</span>元
 					</div>
 					
 					
