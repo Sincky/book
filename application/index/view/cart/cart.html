@@ -21,9 +21,11 @@
 $(function(){
 	$("#goodsAll").click(function(){
 		$("input[type='checkbox']").attr("checked",$("#goodsAll").attr("checked"));
+		total();
 	});
 	$("#goodsAll2").click(function(){
 		$("input[type='checkbox']").attr("checked",$("#goodsAll2").attr("checked"));
+		total();
 	});
 	
 	sum();
@@ -32,15 +34,14 @@ $(function(){
 });
 
 function sum(){
-	
 	$('#goods tr').each(function(){
-	
 		var price = parseFloat($(this).find("td:eq(3)").text());
 		var num	= parseInt($(this).find("input[name='num']").val());
-		$(this).find("td:eq(5)").text(price * num);
+		$(this).find("td:eq(5)").text(parseFloat(price * num).toFixed(2));
 	})
 }
 function total(){
+	var flag=true;
 	var s=0;
 	var piece=0;
 	$('#goods tr').each(function(){
@@ -49,12 +50,23 @@ function total(){
 			var num	= parseInt($(this).find("input[name='num']").val());
 			piece+=num;
 			s+=prices;
-		}		
+		}else{
+			flag=false;
+			$("#goodsAll").attr("checked",false);
+			$("#goodsAll2").attr("checked",false);
+		}	
 	});
+	if(flag==true){
+		$("#goodsAll").attr("checked",true);
+		$("#goodsAll2").attr("checked",true);
+	}
 	$("#amount").val(s);
 	$("#piece").val(piece);
 	$("#amount2").val(s);
 	$("#piece2").val(piece);
+}
+function chk(){
+	total();
 }
 function change(btn,o){
     var num = 0;
@@ -87,26 +99,7 @@ function del(btn,cid){
 	$.get("{:url('cart/deleteCart')}",{"cartID":cid});
 }
 
-function chk(){
-	var flag=true;
-	$('#goods tr').each(function(){
-		if($(this).find("input[type='checkbox']").attr('checked')){
-			//flag=false;
-			//alert("ttt");
-		}else{
-			flag=false;
-			$("#goodsAll").attr("checked",false);
-			$("#goodsAll2").attr("checked",false);
-		}	
-	});
-	if(flag==true){
-		$("#goodsAll").attr("checked",true);
-		$("#goodsAll2").attr("checked",true);
-	}
-	
-	total();
-	
-}
+
 
 </script> 
 	</head>
@@ -143,9 +136,7 @@ function chk(){
 				<td>操作</td>
 			</tr>
 			<tbody id="goods" style="background-color: lightyellow;text-align:center;">
-			{assign name="sum" value="0" /}
 			{foreach $result as $cart}
-			{assign name="sum" value="$sum + $cart.price * $cart.bookNum " /}
 				<tr >
 				<td ><input type='checkbox' id='cartID[]' name='cartID[]' value='{$cart.cartID}' unchecked onclick="chk()"></td>
 				<td >{$cart.bookID}</td>
@@ -172,11 +163,14 @@ function chk(){
 				<div class="choseAllDiv"><input type="checkbox" id="goodsAll2" "/>全选</div>
 				<div class="middleDiv">
 					<div class="statisticsDiv">已选</div>
-					<div class="pieceDiv"><input type="text" id="piece2" name="piece2" value="0" disabled="disabled"/></div>
+					<div class="piece2Div"><input type="text" id="piece2" name="piece2" value="0" disabled="disabled" style="background-color: rgba(0,0,0,0.1);"/></div>
 					<div class="statisticsDiv">件商品&nbsp;合计(不含运费):</div>
-					<div class="amountDiv"><input type="text" id="amount2" name="amount2" value="0" disabled="disabled"/></div>
-					<div class="statisticsDiv">元</div></div>
-				<div class="commitButtonDiv"><input type="submit" name="commit" id="commit" value="提交订单" onclick='javascript:form1.submit()'/></a> </div>
+					<div class="amount2Div"><input type="text" id="amount2" name="amount2" value="0" disabled="disabled"/></div>
+					<div class="statisticsDiv">元</div>
+				</div>
+				<div class="commitButtonDiv"><input type="submit" name="commit" id="commit" value="提交订单" onclick='javascript:form1.submit()'/></div>
+				<div class="commitButtonDiv"><a href="{:url('cart/clearCart')}"><input type="button" name="clear" id="clear" value="清空购物车" /></a> </div>
+				<div class="commitButtonDiv" ><a href="{:url('index/index')}"><input type="button" name="continue" id="continue" value="继续选购" /></a> </div>				
 			</div>
 		
        </div>

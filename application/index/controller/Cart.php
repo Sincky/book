@@ -36,7 +36,9 @@ class Cart extends Controller
         $this->redirect(url('cart/cart'));
     }
     public function clearCart(){
-        $result	=Db::execute("delete from cart where email='".session('email')."'");
+        $email=session('email');
+        $custID=Db::table('customer')->where('email',$email)->find()['custID'];
+        $result	=Db::execute("delete from cart where custID='".$custID."'");
         dump($result);
         $this->redirect(url('cart/cart'));
         

@@ -15,9 +15,6 @@ body{
 	box-shadow: 5px 5px 20px #D3D3D3;
 	;
 }
-.cartDiv{
-	
-}
 
 .wordDiv{
 	height: 60px;
@@ -45,22 +42,37 @@ body{
 }
  .pieceDiv{
 	float: left;
-	width: 50px;
+	width: 30px;
 	height: 30px;
 	margin-left: 0px;
 }
  .pieceDiv input{
 	width: 90%;
 	height: 90%;
-	font-size: 25px;
+	font-size: 15px;
 	text-align: center;
 	color: cornflowerblue;
 	border: hidden;
 	background-color:rgb(249,249,249) ;
 }
+ .piece2Div{
+	float: left;
+	width: 30px;
+	height: 30px;
+ 	background-color:#f5f5f5;
+	margin-left: 0px;
+}
+ .piece2Div input{
+	width: 100%;
+	height: 100%;
+	font-size: 15px;
+	text-align: center;
+	color: cornflowerblue;
+	border: hidden;
+}
 .amountDiv{
 	float: left;
-	width: 50px;
+	width: 70px;
 	height: 30px;
 	margin-left: 0px;
 	margin-bottom: 0px;
@@ -68,11 +80,28 @@ body{
  .amountDiv input{
 	width: 90%;
 	height: 90%;
-	font-size: 25px;
+	font-size: 15px;
 	text-align: center;
 	color: cornflowerblue;
 	border: hidden;
 	background-color:rgb(249,249,249) ;
+}
+.amount2Div{
+	float: left;
+	width: 70px;
+	height: 30px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+}
+ .amount2Div input{
+	width: 100%;
+	height: 100%;
+	font-size: 15px;
+	text-align: center;
+	color: cornflowerblue;
+ 		background-color:#dcdcdc;
+	border: hidden;
+}
 }
 .headDiv{
 	float: left;
@@ -231,6 +260,7 @@ body{
 .commitDiv{
 	height: 50px;
 	background-color: rgba(0,0,0,0.1);
+	
 }
 /*.commitDiv .choseAllDiv{
 	float: left;
@@ -251,7 +281,7 @@ body{
 .commitDiv .middleDiv{
 	float: left;
 	margin-top: 15px;
-	margin-left: 350px;
+	margin-left: 100px;
 	font-size: 16px;
 }
 .commitDiv .commitButtonDiv{
@@ -280,7 +310,6 @@ body{
 }*/
 
 .commitDiv .commitButtonDiv input{
-	font-weight: 650;
 	width: 100%;
 	height: 100%;
 	border: 1px;
