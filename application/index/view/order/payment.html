@@ -3,13 +3,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" href="css/book.css" />		
-		<link rel="stylesheet" href="css/header.css">
-		<link rel="stylesheet" href="css/foot.css" />
-		<link rel="stylesheet" href="css/payment.css" />
-		<link rel="stylesheet" href="css/scnu.css" />
-		<script type="text/javascript" src="js/header.js"></script>
-		<script type="text/javascript" src="js/index.js" ></script>
+		<link rel="stylesheet" href="__STATIC__/css/book.css" />		
+		<link rel="stylesheet" href="__STATIC__/css/header.css">
+		<link rel="stylesheet" href="__STATIC__/css/foot.css" />
+		<link rel="stylesheet" href="__STATIC__/css/payment.css" />
+		<link rel="stylesheet" href="__STATIC__/css/scnu.css" />
+		<script type="text/javascript" src="__STATIC__/js/header.js"></script>
+		
 		
 	</head>
 	
@@ -29,38 +29,7 @@
         	时间：2018-10-09
         	描述：页面顶部
         -->
-		<div class="headerDiv">
-     		<div class="headerTop">
-     			<div class="leftHeadDiv">
-     				<a href="index.html"><!--点击图片会跳转到首页-->          
-     					<img src="img/header/logo.png"/>
-     				</a>
-     		</div>
-     		<div class="HTopDiv">
-     			<div class="searchDiv">
-     				<input id="search" class="search" type="text" placeholder="&nbsp;&nbsp;请输入您要搜索的内容">
-     			</div>
-     			<div class="FindPic"><img src="img/header/search.png" /></div>
-     		</div>
-     		<ul class="UlTopDiv">
-				<li><a href="index.html" title="首页">首页</a></li>
-				<li><b>|</b> </li>
-      			<li><a href="collect.html" title="我的收藏">收藏</a></li>
-      			<li><b>|</b> </li>
-      			<li><a href="order.html" title="我的订单">订单</a></li>
-      			<li><b>|</b> </li>
-      			<li><a href="cart.html" title="我的购物车">购物车</a></li>
-      			<li><b>|</b> </li>
-       			<li><a href="lookforword.html" title="我的设置">设置</a></li>
-       			<li><b>|</b> </li>
-        		<li><a href="lookforword.html" title="退出">退出</a></li>
-        		<li><b>|</b> </li>
-      			<li><a href="regist.html" title="注册新用户">注册</a></li>
-      			<li><b>|</b> </li>
-      			<li><a href="login.html" title="用户登录">登录</a></li>
-			</ul>
-  			</div>
-  		</div>
+		{include file="common/header.html"/}
   		
   		<!--
           	作者：XXX
@@ -99,25 +68,25 @@
 					<ul>
                     <li>
                     	<div class="Quan"><input type="radio" name="bank" id="gong" value="1"></div>
-                    	<div class="BPic"><img src="img/pay/pay_img1.jpg" alt="" /></div> 
+                    	<div class="BPic"><img src="__STATIC__/img/pay/pay_img1.jpg" alt="" /></div> 
                     </li>
                        
                    
                    <li>
                     	<div class="Quan"><input type="radio" name="bank" id="jian" value="2"></div>
-                    	<div class="BPic"><img src="img/pay/pay_img2.jpg" alt="" /></div> 
+                    	<div class="BPic"><img src="__STATIC__/img/pay/pay_img2.jpg" alt="" /></div> 
                     </li>
                    <li>
                     	<div class="Quan"><input type="radio" name="bank" id="zhao" value="3"></div>
-                    	<div class="BPic"><img src="img/pay/pay_img3.jpg" alt="" /></div> 
+                    	<div class="BPic"><img src="__STATIC__/img/pay/pay_img3.jpg" alt="" /></div> 
                     </li>
                    <li>
                     	<div class="Quan"><input type="radio" name="bank" id="zhong" value="4"></div>
-                    	<div class="BPic"><img src="img/pay/pay_img4.jpg" alt="" /></div> 
+                    	<div class="BPic"><img src="__STATIC__/img/pay/pay_img4.jpg" alt="" /></div> 
                     </li>
                     <li>
                     	<div class="Quan"><input type="radio" name="bank" id="nong" value="5"></div>
-                    	<div class="BPic"><img src="img/pay/pay_img5.jpg" alt="" /></div> 
+                    	<div class="BPic"><img src="__STATIC__/img/pay/pay_img5.jpg" alt="" /></div> 
                     </li>
 
                 </ul>
@@ -130,7 +99,7 @@
 					</div>
 					<div class="bankbright">
 						<!--
-                        	<button onclick="get()"><a href="pay-success.html">支付</a></button>
+                        	<button><a href="{:url('order/paysuccess')}">支付</a></button>
                         -->
 						<button onclick="get()">支付</button>
 					</div>
@@ -144,79 +113,12 @@
         	时间：2018-10-09
         	描述：网页的尾部      大标签： FootTop
         -->
-		<div class="FootDiv">
-			<div class="FootTop">
-				<div class="FootTopLeft">
-					<div class="FPicture1">
-						<img src="img/footer/icon1.png" />
-					</div>
-					<div class="FPictureName">品质保障</div>
-				</div>
-				<div class="FootTopLeft">
-					<div class="FootTopLeft">
-					<div class="FPicture1">
-						<img src="img/footer/icon2.png" />
-					</div>
-					<div class="FPictureName">私人定制</div>
-				</div>
-				</div>
-				<div class="FootTopLeft">
-					<div class="FootTopLeft">
-					<div class="FPicture1">
-						<img src="img/footer/icon3.png" />
-					</div>
-					<div class="FPictureName">学员特供</div>
-				</div>
-				</div>
-				<div class="FootTopLeft">
-					<div class="FootTopLeft">
-					<div class="FPicture1">
-						<img src="img/footer/icon4.png" />
-					</div>
-					<div class="FPictureName">专属特权</div>
-				</div>
-				</div>
-			</div>
-			<div class="FootMiddle">
-				<div class="FootMiddle1">
-					<div class="FPicture2"><img src="img/footer/tedu.png"/></div>
-					<div class="FPicture2"><img src="img/footer/footerFont.png"/></div>					
-				</div>
-				<div class="FootMiddle2">
-					<div class="FWord1"><a href="">买家帮助</a></div>
-					<div class="FWord2"><a href="">新手指南</a></div>
-					<div class="FWord2"><a href="">服务保障</a></div>
-					<div class="FWord2"><a href="">常见问题</a></div>
-				</div>
-				<div class="FootMiddle2">
-					<div class="FWord1"><a href="">商家帮助</a></div>
-					<div class="FWord2"><a href="">商家入驻</a></div>
-					<div class="FWord2"><a href="">商家后台</a></div>
-				</div>
-				<div class="FootMiddle2">
-					<div class="FWord1"><a href="">关于我们</a></div>
-					<div class="FWord2"><a href="">关于达内</a></div>
-					<div class="FWord2"><a href="">联系我们</a></div>
-					<div class="FWord3">
-						<img src="img/footer/wechat.png"/>
-						<img src="img/footer/sinablog.png"/>
-					</div>
-				</div>
-				<div class="FootMiddle3">
-					<div class="FWord1">达内商城客户端</div>
-					<div class="FPicture3"><img src="img/footer/ios.png" /></div>
-					<div class="FPicture3"><img src="img/footer/android.png" /></div>
-				</div>
-				<div class="FootMiddle4">
-					<img src="img/footer/erweima.png" />
-				</div>
-			</div>
-			<div class="FootBottom">
-				<div class="FootBottomDiv">2001-2016版权所有 京ICP证8000853号-56</div>
-			</div>			
-		</div>	
+	
+			{include file="common/foot.html"/}	
+					
+		
 	</body>
-	<script type="text/javascript" src="js/payment.js" ></script>
+	<script type="text/javascript" src="__STATIC__/js/payment.js" ></script>
 
  
 </html>

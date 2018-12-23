@@ -7,33 +7,49 @@
 		<link rel="stylesheet" href="__STATIC__/css/header.css">
 		<link rel="stylesheet" href="__STATIC__/css/foot.css" />
 		<script type="text/javascript" src="__STATIC__/js/header.js"></script>
-		
+		<script type="text/javascript" src="__STATIC__/js/index.js"></script>
 		<link rel="stylesheet" href="__STATIC__/css/orderConfirm.css" />
 		<script type="text/javascript" src="__STATIC__/js/orderConfirm.js" ></script>
-		<script src="__STATIC__/js/jquery-1.8.3.min.js"></script>	
+		<script type="text/javascript" src="__STATIC__/js/jquery-1.8.3.min.js"></script>		
 	<script>
-		$(function(){
-			//点击提交
-			$(".submit").click(function(event){
-				var custID=$("input[name='custID']").val();
-				var total = $("#total_price").text();
-				
-				
-				
-				
-				$.post('{:url('order/addOrder')}',{
-						custID:custID, 
-						total:total,
-						
-					},function(data){
-			//			alert(data);
-						
-						if(data=="success"){
-							window.location.href="{:url('order/payment')}";	
-						}				
-					});
-			});	
-		})
+	var receID=$("#receID").text();
+	// 选择收货人
+	function Select(obj){
+		var receName=$(obj).parent().find("#receName").text();
+		var receAdd=$(obj).parent().find("#receAdd").text();
+		
+	    receID=$(obj).parent().find("#receID").text();
+		
+		
+		
+	}
+	function tijiao(){
+		var bookID=$("#bookID").text();
+		var author=$("#author").text();
+		var price=$("#price").text();
+		var bookNum=$("#bookNum").text();
+		var receName=$("#receName").text();
+		var receAdd=$("#receAdd").text();
+		alert(receID);
+
+		$.post("{:url('order/addOrder')}",{
+				receID:receID,
+				bookID:bookID,
+				author:author,
+				price:price,
+				bookNum:bookNum,
+				receName:receName,
+				receAdd:receAdd
+			},function(data){
+				alert(data);
+				if(data=="success"){
+					window.location.href="{:url('order/payment')}";	
+				}				
+			});
+		
+	}
+		
+	
 	</script>
 	</head>
 	
@@ -72,15 +88,17 @@
 				<div class="OCCTopDiv">
 					<p>选择收货地址</p>
 				</div>
-				<div class="OCCborderDiv"></div>
+				<div class="OCCborderDiv" ></div>
 				{foreach $Receivers as $Receiver}
-				<div class="OCCCenterDiv">
-					<div class="OCCCenterradioDiv">
+				<div class="OCCCenterDiv" >
+				
+					<div class="OCCCenterradioDiv" onclick="Select(this)">
 						<input name="address" type="radio" />
 					</div>
-					<p>{$Receiver.receName}</p>
+					<span class="receID" id="receID" style="display:none;">{$Receiver.receID}</span>
+					<p id="receName">{$Receiver.receName}</p>
 					<div class="OCCCenteraddressDiv">
-						<span>{$Receiver.receAdd}</span>
+						<span id="receAdd">{$Receiver.receAdd}</span>
 					</div>
 				</div>
 				{/foreach}
@@ -99,11 +117,13 @@
 					<table width="1000px" >
 						<tr bgcolor=gainsboro class="" height="40px">
 							<td align="center">   </td>
+							<td align="center">商品编号</td>
 							<td align="center">商品信息</td>
 							<td align="center">单价（元）</td>
 							<td align="center">数量</td>
 							<td align="center">金额</td>
 						</tr>
+						
 						{assign name="total" value="0" /}	
 						{assign name="sum" value="0" /}	
 						{foreach $vcarts as $vcart}
@@ -112,6 +132,7 @@
 						{assign name="sum" value="$sum + $vcart.bookNum " /}
 						<tr height="100px">
 							<td  align="center"><img align="center" width="60px" src="__ROOT__/static/{$vcart.detail1P}"> </td>
+							<td id="bookID">{$vcart.bookID}</td>
 							<td id="author">{$vcart.author}</td>
 							<td id="price">{$vcart.price}</td>
 							<td id="bookNum">{$vcart.bookNum}</td>
@@ -125,7 +146,8 @@
 				<div class="OCCBottomDiv">
 					<div class="OCCBottomleftDiv"><span onclick="onOCClickcart();" ><<返回购物车</span></div>
 					<div class="OCCBottomrightDiv buttoDiv">
-						<input id="submit" class="submit" type="button" value=" 确认并付款" />
+					
+						<input id="submit" class="submit" type="button" value=" 确认并付款" onclick="tijiao();"/>
 					</div>
 					<div class="OCCBottomrightDiv">
 						已选<span>{$sum}</span>件商品 合计（不含运费）:￥<span id="total_price">{$total}</span>元
