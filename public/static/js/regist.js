@@ -33,7 +33,7 @@ function emailOnblur(obj){
 	obj.placeholder="请输入邮箱"
 	if(obj.value==''){
 		$("errEmail").innerHTML="邮箱不能为空";
-		$("errEmail").className="nospan"
+		$("errEmail").className="nospan";
 		return false;
 	}
 	return true;
@@ -43,7 +43,7 @@ function pwdOnblur(obj){
 	var pwd=/^[0-9]{6,12}$/;
 	if(pwd.exec(obj.value)){
 		$("errPwd").innerHTML="符合要求";
-		$("errPwd").className="okspan"
+		$("errPwd").className="okspan";
 			return true;
 	}	
 	else{

@@ -18,8 +18,7 @@ class Register extends Controller
 
         $emailexist = db('customer')->where('email', $email)->find();
         if(empty($emailexist)&& !empty($phone)){
-            $result = Db::execute("insert into customer(email,username,password,phone) values('".$email."','".$username."','".$password."','".$phone."')");
-            dump($result);          
+            $result = Db::execute("insert into customer(email,username,password,phone) values('".$email."','".$username."','".$password."','".$phone."')");         
             $this->success('用户['. $email.']新增成功','login/login');
         }
         elseif (!empty($emailexist)){

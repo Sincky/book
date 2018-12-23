@@ -63,7 +63,7 @@
 	float: right;
 	width: 150px;
 	height:35px;
-	margin-top: 40px;
+	margin-top: 20px;
 	color: white;
 	padding-top: 15px;
 }
@@ -73,11 +73,13 @@
 	height: 1px;
 	border: solid #FFFFFF 1px;
 }
+/*margin-top: 10px;
+	padding-top: 10px;*/
 .AMCPInputDiv{
-	margin-top: 10px;
-	padding-top: 10px;
+	margin-top: 5px;
+	padding-top: 5px;
 	width: 400px;
-	height: 60px;
+	height: 70px;
 }
 .AMCPInputDiv input{
 	width: 350px;
@@ -87,17 +89,33 @@
 	padding-left: 10px;
 	margin-left: 10px;
 }
+
+.errDiv{
+	width: 350px;
+	height:30px;
+	float:left;
+	margin-left: 25px;	
+}
+
+.errDiv span{
+	float:left;
+	color: orangered;
+	font-size:14px;
+	
+}
+.errDiv .okspan{
+	color:chartreuse;	
+}
+.errDiv .nospan{
+	color: orangered;
+}
+
 .AccountManageBodyCenterDiv .AMCPButton{
-	margin-left: 70px;
-	float: left;
-	width: 40px;
+	width: 100px;
 	height: 30px;
 }
 .AccountManageBodyCenterDiv .AMCPButton input{
-	margin-left:10px ;
-	margin-top:10px ;
-	float: left;
-	width: 50px;
+	width: 100px;
 	height: 30px;
 }
 .AccountManageBottomDiv{

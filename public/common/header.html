@@ -17,6 +17,7 @@
 			<li>
 				<a style="color: gray;" href="{:url('Index/index')}" title="首页">首页</a>
 			</li>
+			{if condition="$Think.session.email neq '' "}
 			<li><b>|</b></li>
 			<li>
 				<a style="color: gray;" href="{:url('Collect/collect')}" title="我的收藏">收藏</a>
@@ -28,12 +29,12 @@
 			<li><b>|</b></li>
 			<li>
 				<a style="color: gray;" href="{:url('Cart/Cart')}" title="我的购物车">购物车</a>
-			</li>
+			</li>			
 			<li><b>|</b></li>
 			<li>
 				<a style="color: gray;" href="{:url('Setting/setting')}" title="我的设置">设置</a>
 			</li>
-			
+			{/if}
 			{if condition="$Think.session.email eq '' "}
 			<li><b>|</b></li>
 			<li>
