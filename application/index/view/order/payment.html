@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="__STATIC__/css/book.css" />		
+		<link rel="stylesheet" href="__STATIC__/css/header.css">
+		<link rel="stylesheet" href="__STATIC__/css/foot.css" />
+		<link rel="stylesheet" href="__STATIC__/css/payment.css" />
+		<link rel="stylesheet" href="__STATIC__/css/scnu.css" />
+		<script type="text/javascript" src="__STATIC__/js/header.js"></script>
+		
+		
+	</head>
+	
+	<!--需要删去，仅为示例所用-->
+	<style>
+		.mainDiv{
+			width: 1000px;
+			height: 500px;
+			margin: 0px auto;
+			
+		}
+	</style>
+	
+	<body>
+		<!--
+        	作者：杨富宙
+        	时间：2018-10-09
+        	描述：页面顶部
+        -->
+		{include file="common/header.html"/}
+  		
+  		<!--
+          	作者：XXX
+          	时间：2018-10-09
+          	描述：页面中部示例
+          -->
+        <div class="mainDiv">
+        	<div class="PayHead">
+        		<div class="navlist">
+    				<ul>
+        				<li class="navlist_blue_left"></li>
+        				<li class="navlist_gray">确认订单信息</li>
+        				<li class="navlist_gray_arrow"><canvas id="canvas_blue" width="20" height="38"></canvas>
+        				</li>
+        				<li class="navlist_blue">支付订单<b></b></li>
+        				<li class="navlist_blue_arrow"><canvas id="canvas_gray" width="20" height="38"></canvas>
+        				</li>
+        				<li class="navlist_gray">支付完成<b></b></li>
+        				<li class="navlist_gray_right"></li>
+    				</ul>
+				</div>
+				<div class="PayInfo">
+					<div class="Infotop">
+						<h1 class="left">支付金额：<b>4800元</b></h1>
+						<h1 class="right">支付订单：324235435 收款方：达内商城</h1>
+					</div>
+					<div class="Infolefttop">
+						<h1 class="right">网上银行支付</h1>
+					</div>
+				</div>
+				<div class="PayBank">
+					
+				<div class="dnBank">
+					
+				
+					<ul>
+                    <li>
+                    	<div class="Quan"><input type="radio" name="bank" id="gong" value="1"></div>
+                    	<div class="BPic"><img src="__STATIC__/img/pay/pay_img1.jpg" alt="" /></div> 
+                    </li>
+                       
+                   
+                   <li>
+                    	<div class="Quan"><input type="radio" name="bank" id="jian" value="2"></div>
+                    	<div class="BPic"><img src="__STATIC__/img/pay/pay_img2.jpg" alt="" /></div> 
+                    </li>
+                   <li>
+                    	<div class="Quan"><input type="radio" name="bank" id="zhao" value="3"></div>
+                    	<div class="BPic"><img src="__STATIC__/img/pay/pay_img3.jpg" alt="" /></div> 
+                    </li>
+                   <li>
+                    	<div class="Quan"><input type="radio" name="bank" id="zhong" value="4"></div>
+                    	<div class="BPic"><img src="__STATIC__/img/pay/pay_img4.jpg" alt="" /></div> 
+                    </li>
+                    <li>
+                    	<div class="Quan"><input type="radio" name="bank" id="nong" value="5"></div>
+                    	<div class="BPic"><img src="__STATIC__/img/pay/pay_img5.jpg" alt="" /></div> 
+                    </li>
+
+                </ul>
+
+				</div>
+				</div>
+				<div class="bankbottom">
+					<div class="bankbleft">
+						<h1 class="left">剩余付款时间：<b>15:00</b></h1>
+					</div>
+					<div class="bankbright">
+						<!--
+                        	<button><a href="{:url('order/paysuccess')}">支付</a></button>
+                        -->
+						<button onclick="get()">支付</button>
+					</div>
+				</div>
+				
+        	</div>
+        </div>
+        
+        <!--
+        	作者：lajiaopingzi@163.com
+        	时间：2018-10-09
+        	描述：网页的尾部      大标签： FootTop
+        -->
+	
+			{include file="common/foot.html"/}	
+					
+		
+	</body>
+	<script type="text/javascript" src="__STATIC__/js/payment.js" ></script>
+
+ 
+</html>

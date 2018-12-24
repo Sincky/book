@@ -29,12 +29,14 @@ class Login extends Controller
 	    }
 	    session('identity',$has['identity']);
 	    session('email',$has['email']);
+	    session('password',$has['password']);
 	    $this->redirect(url('index/index'));
 	}
 	
 	public  function LogOut(){
 	    session('identity',null);
 	    session('email',null);
+	    session('password',null);
 	    $this->redirect(url('index/index'));
 	}
 	
