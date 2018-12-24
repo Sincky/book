@@ -7,6 +7,12 @@
     {
         transform: scale(2);  
     }
+	tbody tr:nth-child(odd) {
+        background-color: white; /* green, 10% alpha */
+    }
+    tbody tr:nth-child(even) {
+        background-color: lightyellow; /* red, 30% alpha */
+    }
 </style>
 		<meta charset="UTF-8">
 		<title></title>
@@ -19,6 +25,7 @@
 		<script type="text/javascript">
 		
 $(function(){
+	
 	$("#goodsAll").click(function(){
 		$("input[type='checkbox']").attr("checked",$("#goodsAll").attr("checked"));
 		total();
@@ -125,8 +132,8 @@ function del(btn,cid){
 				</div>
 			</div>
 			
-			<table style="width:100%;background-color:rgba(255,255,255,1);border-width:1px; border-style:groove;font-size: 16px;">
-			<tr style="text-align:center;font-weight:bold; border-width:1px; border-style:groove;height:50px">
+			<table style="width:100%;background-color:rgba(255,255,255,1);border-width:1px;font-size: 16px;">
+			<tr style="text-align:center;font-weight:bold; border-width:1px;background-color:#E9ECEF;height:50px">
 				<td><input type="checkbox" id="goodsAll" />全选</td>
 				<td>商品编号</td>
 				<td>商品</td>
@@ -135,7 +142,7 @@ function del(btn,cid){
 				<td>金额</td>
 				<td>操作</td>
 			</tr>
-			<tbody id="goods" style="background-color: lightyellow;text-align:center;">
+			<tbody id="goods" style="text-align:center;">
 			{foreach $result as $cart}
 				<tr >
 				<td ><input type='checkbox' id='cartID[]' name='cartID[]' value='{$cart.cartID}' unchecked onclick="chk()"></td>
@@ -163,7 +170,7 @@ function del(btn,cid){
 				<div class="choseAllDiv"><input type="checkbox" id="goodsAll2" "/>全选</div>
 				<div class="middleDiv">
 					<div class="statisticsDiv">已选</div>
-					<div class="piece2Div"><input type="text" id="piece2" name="piece2" value="0" disabled="disabled" style="background-color: rgba(0,0,0,0.1);"/></div>
+					<div class="piece2Div"><input type="text" id="piece2" name="piece2" value="0" disabled="disabled"/></div>
 					<div class="statisticsDiv">件商品&nbsp;合计(不含运费):</div>
 					<div class="amount2Div"><input type="text" id="amount2" name="amount2" value="0" disabled="disabled"/></div>
 					<div class="statisticsDiv">元</div>

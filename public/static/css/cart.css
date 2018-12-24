@@ -259,7 +259,7 @@ body{
 
 .commitDiv{
 	height: 50px;
-	background-color: rgba(0,0,0,0.1);
+	background-color:#E9ECEF;
 	
 }
 /*.commitDiv .choseAllDiv{
@@ -292,11 +292,11 @@ body{
 	margin-right: 40px;
 	
 }
-.commitDiv .middleDiv .pieceDiv input{
-   background-color: rgb(225,225,225);
+.commitDiv .middleDiv .piece2Div input{
+   background-color: #E9ECEF;
 }
-.commitDiv .middleDiv .amountDiv input{
-   background-color: rgb(225,225,225);
+.commitDiv .middleDiv .amount2Div input{
+   background-color:#E9ECEF;
 }
 /*.commitDiv .commitButtonDiv input{
 	width: 200px;
