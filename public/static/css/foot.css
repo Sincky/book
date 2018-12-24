@@ -31,6 +31,7 @@ body{
 
 /*尾部中部*/
 .FootMiddle{
+	float:left;
 	height: 250px;
 	background-color: white;
 }
@@ -106,6 +107,7 @@ body{
 
 /*尾部下部*/
 .FootBottom{
+	float:left;
 	height: 30px;
 	background-color: white;
 }

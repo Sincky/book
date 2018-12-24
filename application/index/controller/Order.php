@@ -5,7 +5,7 @@ use think\Db;
 use app\index\model\Receiver;
 use app\index\model\Customer;
 use app\index\model\Neworder;
-use app\index\model\OrderInfo;
+use app\index\model\Orderinfo;
 use app\index\model\Cart;
 use app\index\model\Shoplist;
 use app\index\model\Book;
@@ -18,6 +18,14 @@ class Order extends Controller
 {
     public function order()
     {
+        if (empty(session('email'))) {
+	        $this->error('请先登录!', 'login/login');
+	    }
+	    $custID=customer::where('email',session('email'))->find()['custID'];
+	    
+	    $data=Neworder::where('custID',$custID)->select();
+	    $this->assign('data',$data);
+        
     	return $this->fetch();
     	 
 	}
@@ -26,7 +34,7 @@ class Order extends Controller
 	        $this->error('请先登录!', 'login/login');
 	    }
 	    
-	    $data = Receiver::where('4', session('email'))->select();
+	    $data = Receiver::where('email', session('email'))->select();
 	    $this->assign('Receivers', $data);
 	    
 	    $Custo = Customer::get(session('email'));
@@ -35,7 +43,7 @@ class Order extends Controller
 	    $cartIDs = input('post.cartID/a');
 	    session('cartIDs',$cartIDs);
 	    
-	    session('cartIDs', $cartIDs);
+	    
 	    
 	    $vcart = Db::table('vcart')->where('cartID', 'in', $cartIDs)->select();
 	    $this->assign('vcarts', $vcart);
@@ -63,12 +71,12 @@ class Order extends Controller
 	        $order->orderstate="处理中";
  	        $order->save();
  	        //订单处理列表
-  	        $orderinfo=new Orderinfo();
-   	        $orderinfo->orderID=$order->orderID;
-  	        $orderinfo->bookNum=input('post.bookNum');
-  	        $orderinfo->bookID=input('post.bookID');
+//   	        $orderinfo=new Orderinfo();
+//    	        $orderinfo->orderID=$order->orderID;
+//   	        $orderinfo->bookNum=input('post.bookNum');
+//   	        $orderinfo->bookID=input('post.bookID');
  	       
-     	    $orderinfo->save();
+//      	    $orderinfo->save();
 	         
 
 	         
@@ -102,15 +110,12 @@ class Order extends Controller
         
 	
 }
-public function payment(){
+
+public function paysuccess(){
     $email = session('email');
     if (empty($email)) {
         $this->error('请先登录!', 'login/login');
     }
-    
-    return $this->fetch();
-}
-public function paysuccess(){
     return $this->fetch();
 }
 }

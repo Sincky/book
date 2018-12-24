@@ -27,6 +27,7 @@
 }
 /*?????*/
 .mainTop .leftmainDiv #leftsidebar_box{
+	float:left;
     width:160px;
     height:470px;
 !important;overflow:hidden;

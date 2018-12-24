@@ -5,14 +5,10 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" href="__STATIC__/css/book.css" />
-		<link rel="stylesheet" href="__STATIC__/css/scnu.css">
 		<link rel="stylesheet" href="__STATIC__/css/header.css">
 		<link rel="stylesheet" href="__STATIC__/css/foot.css" />
 		<link rel="stylesheet" href="__STATIC__/css/order.css" />
-		<script type="text/javascript" src="__STATIC__/js/header.js"></script>
-		<script type="text/javascript" src="__STATIC__/js/index.js" ></script>
-		
-		
+		<script type="text/javascript" src="__STATIC__/js/header.js"></script>		
 	</head>
 	
 	<!--需要删去，仅为示例所用-->
@@ -42,42 +38,11 @@
         		<!--
                 	左边的下拉框
                 -->
-        		<div class="leftmainDiv">
-        			<!-- 左边栏-->
-  					<div id="leftsidebar_box" class="lf">
-    
-    				<dl class="my_order">
-      				<dt onClick="changeImage()" id="test1" >我的订单
-        				<img src="__STATIC__/img/myOrder/myOrder1.png" id="test2">
-      				</dt>
-      				<dd class="first_dd"><a href="order.html">全部订单</a></dd>
-      				<dd>
-        				<a href="#">
-          					待付款
-          					<span><!--待付款数量--></span>
-        				</a>
-      				</dd>
-      			<dd>
-       		 <a href="#">
-         			 待收货
-          	<span><!--待收货数量--></span>
-        	</a>
-      		</dd>
-      		<dd>
-        		<a href="#">
-         			 待评价<span><!--待评价数量--></span>
-       			 </a>
-     		 </dd>
-      		<dd>
-        		<a href="#">退货退款</a>
-     		</dd>
-    		</dl>
-		</div>
-	</div>
+        		
 				<!--
                 	中间部分
                 -->
-                <div class="midmainDiv">
+    			<div class="midmainDiv">
                 	<div class="TitlePic">
                 		
                 			<ul class="headitems">
@@ -92,11 +57,12 @@
                 			
                 		
                 	</div>
+                	{foreach $data as $d}
                 	<div class="MassageDiv">
                 		
                 		<div class="MassageTopDiv">
                 			<h1>
-                				订单编号：1234567890&nbsp;&nbsp;&nbsp;成交时间：2016-01-04 18:00&nbsp;&nbsp;&nbsp;联系客户
+                				订单编号：{$d.orderID}&nbsp;&nbsp;&nbsp;成交时间：{$d.createtime}&nbsp;&nbsp;&nbsp;联系客户
                 			<img src="__STATIC__/img/myOrder/kefuf.gif" />
                 			</h1>
                 			
@@ -141,141 +107,21 @@
                 		</div>
                 		
                 	</div>
-                	<div class="MassageDiv">
-                		<div class="MassageTopDiv">
-                			<h1>
-                				订单编号：1234567890&nbsp;&nbsp;&nbsp;成交时间：2016-01-04 18：00&nbsp;&nbsp;&nbsp;联系客户
-                			<img src="__STATIC__/img/myOrder/kefuf.gif" />
-                			</h1>
-                			
-                		</div>
-                		<div class="MassageMiddleDiv">
-                			<div class="MassagegoodDiv">
-                				<div class="goodPic">
-                					<img src="__STATIC__/img/goods/9787508344980/detail1.jpg" />	
-                				</div>
-                				<div class="MassagegoodnameDiv">
-                				<h1 >Head First Java (涵盖Java5.0)(第2版)</h1><br/>
-                				<h1>出版社：中国电力出版社</h1>
-                			</div>
-                			</div>
-                			<div class="Pirce">
-                				<h1 >专属价</h1>
-                				<h1>￥39.90</h1>
-                			</div>
-                			<div class="Number">
-                				<h1 >1件</h1>            
-                			</div>
-                			<div class="SaleAfter">
-                				<h1 >退款/退货</h1>
-                				<h1>我要维权</h1>          
-                			</div>
-                			<div class="RPirce">        
-                				<h1>￥39.90</h1>
-                			</div>
-                			<div class="Zhuangtai">
-                				
-                				
-                				<div class="Fahuo">
-                					<h1 ><img src="__STATIC__/img/myOrder/car.png" />已发货</h1>
-                					<br/>
-                					<h1>订单详情</h1>
-                				</div>
-                				
-                			</div>
-                			<div class="Caozuo">
-                				<button onclick="remove(this);">确认收货</button>
-                			</div>
-                		</div>
-                		
-                	</div>
-                	<div class="MassageDiv">
-                		<div class="MassageTopDiv">
-                			<h1>
-                				订单编号：1234567890&nbsp;&nbsp;&nbsp;成交时间：2016-01-04 18：00&nbsp;&nbsp;&nbsp;联系客户
-                			<img src="__STATIC__/img/myOrder/kefuf.gif" />
-                			</h1>
-                			
-                		</div>
-                		<div class="MassageMiddleDiv">
-                			<div class="MassagegoodDiv">
-                				<div class="goodPic">
-                					<img src="__STATIC__/img/goods/9787111526285/detail1.jpg" />	
-                				</div>
-                				<div class="MassagegoodnameDiv">
-                				<h1 >Go程序设计语言（英文版）</h1><br/>
-                				<h1>出版社：机械工业出版社</h1>
-                			</div>
-                			</div>
-                			<div class="Pirce">
-                				<h1 >专属价</h1>
-                				<h1>55.90</h1>
-                			</div>
-                			<div class="Number">
-                				<h1 >1件</h1>            
-                			</div>
-                			<div class="SaleAfter">
-                				<h1 >退款/退货</h1>
-                				<h1>我要维权</h1>          
-                			</div>
-                			<div class="RPirce">        
-                				<h1>￥55.90</h1>
-                			</div>
-                			<div class="Zhuangtai">
-                				
-                				
-                				<div class="Fahuo">
-                					<h1 ><img src="__STATIC__/img/myOrder/car.png" />已发货</h1>
-                					<br/>
-                					<h1>订单详情</h1>
-                				</div>
-                				
-                			</div>
-                			<div class="Caozuo">
-                				<button onclick="remove(this);">确认收货</button>
-                			</div>
-                		</div>
-                		<!--
-                        	作者：1924415064@qq.com
-                        	时间：2018-10-11
-                        	描述：
-                        -->
-                		<div class="PageDiv">
-                			<div class="Page">
-                			<div class="PageButton">
-                				<input type="button" class="buttonup" id="up" value="上一页" onclick="pageup()" />
-                			</div>
-                			<div class="PageNumber">
-                			<input type="button" class="pagechange" value="1" onclick="page(this)"style="background-color:cornflowerblue;color: white;"/>
-                				<input type="button" class="pagechange" value="2" onclick="page4(this)"/>
-                				<input type="button" class="pagechange" value="3" onclick="page4(this)"/>
-                				<input type="button" class="pagechange" value="4" onclick="page4(this)"/>
-                				
-                				<input type="button" class="button1" value="..."/>
-                				<input type="button" class="pagechange" value="6" onclick="page4(this)"/>
-                				
-                			</div>
-                			<div class="PageButton">
-                				<input type="button"  class="buttondown" id="down" value="下一页" onclick="pagedown()"/>
-                			</div>
-                			</div>
-                		</div>
-                		<!--
-                        	作者：1924415064@qq.com
-                        	时间：2018-10-11
-                        	描述：
-                        -->
-                	</div>
+                	{/foreach}
+                	
                 </div>
-        	</div>
-        </div>
+        	
         
+        </div>	
+        </div>
         <!--
         	作者：lajiaopingzi@163.com
         	时间：2018-10-09
         	描述：页面尾部
         -->
-        {include file="common/foot.html"/}		
+       
+        
+         {include file="common/foot.html"/}	
 	</body>
 	<script src="__STATIC__/js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="__STATIC__/js/order.js" ></script>
