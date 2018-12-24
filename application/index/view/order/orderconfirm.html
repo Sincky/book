@@ -30,7 +30,7 @@
 		var bookNum=$("#bookNum").text();
 		var receName=$("#receName").text();
 		var receAdd=$("#receAdd").text();
-		alert(receID);
+		
 
 		$.post("{:url('order/addOrder')}",{
 				receID:receID,
@@ -41,7 +41,7 @@
 				receName:receName,
 				receAdd:receAdd
 			},function(data){
-				alert(data);
+				
 				if(data=="success"){
 					window.location.href="{:url('order/payment')}";	
 				}				

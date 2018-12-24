@@ -26,7 +26,7 @@ class Order extends Controller
 	        $this->error('请先登录!', 'login/login');
 	    }
 	    
-	    $data = Receiver::where('email', session('email'))->select();
+	    $data = Receiver::where('4', session('email'))->select();
 	    $this->assign('Receivers', $data);
 	    
 	    $Custo = Customer::get(session('email'));
@@ -53,25 +53,24 @@ class Order extends Controller
 	    Db::transaction(function(){
 	       
  	        $order=new Neworder();
-//    	        $custID=customer::where(session('email'),'custID')->find();
- 	        $order->email=session('email');
-//  	        $a=input('post.receID');加不了这个
-//  	        alert($a);
-//  	        $order->payway="payway";
+    	    $custID=customer::where('email',session('email'))->find()['custID'];
+ 	        //支付订单列表更新
+ 	        $order->custID=$custID;
+ 	        $order->payway="网上支付";
 	        $order->recename=input('post.receName');
 	        $order->receadd=input('post.receAdd');
 	        $order->createtime=date('Y-m-d');
+	        $order->orderstate="处理中";
  	        $order->save();
- 	        
-//   	        $myorderinfo=new OrderInfo();加上这个就出错
-//   	        $orderinfobookid=input('post.bookID');
-//    	        $myorderinfo->orderID=$order->orderID;
-//   	        $orderinfo->bookNum=input('post.bookNum');
-//   	        $orderinfo->bookID=input('post.bookID');
+ 	        //订单处理列表
+  	        $orderinfo=new Orderinfo();
+   	        $orderinfo->orderID=$order->orderID;
+  	        $orderinfo->bookNum=input('post.bookNum');
+  	        $orderinfo->bookID=input('post.bookID');
  	       
-//     	    $myorderinfo->save();
+     	    $orderinfo->save();
 	         
-// 	        alert($order->email);
+
 	         
 	    
 // 	        $sch="email='".session('email')."' and createtime='".$order->createtime."' and custID=".$order->custID;
