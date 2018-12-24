@@ -4,7 +4,7 @@ use book;
 CREATE TABLE customer(
 	custID  int  auto_increment,
 	email char(30) UNIQUE NOT NULL,
-	username char(10),
+	username char(15),
                 password char(10),
 	phone char(11),
                 identity char(11),
@@ -14,9 +14,9 @@ CREATE TABLE customer(
 )ENGINE=MyISAM DEFAULT CHARSET=utf8;
 delete from customer;
 
-insert into customer(email,username,password,phone,identity,address,cdefault) values('aaa@163.com','李筱雯','123456','18012889889','Manager','佛山市南海区狮山大学城','1');
-insert into customer(email,username,password,phone,identity,address,cdefault) values('bbb@163.com','方凯西','123456','18022735825','Manager','佛山市南海区狮山大学城','0');
-insert into customer(email,username,password,phone,identity,address,cdefault) values('ccc@163.com','陈小花','123456','18912123212','Manager','佛山市南海区狮山大学城','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('aaa@163.com','李筱雯','123456','18012889889','User','佛山市南海区狮山大学城','1');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('bbb@163.com','方凯西','123456','18022735825','User','佛山市南海区狮山大学城','0');
+insert into customer(email,username,password,phone,identity,address,cdefault) values('ccc@163.com','陈小花','123456','18912123212','User','佛山市南海区狮山大学城','0');
 insert into customer(email,username,password,phone,identity,address,cdefault) values('ddd@163.com','王红霞','123456','13522132124','VIP','广州市新港东路144号','1');
 insert into customer(email,username,password,phone,identity,address,cdefault) values('eee@163.com','李梅','123456','18921214244','VIP','广州市华南师范大学','0');
 insert into customer(email,username,password,phone,identity,address,cdefault) values('fff@163.com','李丽','123456','18927712112','VIP','广东省佛山市南海区狮山大学城','0');
@@ -222,40 +222,6 @@ insert into comment(custID,bookID,comment,time) values('1','9787508344980','浅显
 insert into comment(custID,bookID,comment,time) values('2','9787302459873','到货快','2018-12-15');
 insert into comment(custID,bookID,comment,time) values('2','9787508344980','服务好','2018-12-15');
 
-drop table if exists shoplist;
 
-	CREATE TABLE shoplist(
-	SLID int  PRIMARY KEY   auto_increment,
-	orderID int,
-	bookID char(30),
-	bookNum int,
-	email char(30),
-	pjcontent varchar(100),
-	pjstar smallint,
-	pjtime datetime,
-	pjip char(14),
-	pjreply varchar(100)
-	)DEFAULT CHARSET=utf8;
-
-	insert into shoplist values(null,1,'9787508344980',1,'aaa@163.com',null,null,null,null,null);
-	insert into shoplist values(null,1,'9787302459873',1,'aaa@163.com',null,null,null,null,null);
-
-	
-drop view if exists showorder ;
-create view showorder
-as
-select myorder.orderID,myorder.email,inputtime,sname,address,pay_with,total,peisongday,status from myorder,customer 
-where myorder.custID=receiver.custID  order by peisongday desc,orderID desc;
-
- select * from showorder;
-
-drop view showshoplist;
-create view showshoplist 
-As 
-Select orderID,SLID,num,email,a.flowerID,fname,pictures,picturem,price,yourprice from shoplist a,flower b where  a.flowerID=b.flowerID;
-
-
-select orderID,SLID,flowerID,num,email from shoplist;
-select orderID,SLID,flowerID,fname,num,email from showshoplist;
 
 
