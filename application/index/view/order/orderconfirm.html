@@ -24,7 +24,11 @@
 		receName=$(obj).parent().find("#receName").text();
 		receAdd=$(obj).parent().find("#receAdd").text();
 	    receID=$(obj).parent().find("#receID").text();
-		
+	    bookID=$("#bookID").text();
+		author=$("#author").text();
+		price=$("#price").text();
+		bookNum=$("#bookNum").text();
+		alert(bookID);
 	}
 	function tijiao(){
 		$.post("{:url('order/addOrder')}",{

@@ -1,6 +1,6 @@
 <?php
 namespace app\index\model;
 use think\Model;
-class OrderInfo extends Model{
+class Orderinfo extends Model{
     
 }

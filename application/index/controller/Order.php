@@ -70,17 +70,19 @@ class Order extends Controller
 	        $order->createtime=date('Y-m-d');
 	        $order->orderstate="处理中";
  	        $order->save();
- 	        //订单处理列表
+ 	        //订单处理列表 
 //   	        $orderinfo=new Orderinfo();
 //    	        $orderinfo->orderID=$order->orderID;
-//   	        $orderinfo->bookNum=input('post.bookNum');
-//   	        $orderinfo->bookID=input('post.bookID');
+  	        $bookNum=input('post.bookNum');
+   	        $bookID=input('post.bookID');
  	       
 //      	    $orderinfo->save();
-	         
+     	    
+     	    $result = Db::execute("insert into orderinfo(orderID,bookID,bookNum) values('".$order->orderID."','".$bookID."','".$bookNum."')");
+	        
 
 	         
-	    
+	        $deletecart=Db::execute("delete from cart where custID='".$custID."' AND bookID='".$bookID."'");
 // 	        $sch="email='".session('email')."' and createtime='".$order->createtime."' and custID=".$order->custID;
 // 	        $orderN=Neworder::where($sch)->order('createtime desc')->limit(1)->find();
 // 	        $orderID=$orderN->orderID;
