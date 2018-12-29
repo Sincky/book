@@ -15,24 +15,45 @@
 	var receID=$("#receID").text();
 	var receName=$("#receName").text();
 	var receAdd=$("#receAdd").text();
-	var bookID=$("#bookID").text();
-	var author=$("#author").text();
-	var price=$("#price").text();
-	var bookNum=$("#bookNum").text();
+	//var bookID=$(".bookID").text();
+	//var author=$("#author").text();
+	//var price=$("#price").text();
+	//var bookNum=$("#bookNum").text();
+	var list=document.getElementsByClassName("bookID");
+	//var list2=document.getElementsByClassName("bookNum");
+	 var array=new Array();
+	
+
 	// 选择收货人
 	function Select(obj){
+		
+		list=document.getElementsByClassName("bookID");
+		for(var i=0;i<list.length;i++){
+			array[i]=(list[i].innerHTML);
+		}
+		//alert(array[1]);
+		
+		//list2=document.getElementsByClassName("bookNum");
+
 		receName=$(obj).parent().find("#receName").text();
 		receAdd=$(obj).parent().find("#receAdd").text();
 	    receID=$(obj).parent().find("#receID").text();
+	    
+		//author=$("#author").text();
+		//price=$("#price").text();
+		//bookNum=$("#bookNum").text();
 		
 	}
+	
 	function tijiao(){
+		//
 		$.post("{:url('order/addOrder')}",{
+			
 				receID:receID,
-				bookID:bookID,
-				author:author,
-				price:price,
-				bookNum:bookNum,
+				list:array,
+				//author:author,
+				//price:price,
+				//list2:list2,
 				receName:receName,
 				receAdd:receAdd
 			},function(data){
@@ -127,7 +148,7 @@
 						{assign name="sum" value="$sum + $vcart.bookNum " /}
 						<tr height="100px">
 							<td  align="center"><img align="center" width="60px" src="__ROOT__/static/{$vcart.detail1P}"> </td>
-							<td id="bookID">{$vcart.bookID}</td>
+							<td class="bookID">{$vcart.bookID}</td>
 							<td id="author">{$vcart.author}</td>
 							<td id="price">{$vcart.price}</td>
 							<td id="bookNum">{$vcart.bookNum}</td>
