@@ -37,18 +37,34 @@ class Order extends Controller
 // 	    return $this->fetch();
 	    
 	    $custID=customer::where('email',session('email'))->find()['custID'];
-	    
-	    $data1=Neworder::where('custID',$custID)->find()['orderID'];
+	    //$data=Neworder::where('custID',$custID)->select();
+	    $data=Db::table('vorderinfo')->where('custID',$custID)->select();
+	    $this->assign('data',$data);
+	    //$data1=Neworder::where('custID',$custID)->find()['orderID'];
 	    //$this->assign('orders',$data);
 	    
 	    //$data=Db::execute("select orderID,bookname,press,price from vorderinfo where orderID='".$data1."'");
 	    //$data=Db::execute("select ".'bookNum'.",".'press'.",".'price'.",".'orderstate'." from vorderinfo where custID='".$custID."'");
-	    foreach ($data1 as $orderid){
-	        $data+=Db::execute("select * from vorderinfo where orderID='".$orderid."'");
-	    }
+	    //foreach ($data1 as $orderid){
+	       // $data+=Db::execute("select * from vorderinfo where orderID='".$orderid."'");
+	   // }
 	    
 	    //$orderlists=array();
 	    //foreach ($data as $showorder){
+	        //$orderlistsitems=array();
+	        //print_r($orderlistsitems);
+	       // $orderID=$showorder->orderID;
+	       // echo $orderID ;
+	        
+	       // $books=Db::table('vorderinfo')->where('orderID',$orderID)->select();
+	       // foreach ($books as $book){
+	           // print_r($book);
+	            //array_push($orderlistsitems,$book);
+	        //}
+	        
+	        
+	       // $this->assign('books',$books);
+	        
 	        //$orderlistsitems=array();
 	        //foreach($showorder->vorderinfo as $shoplist){
 	            //if($showorder->orderID == $vorderinfo->orderID){
@@ -57,9 +73,11 @@ class Order extends Controller
 	        //}
 	        //array_push($orderlists,$orderlistitems);
 	    //}
+	    //print_r($orderlistsitems[0]);
+	    //array_push($orderlists,$orderlistsitems);
 	    
-	    $this->assign('orderlists',$orderlists);
-        
+	    //$this->assign('books',$orderlists);
+	   // print_r($orderlists);
     	return $this->fetch();
     	 
 	}
@@ -181,7 +199,7 @@ public function paysuccess(){
     }
     $custID=customer::where('email',session('email'))->find()['custID'];
     $orderID=Db::execute("select orderID from neworder where custID='".$custID."'");
-    $orderID=$orderID+1;
+    $orderID=$orderID;
     //$orderIDs=Neworder::where('custID',$custID)->find()['orderID'];
     //$orderids=count($orderIDs);
     //echo $orderIDs;
@@ -190,10 +208,22 @@ public function paysuccess(){
         //echo $orderIDs[$i];
     //}
     //echo $orderID;
-    $bookPrice=Db::execute("select price from vorderinfo where orderID='".$orderID."'");
-    $bookNum=Db::execute("select bookNum from vorderinfo where orderID='".$orderID."'");
-    echo $bookPrice;
-    $this->assign('total', $bookNum*$bookPrice);
+    $total=0;
+    $prices = Db::table('vorderinfo')->where('orderID',$orderID)->select();
+    $nums = Db::table('vorderinfo')->where('orderID',$orderID)->select();
+    foreach ($prices as $i => $price)
+    {
+        $num=$nums[$i]['bookNum'];
+        $total+=($prices[$i]['price']*$num);
+    
+    }
+    echo $total;
+    //echo $orders;
+    //$bookPrice=Db::table('vorderinfo')->where('orderID',$orderID)->find()['price'];
+    //$bookNum=Db::execute("select bookNum from vorderinfo where orderID='".$orderID."'");
+    //echo $bookPrice;
+    //echo $bookNum;
+    $this->assign('total', $total);
     $this->assign('orderId', $orderID);
     
     return $this->fetch();
@@ -201,6 +231,7 @@ public function paysuccess(){
 public function orderUpdate(){
     $orderID=input('get.orderID/d');
     $result=Db::execute("delete from neworder where orderID='".$orderID."'");
+    $result=Db::execute("delete from orderinfo where orderID='".$orderID."'");
     $this->redirect(url('order/order'));
 }
 }

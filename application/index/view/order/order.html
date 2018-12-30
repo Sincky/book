@@ -58,6 +58,7 @@
                 		
                 	</div>
                 	{foreach $data as $d}
+                	
                 	<div class="MassageDiv">
                 		
                 		<div class="MassageTopDiv">
@@ -70,16 +71,16 @@
                 		<div class="MassageMiddleDiv">
                 			<div class="MassagegoodDiv">
                 				<div class="goodPic">
-                					<img src="__STATIC__/img/goods/9787302383666/detail1.jpg" />	
+                					<img src="__STATIC__/img/goods/{$d.bookID}/detail1.jpg" />	
                 				</div>
                 				<div class="MassagegoodnameDiv">
-                				<h1 >MongoDB大数据处理权威指南（第2版）</h1><br/>
-                				<h1>出版社：清华大学出版社</h1>
+                				<h1 >{$d.bookname}</h1><br/>
+                				<h1>{$d.press}</h1>
                 			</div>
                 			</div>
                 			<div class="Pirce">
                 				<h1 >专属价</h1>
-                				<h1>￥29.90</h1>
+                				<h1>￥{$d.price}</h1>
                 			</div>
                 			<div class="Number">
                 				<h1 >1件</h1>            
@@ -89,13 +90,13 @@
                 				<h1>我要维权</h1>          
                 			</div>
                 			<div class="RPirce">        
-                				<h1>￥29.90</h1>
+                				<h1>￥{$d.price}</h1>
                 			</div>
                 			<div class="Zhuangtai">
                 				
                 				
                 				<div class="Fahuo">
-                					<h1 ><img src="__STATIC__/img/myOrder/car.png" />已发货</h1>
+                					<h1 ><img src="__STATIC__/img/myOrder/car.png" />{$d.orderstate}</h1>
                 					<br/>
                 					<h1>订单详情</h1>
                 				</div>
