@@ -174,7 +174,7 @@ insert into OrderInfo(orderID,bookID,bookNum) values('2','9787508344980',1);
 
 create view VorderInfo
 as
-select OrderInfo.orderID,OrderInfo.bookID,bookname,detail1P,press,price,payway,recename,receadd,recephone,createtime,orderstate,bookNum
+select OrderInfo.orderID,OrderInfo.bookID,bookname,detail1P,press,price,payway,recename,receadd,recephone,createtime,orderstate,bookNum,Neworder.custID
 from book,Neworder,OrderInfo
 where book.bookID=OrderInfo.bookID AND OrderInfo.orderID=Neworder.orderID;
 
