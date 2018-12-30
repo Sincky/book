@@ -15,7 +15,7 @@ class Cart extends Controller
         return $this->fetch();
     }
     public function addCart(){
-        
+    
         if(empty(session('email'))){
             $this->error('请先登录!','login/login');
         }
@@ -44,24 +44,26 @@ class Cart extends Controller
         
     }
     public function deleteCart(){
-        $cartID=input('get.cartID');
+        $cartID=input("get.cartID");
         $cart=CartModel::get($cartID);
+        
         if($cart){
             $cart->delete();
             $this->redirect(url('cart/cart'));
         }
     }
     public function updateCart(){
-
+    
         $cartID=input('get.cartID');
-        
         $num=input('get.num');
+        
         $cart=CartModel::get($cartID);
-        $cart->num=$num;
+        $cart->bookNum=$num;
         if($cart->save()){ 
             $this->redirect(url('cart/cart'));
         }else{
             $this->redirect(url('login/login'));
         }
+        
     }
 }

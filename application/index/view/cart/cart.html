@@ -22,8 +22,7 @@
 		<link rel="stylesheet" href="__STATIC__/css/cart.css" />
 		<script type="text/javascript" src="__STATIC__/js/header.js"></script>
 		<script type="text/javascript" src="__STATIC__/js/jquery-1.4.2.js"></script>
-		<script type="text/javascript">
-		
+		<script type="text/javascript">	
 $(function(){
 	
 	$("#goodsAll").click(function(){
@@ -38,6 +37,7 @@ $(function(){
 	sum();
 	total();
 	chk();
+	
 });
 
 function sum(){
@@ -96,7 +96,7 @@ function change(btn,o){
 		var price = tds.eq(3).text();	
 		tds.eq(4).text(price * num);	
 		total();	
-        $.get("{:url('cart/updateCart')}",{"cartID":o,"num":num});
+		$.get("{:url('cart/updateCart')}",{"cartID":o,"num":num});
 	}
 } 
 
@@ -119,7 +119,7 @@ function del(btn,cid){
           	描述：页面中部示例
           -->
 		<div class="mainDiv">
-        <form action="{:url('order/orderconfirm')}" name="form1" method="post">
+        <form action="{:url('order/order')}" name="form1" method="post">
 		<div class="cartDiv">
 			<div class="wordDiv">
 				<div class="leftWordDiv">购物车</div>
