@@ -125,9 +125,7 @@
 				</div>
 				{/foreach}
 				
-				<div class="OCCBottom">
-					更多地址>>
-				</div>
+				<div class="OCCBottom"><span><a href="{:url('addressadd/addressadd')}">更多地址>></a></span></div>
 			</div>
 			
 			<div class="confirmProductDiv">
@@ -166,7 +164,7 @@
 				
 				</div>
 				<div class="OCCBottomDiv">
-					<div class="OCCBottomleftDiv"><span onclick="onOCClickcart();" ><<返回购物车</span></div>
+					<div class="OCCBottomleftDiv" ><span  onclick="onOCClickcart();" ><a href="{:url('cart/cart')}"><<返回购物车</a></span></div>
 					<div class="OCCBottomrightDiv buttoDiv">
 					
 						<input id="submit" class="submit" type="button" value=" 确认并付款" onclick="tijiao();"/>

@@ -21,6 +21,34 @@ class Order extends Controller
         if (empty(session('email'))) {
 	        $this->error('请先登录!', 'login/login');
 	    }
+// 	    $orders = Db::table('neworder')->select();
+// 	    foreach ($orders as $key => $order){
+// 	        $orderID = $order['orderID'];
+// 	        $priceNum = 0.;
+// 	        //查询这个订单id所购买的商品
+// 	        $books = Db::table('vorderinfo')->where('orderID',$orderID)->select();
+// 	        $bookarray=array();
+// 	        //获取此订单的总额
+// 	        foreach ($books as $book){
+// 	            $priceNum += ((float)$book['price'])*((float)$book['bookNum']);
+// 	            $bookID=$book['bookID'];
+// 	            $bookNum=$book['bookNum'];
+// 	            $bookName=$book['bookname'];
+// 	            $press=$book['press'];
+// 	            $price=$book['price'];
+// 	            array_push($bookarray,$book);
+	            
+// 	        }
+// 	        print_r($bookarray);
+// 	        $orders[$key]['bookID'] = $bookarray['bookID'];
+// 	        $orders[$key]['priceNum'] = $bookarray['priceNum'];
+// 	        $orders[$key]['bookNum']=$bookarray['bookNum'];
+// 	        $orders[$key]['bookname']=$bookarray['bookname'];
+// 	        $orders[$key]['press']=$bookarray['press'];
+// 	        $orders[$key]['price']=$bookarray['price'];
+// 	    }
+// 	    $this->assign('data',$orders);
+	   // return $this->fetch();
 // 	    $data = Receiver::where('email', session('email'))->select();
 // 	    $this->assign('Receivers', $data);
 	    
@@ -230,8 +258,11 @@ public function paysuccess(){
 }
 public function orderUpdate(){
     $orderID=input('get.orderID/d');
+    $bookID=input('get.bookID/d');
     $result=Db::execute("delete from neworder where orderID='".$orderID."'");
-    $result=Db::execute("delete from orderinfo where orderID='".$orderID."'");
+    //$result=Db::execute("delete from orderinfo where orderID='".$orderID."' AND bookID='".$bookID."'");
+    //$result=Db::execute("delete from vorderinfo where orderID='".$orderID."' AND bookID='".$bookID."'");
+    
     $this->redirect(url('order/order'));
 }
 }

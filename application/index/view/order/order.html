@@ -83,7 +83,7 @@
                 				<h1>￥{$d.price}</h1>
                 			</div>
                 			<div class="Number">
-                				<h1 >1件</h1>            
+                				<h1 >{$d.bookNum}件</h1>            
                 			</div>
                 			<div class="SaleAfter">
                 				<h1 >退款/退货</h1>
@@ -103,7 +103,7 @@
                 				
                 			</div>
                 			<div class="Caozuo">
-                				<button onclick="remove(this);"><a href="{:url('order/orderUpdate')}?orderID={$d.orderID}">确认收货</button>
+                				<button onclick="remove(this);"><a href="{:url('order/orderUpdate')}?orderID={$d.orderID}& bookID={$d.bookID}">确认收货</button>
                 			</div>
                 		</div>
                 		
