@@ -222,6 +222,18 @@ insert into comment(custID,bookID,comment,time) values('1','9787508344980','浅显
 insert into comment(custID,bookID,comment,time) values('2','9787302459873','到货快','2018-12-15');
 insert into comment(custID,bookID,comment,time) values('2','9787508344980','服务好','2018-12-15');
 
+CREATE TABLE booklist(
+	listID  int  auto_increment,
+	buyname varchar(120),
+                buyauthor varchar(300),
+                buyprice float,
+	buynum int,
+	buypicture varchar(50),
+	buypress varchar(200),
+	total float,
+       	PRIMARY KEY(listID)
+)ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 
 
 
