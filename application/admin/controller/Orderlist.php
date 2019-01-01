@@ -8,7 +8,7 @@ class Orderlist extends Controller
     public function orderlist()
     {
         //查询订单表所有的订单
-        $orders = Db::table('neworder')->select();
+        $orders = Db::table('neworder')->order('orderID','desc')->select();
         foreach ($orders as $key => $order){
             $orderID = $order['orderID'];
             $priceNum = 0.;
