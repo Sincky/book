@@ -130,11 +130,11 @@ class Order extends Controller
 	    if (empty(session('email'))) {
 	        $this->error('请先登录!', 'login/login');
 	    }
-	   
+	    //echo "fffff";
 	   
 	    //事务处理开始
 	    Db::transaction(function(){
-	       
+	       //echo "hhhhh";
  	        $order=new Neworder();
     	    $custID=customer::where('email',session('email'))->find()['custID'];
  	        //支付订单列表更新
@@ -154,10 +154,10 @@ class Order extends Controller
  	        $num=count($bookIDs);
  	        for($i=0;$i<$num;++$i){
  	            //echo $bookIDs[$i];
- 	            $bookNum=Db::execute("select bookNum from vcart where bookID='".$bookIDs[$i]."'");
+ 	            $bookNum=Db::execute("select bookNum from vcart where bookID='".$bookIDs[$i]."' AND custID='".$custID."'");
  	            $result = Db::execute("insert into orderinfo(orderID,bookID,bookNum) values('".$order->orderID."','".$bookIDs[$i]."','".$bookNum."')");
  	            $deletecart=Db::execute("delete from cart where custID='".$custID."' AND bookID='".$bookIDs[$i]."'");
- 	            //echo $bookNum;
+ 	            
  	            
  	        }
  	        //request()->post('list/a');
@@ -227,7 +227,7 @@ public function paysuccess(){
     }
     $custID=customer::where('email',session('email'))->find()['custID'];
     $orderID=Db::execute("select orderID from neworder where custID='".$custID."'");
-    $orderID=$orderID;
+    $orderID=$orderID+1;
     //$orderIDs=Neworder::where('custID',$custID)->find()['orderID'];
     //$orderids=count($orderIDs);
     //echo $orderIDs;
@@ -245,7 +245,7 @@ public function paysuccess(){
         $total+=($prices[$i]['price']*$num);
     
     }
-    echo $total;
+    //echo $total;
     //echo $orders;
     //$bookPrice=Db::table('vorderinfo')->where('orderID',$orderID)->find()['price'];
     //$bookNum=Db::execute("select bookNum from vorderinfo where orderID='".$orderID."'");
