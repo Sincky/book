@@ -203,7 +203,7 @@ public function paysuccess(){
 public function orderUpdate(){
     $orderID=input('get.orderID/d');
     $bookID=input('get.bookID/d');
-    $result=Db::execute("delete from neworder where orderID='".$orderID."'");
+    $result=Db::execute("update neworder set orderstate='已收货' where orderID='".$orderID."'");
     //$result=Db::execute("delete from orderinfo where orderID='".$orderID."' AND bookID='".$bookID."'");
     //$result=Db::execute("delete from vorderinfo where orderID='".$orderID."' AND bookID='".$bookID."'");
     

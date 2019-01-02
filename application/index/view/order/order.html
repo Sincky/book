@@ -103,7 +103,26 @@
                 				
                 			</div>
                 			<div class="Caozuo">
-                				<button onclick="remove(this);"><a href="{:url('order/orderUpdate')}?orderID={$d.orderID}& bookID={$d.bookID}">确认收货</button>
+								{php} switch($d['orderstate']){
+								case '待处理':
+								echo '<button >待处理</button>';
+								break;
+								case '处理中':
+								echo '<button onclick="remove(this);"><a href="'. url('order/orderUpdate') . '?orderID=' . $d['orderID'] . '&bookID=' . $d['bookID'] . '">确认收货</a></button>';
+
+								break;
+								case '已发货':
+								echo '<button >发货中</button>';
+								break;
+								case '已收货':
+								echo '<button >已收货</button>';
+								break;
+								default:
+								echo '<button >待处理</button>';
+								break;
+								}
+								{/php}
+
                 			</div>
                 		</div>
                 		

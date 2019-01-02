@@ -247,7 +247,6 @@ function page4(obj,int4) {
 }
 
 function remove(obj) {
-	var inputobj = obj.parentNode.parentNode.parentNode;
-	inputobj.remove();
-	alert("收货成功");
+	alert('收货成功~');
+	document.location.reload();
 }
