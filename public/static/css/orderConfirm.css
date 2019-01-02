@@ -67,7 +67,7 @@
     left:0;
 }
 .orderConfirmChooseAdDiv{
-	height: 200px;
+	margin: 10px auto;
 	width: 1000px;
 }
 .OCCTopDiv p{
@@ -114,7 +114,6 @@
 	margin-left: 5px;
 }
 .CFPtableDiv{
-	height: 280px;
 	width: 1000px;
 }
 .OCCBottomDiv{
