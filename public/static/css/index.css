@@ -1,7 +1,7 @@
 .mainDiv{
 	width: 1000px;
-	height: 1400px;
 	margin: 0px auto;
+	margin-bottom: 100px;
 }
 
 .mainDiv .indexTop{
@@ -76,8 +76,8 @@
 
 /*书本内容*/
 .mainDiv .indexContent{
-	height: 950px;	
 	border: solid whitesmoke 2px;
+	overflow: hidden;
 }
 .mainDiv .indexContent .ContentBox{
 	float: left;
@@ -122,4 +122,7 @@
 
 .caroursel img{
 	transition: 0.5s;
+}
+.mainDiv .page{
+	margin-top: 50px;
 }
