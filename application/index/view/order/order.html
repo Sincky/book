@@ -120,6 +120,9 @@
 								case '已收货':
 								echo '<button >已收货</button>';
 								break;
+								case '已评价':
+								echo '<button >已评价</button>';
+								break;
 								default:
 								echo '<button >待处理</button>';
 								break;
@@ -141,6 +144,9 @@
 								break;
 								case '已收货':
 								echo '<button ><a href="'. url('order/evaluate') . '?orderID=' . $d['orderID'] . '&bookID=' . $d['bookID'] . '">我要评价</a></button>';
+								break;
+								case '已评价':
+								echo '<button >已评价</button>';
 								break;
 								default:
 								echo '<button >收货后评价</button>';

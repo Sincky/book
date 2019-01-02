@@ -208,17 +208,22 @@ public function orderUpdate(){
 //评价保存
  public function doEvaluate(){
      Db::transaction(function(){
+         
          $custID=customer::where('email',session('email'))->find()['custID'];
          $comments = $_POST['listC'];
          $bookIDs = $_POST['listB'];
+         $orderID= $_POST['orderID'];
+         $time=date('Y-m-d');
          $num=count($comments);
          for($i=0;$i<$num;++$i){
              //$bookNum = Db::query("select bookNum from vcart where bookID='".$bookIDs[$i]."' AND custID='".$custID."'")[0]['bookNum'];
              //订单信息列表增加
-             $result = Db::execute("insert into comment(custID,bookID,comment) values('".$custID."','".$bookIDs[$i]."','".$comments[$i]."')");
+             $result = Db::execute("insert into comment(custID,bookID,comment,time) values('".$custID."','".$bookIDs[$i]."','".$comments[$i]."','".$time."')");
              //删除购物车对应的订单
             // $deletecart=Db::execute("delete from cart where custID='".$custID."' AND bookID='".$bookIDs[$i]."'");
+             
          }
+         $result1=Db::execute("update neworder set orderstate='已评价' where orderID='".$orderID."'");
          
      });
      return "success";

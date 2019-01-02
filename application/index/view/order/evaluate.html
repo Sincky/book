@@ -11,12 +11,15 @@
 		<script>
 			var listComments=document.getElementsByClassName("comment");
 			var listBookIDs=document.getElementsByClassName("bookID");
+			//var orderID=document.getElementById('orderID').value;
 			var arrayComments=new Array();
 			var arrayBookIDs=new Array();
 			function tijiaoComment(){
-				//alert("tijiao");
+				
 				listComments=document.getElementsByClassName("comment");
 				listBookIDs=document.getElementsByClassName("bookID");
+				var orderID= document.getElementById('orderID').value;
+				alert(orderID);
 				for(var i=0;i<listComments.length;i++){
 					arrayComments[i]=(listComments[i].innerHTML);
 				}
@@ -24,8 +27,10 @@
 					arrayBookIDs[i]=(listBookIDs[i].innerHTML);
 				}
 				$.post("{:url('order/doEvaluate')}",{
+					    orderID:orderID,
 						listC:arrayComments,
 						listB:arrayBookIDs
+						
 						
 					},function(data){
 						
@@ -50,7 +55,7 @@
 {foreach $results as $result}
 
 <tr ><td rowspan="3" align=center><img src="__STATIC__/img/goods/{$result.bookID}/detail1.jpg">
-<br>{$result.bookname}<br><span class="bookID">商品编号：{$result.bookID}</span></td>
+<br>{$result.bookname}<br>商品编号：<span class="bookID">{$result.bookID}</span></td>
 
 <tr>
 <td align=left style="text-align:center;height:150px;">
@@ -60,7 +65,7 @@
 <tr><td></td></tr>
 {/foreach}
 <tr><td colspan="2" style="text-align:center;height:60px;">
-<input type="hidden" name="orderID" value="{$result.orderID}">
+<input id="orderID" type="hidden" name="orderID" value="{$result.orderID}">
 <input type="button" name="s" value="评价" onclick="tijiaoComment();">
 </td></tr>
 </table>
