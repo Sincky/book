@@ -261,7 +261,7 @@
 .mainTop .midmainDiv .MassageDiv{
 	float: left;
 	width:825px;
-	height:180px;
+	height:auto;
 	margin-left:10px;
 	margin-top: 5px;
 }

@@ -21,94 +21,33 @@ class Order extends Controller
         if (empty(session('email'))) {
 	        $this->error('请先登录!', 'login/login');
 	    }
-// 	    $orders = Db::table('neworder')->select();
-// 	    foreach ($orders as $key => $order){
-// 	        $orderID = $order['orderID'];
-// 	        $priceNum = 0.;
-// 	        //查询这个订单id所购买的商品
-// 	        $books = Db::table('vorderinfo')->where('orderID',$orderID)->select();
-// 	        $bookarray=array();
-// 	        //获取此订单的总额
-// 	        foreach ($books as $book){
-// 	            $priceNum += ((float)$book['price'])*((float)$book['bookNum']);
-// 	            $bookID=$book['bookID'];
-// 	            $bookNum=$book['bookNum'];
-// 	            $bookName=$book['bookname'];
-// 	            $press=$book['press'];
-// 	            $price=$book['price'];
-// 	            array_push($bookarray,$book);
-	            
-// 	        }
-// 	        print_r($bookarray);
-// 	        $orders[$key]['bookID'] = $bookarray['bookID'];
-// 	        $orders[$key]['priceNum'] = $bookarray['priceNum'];
-// 	        $orders[$key]['bookNum']=$bookarray['bookNum'];
-// 	        $orders[$key]['bookname']=$bookarray['bookname'];
-// 	        $orders[$key]['press']=$bookarray['press'];
-// 	        $orders[$key]['price']=$bookarray['price'];
-// 	    }
-// 	    $this->assign('data',$orders);
-	   // return $this->fetch();
-// 	    $data = Receiver::where('email', session('email'))->select();
-// 	    $this->assign('Receivers', $data);
-	    
-// 	    $cust = Customer::get(session('email'));
-// 	    $this->assign('customer', $cust);
-	    
-// 	    $cartIDs = input('post.cartID/a');
-// 	    session('cartIDs',$cartIDs);
-	    
-// 	    session('cartIDs', $cartIDs);
-	    
-// 	    $vcart = Db::table('vcart')->where('cartID', 'in', $cartIDs)->select();
-// 	    $this->assign('vcart', $vcart);
-// 	    return $this->fetch();
-	    
 	    $custID=customer::where('email',session('email'))->find()['custID'];
-	    //$data=Neworder::where('custID',$custID)->select();
-	    $data=Db::table('vorderinfo')->where('custID',$custID)->select();
-	   
+// 	    //$data=Neworder::where('custID',$custID)->select();
+// 	    $data=Db::table('vorderinfo')->where('custID',$custID)->select(); 
+// 	    $this->assign('data',$data);
 	    
-	    $this->assign('data',$data);
-	    
-	    //$data1=Neworder::where('custID',$custID)->find()['orderID'];
-	    //$this->assign('orders',$data);
-	    
-	    //$data=Db::execute("select orderID,bookname,press,price from vorderinfo where orderID='".$data1."'");
-	    //$data=Db::execute("select ".'bookNum'.",".'press'.",".'price'.",".'orderstate'." from vorderinfo where custID='".$custID."'");
-	    //foreach ($data1 as $orderid){
-	       // $data+=Db::execute("select * from vorderinfo where orderID='".$orderid."'");
-	   // }
-	    
-	    //$orderlists=array();
-	    //foreach ($data as $showorder){
-	        //$orderlistsitems=array();
-	        //print_r($orderlistsitems);
-	       // $orderID=$showorder->orderID;
-	       // echo $orderID ;
+	    //以下是按照后台评论写的
+	    $books = Db::query("select * from book,vorderinfo where book.bookID=vorderinfo.bookID and vorderinfo.custID='".$custID."'");
+	    $data = [];
+	    foreach ($books as $i => $book){
 	        
-	       // $books=Db::table('vorderinfo')->where('orderID',$orderID)->select();
-	       // foreach ($books as $book){
-	           // print_r($book);
-	            //array_push($orderlistsitems,$book);
-	        //}
-	        
-	        
-	       // $this->assign('books',$books);
-	        
-	        //$orderlistsitems=array();
-	        //foreach($showorder->vorderinfo as $shoplist){
-	            //if($showorder->orderID == $vorderinfo->orderID){
-	                //array_push($orderlistitems,$shoplist);
-	           // }
-	        //}
-	        //array_push($orderlists,$orderlistitems);
-	    //}
-	    //print_r($orderlistsitems[0]);
-	    //array_push($orderlists,$orderlistsitems);
-	    
-	    //$this->assign('books',$orderlists);
-	   // print_r($orderlists);
+	        $order=Db::table('vorderinfo')->where('bookID',$book['bookID'])->find();
+	        $customer = Db::table('customer')->where('custID',$book['custID'])->find();
+	        if(empty($data[$book['orderID']])){
+	            $data[$book['orderID']]['orderID'] = $order['orderID'];
+	            $data[$book['orderID']]['createtime'] = $order['createtime'];
+	            $data[$book['orderID']]['books'] = "";
+	        }
+	        $data[$book['orderID']]['books'][$book['custID']]['orderID'] = $book['orderID'];
+	        $data[$book['orderID']]['books'][$book['custID']]['bookID'] = $book['bookID'];
+	        $data[$book['orderID']]['books'][$book['custID']]['bookname'] = $book['bookname'];
+	        $data[$book['orderID']]['books'][$book['custID']]['bookNum'] = $book['bookNum'];
+	        $data[$book['orderID']]['books'][$book['custID']]['press'] = $book['press'];
+	        $data[$book['orderID']]['books'][$book['custID']]['price'] = $book['price'];
+	        $data[$book['orderID']]['books'][$book['custID']]['orderstate'] = $book['orderstate'];
+	    }
+	    // 设置页面变量
+	    $this->assign('books',$data);
     	return $this->fetch();
     	 
 	}
