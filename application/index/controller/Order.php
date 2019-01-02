@@ -67,7 +67,10 @@ class Order extends Controller
 	    $custID=customer::where('email',session('email'))->find()['custID'];
 	    //$data=Neworder::where('custID',$custID)->select();
 	    $data=Db::table('vorderinfo')->where('custID',$custID)->select();
+	   
+	    
 	    $this->assign('data',$data);
+	    
 	    //$data1=Neworder::where('custID',$custID)->find()['orderID'];
 	    //$this->assign('orders',$data);
 	    
@@ -209,4 +212,29 @@ public function orderUpdate(){
     
     $this->redirect(url('order/order'));
 }
+//评价跳转
+ public function evaluate(){
+        $orderID = input('get.orderID/d');
+        $data = Db::table('vorderinfo')->where('orderID', $orderID)->select();
+        $this->assign('results', $data);
+        return $this->fetch();
+    }
+//评价保存
+ public function doEvaluate(){
+     Db::transaction(function(){
+         $custID=customer::where('email',session('email'))->find()['custID'];
+         $comments = $_POST['listC'];
+         $bookIDs = $_POST['listB'];
+         $num=count($comments);
+         for($i=0;$i<$num;++$i){
+             //$bookNum = Db::query("select bookNum from vcart where bookID='".$bookIDs[$i]."' AND custID='".$custID."'")[0]['bookNum'];
+             //订单信息列表增加
+             $result = Db::execute("insert into comment(custID,bookID,comment) values('".$custID."','".$bookIDs[$i]."','".$comments[$i]."')");
+             //删除购物车对应的订单
+            // $deletecart=Db::execute("delete from cart where custID='".$custID."' AND bookID='".$bookIDs[$i]."'");
+         }
+         
+     });
+     return "success";
+    } 
 }

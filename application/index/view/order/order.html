@@ -53,6 +53,7 @@
                 				<li class="items5">实付款（元）</li>
                 				<li class="items6">交易状态</li>
                 				<li class="items7">操作</li>
+                				<li class="items8">评价</li>
                 			</ul>
                 			
                 		
@@ -68,6 +69,7 @@
                 			</h1>
                 			
                 		</div>
+                	
                 		<div class="MassageMiddleDiv">
                 			<div class="MassagegoodDiv">
                 				<div class="goodPic">
@@ -92,6 +94,7 @@
                 			<div class="RPirce">        
                 				<h1>￥{$d.price}</h1>
                 			</div>
+                			
                 			<div class="Zhuangtai">
                 				
                 				
@@ -124,15 +127,38 @@
 								{/php}
 
                 			</div>
+                			<div class="comment">
+                				{php} switch($d['orderstate']){
+								case '待处理':
+								echo '<button >收货后评价</button>';
+								break;
+								case '处理中':
+								echo '<button>收货后评价</button>';
+
+								break;
+								case '已发货':
+								echo '<button >收货后评价</button>';
+								break;
+								case '已收货':
+								echo '<button ><a href="'. url('order/evaluate') . '?orderID=' . $d['orderID'] . '&bookID=' . $d['bookID'] . '">我要评价</a></button>';
+								break;
+								default:
+								echo '<button >收货后评价</button>';
+								break;
+								}
+								{/php}
+                			</div>
                 		</div>
-                		
+                	
                 	</div>
                 	{/foreach}
                 	
                 </div>
         	
         
+        
         </div>	
+        
         </div>
         <!--
         	作者：lajiaopingzi@163.com

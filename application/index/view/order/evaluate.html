@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="__STATIC__/css/book.css" />
+		<link rel="stylesheet" href="__STATIC__/css/header.css">
+		<link rel="stylesheet" href="__STATIC__/css/foot.css" />
+		<link rel="stylesheet" href="__STATIC__/css/order.css" />
+		<script type="text/javascript" src="__STATIC__/js/header.js"></script>	
+		<script>
+			var listComments=document.getElementsByClassName("comment");
+			var listBookIDs=document.getElementsByClassName("bookID");
+			var arrayComments=new Array();
+			var arrayBookIDs=new Array();
+			function tijiaoComment(){
+				//alert("tijiao");
+				listComments=document.getElementsByClassName("comment");
+				listBookIDs=document.getElementsByClassName("bookID");
+				for(var i=0;i<listComments.length;i++){
+					arrayComments[i]=(listComments[i].innerHTML);
+				}
+				for(var i=0;i<listBookIDs.length;i++){
+					arrayBookIDs[i]=(listBookIDs[i].innerHTML);
+				}
+				$.post("{:url('order/doEvaluate')}",{
+						listC:arrayComments,
+						listB:arrayBookIDs
+						
+					},function(data){
+						
+						if(data=="success"){
+							window.location.href="{:url('order/order')}";	
+						}				
+					});
+				
+			}
+		
+		</script>	
+	</head>
+	<body>
+{include file="common/header.html"/}
+<meta charset="utf-8">
+<br><center>
+<form  method="post" name="f">
+<table style="width:680px; border: 2px solid #EEF8FD;">
+<tr>
+<td colspan=2 style="text-align:center;height:60px;font-weight:bold;">
+评价宝贝---请对您所购买的商品进行评价</td></tr>
+{foreach $results as $result}
+
+<tr ><td rowspan="3" align=center><img src="__STATIC__/img/goods/{$result.bookID}/detail1.jpg">
+<br>{$result.bookname}<br><span class="bookID">商品编号：{$result.bookID}</span></td>
+
+<tr>
+<td align=left style="text-align:center;height:150px;">
+<textarea class="comment" name="pjcontent{$result.bookID}" rows="8" cols="55">{$result.bookname}&nbsp; 很不错，内容丰富,送货很准时。</textarea>
+</td></tr>
+
+<tr><td></td></tr>
+{/foreach}
+<tr><td colspan="2" style="text-align:center;height:60px;">
+<input type="hidden" name="orderID" value="{$result.orderID}">
+<input type="button" name="s" value="评价" onclick="tijiaoComment();">
+</td></tr>
+</table>
+</form>
+</center>
+
+         {include file="common/foot.html"/}	
+	</body>
+	<script src="__STATIC__/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/order.js" ></script>
+	<script type="text/javascript">
+</script>
+</html>

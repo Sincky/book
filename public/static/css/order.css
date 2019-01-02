@@ -180,7 +180,7 @@
 }
 .mainTop .midmainDiv .TitlePic .headitems .items1{
 	float:left;
-	width: 325px;
+	width: 315px;
 	height: 37px;
 	list-style: none;
 	padding: 0px 5px;
@@ -190,7 +190,7 @@
 }
 .mainTop .midmainDiv .TitlePic .headitems .items2{
 	float:left;
-	width: 70px;
+	width: 60px;
 	height: 37px;
 	list-style: none;
 	padding: 0px 5px;
@@ -210,7 +210,7 @@
 }
 .mainTop .midmainDiv .TitlePic .headitems .items4{
 	float:left;
-	width: 64px;
+	width: 54px;
 	height: 37px;
 	list-style: none;
 	padding: 0px 5px;
@@ -220,7 +220,7 @@
 }
 .mainTop .midmainDiv .TitlePic .headitems .items5{
 	float:left;
-	width: 80px;
+	width: 70px;
 	height: 37px;
 	list-style: none;
 	padding: 0px 5px;
@@ -230,7 +230,7 @@
 }
 .mainTop .midmainDiv .TitlePic .headitems .items6{
 	float:left;
-	width: 90px;
+	width: 80px;
 	height: 37px;
 	list-style: none;
 	padding: 0px 5px;
@@ -248,7 +248,16 @@
 	text-align: center;
 
 }
+.mainTop .midmainDiv .TitlePic .headitems .items8{
+	float:left;
+	width: 40px;
+	height: 37px;
+	list-style: none;
+	padding: 0px 5px;
+	font-size: 10px;
+	text-align: center;
 
+}
 .mainTop .midmainDiv .MassageDiv{
 	float: left;
 	width:825px;
@@ -278,7 +287,7 @@
 }
 .mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .MassagegoodDiv{
 	float: left;
-	width:335px;
+	width:325px;
 	height: 150px;
 	margin-left:0px;
 	margin-top: 0px;
@@ -294,7 +303,7 @@
 }
 .mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .MassagegoodDiv .MassagegoodnameDiv{
 	float: left;
-	width:230px;
+	width:220px;
 	height: 100px;
 	margin-left:10px;
 	margin-top: 15px;
@@ -305,7 +314,7 @@
 }
 .mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Pirce{
 	float: left;
-	width:70px;
+	width:60px;
 	height: 150px;
 	margin-left:0px;
 	margin-top: 0px;
@@ -319,7 +328,7 @@
 }
 .mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Number{
 	float: left;
-	width:65px;
+	width:55px;
 	height: 150px;
 	margin-left:0px;
 	margin-top: 0px;
@@ -333,7 +342,7 @@
 }
 .mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .SaleAfter{
 	float: left;
-	width:65px;
+	width:55px;
 	height: 150px;
 	margin-left:0px;
 	margin-top: 0px;
@@ -347,7 +356,7 @@
 }
 .mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .RPirce{
 	float: left;
-	width:90px;
+	width:80px;
 	height: 150px;
 	margin-left:0px;
 	margin-top: 0px;
@@ -361,7 +370,7 @@
 }
 .mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Zhuangtai{
 	float: left;
-	width:100px;
+	width:90px;
 	height: 150px;
 	margin-left:0px;
 	margin-top: 0px;
@@ -375,12 +384,20 @@
 .mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Zhuangtai .Fahuo{
 	margin-left: 25px;
 	margin-top: 40px;
-	width:60px;
+	width:50px;
 	height: 50px;
 }
 .mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Caozuo{
 	float: left;
-	width:85px;
+	width:75px;
+	height: 150px;
+	margin-left:0px;
+	margin-top: 0px;
+	border-color: rgb(232,232,232);
+}
+.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Caozuo{
+	float: left;
+	width:75px;
 	height: 150px;
 	margin-left:0px;
 	margin-top: 0px;
