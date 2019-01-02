@@ -170,31 +170,17 @@ public function paysuccess(){
         $this->error('请先登录!', 'login/login');
     }
     $custID=customer::where('email',session('email'))->find()['custID'];
-    $orderID=Db::execute("select orderID from neworder where custID='".$custID."'");
-    $orderID=$orderID+1;
-    //$orderIDs=Neworder::where('custID',$custID)->find()['orderID'];
-    //$orderids=count($orderIDs);
-    //echo $orderIDs;
-    //$orderID=$orderIDs[$orderids];
-    //for($i=0;$i<$orderids;++$i){
-        //echo $orderIDs[$i];
-    //}
-    //echo $orderID;
+    $orderID=Db::query("select orderID from neworder where custID='".$custID."order by id desc'");
+    $orderID= $orderID[0]['orderID'];
+
     $total=0;
-    $prices = Db::table('vorderinfo')->where('orderID',$orderID)->select();
-    $nums = Db::table('vorderinfo')->where('orderID',$orderID)->select();
-    foreach ($prices as $i => $price)
+    $books = Db::table('vorderinfo')->where('orderID',$orderID)->select();
+  
+    foreach ($books as $book)
     {
-        $num=$nums[$i]['bookNum'];
-        $total+=($prices[$i]['price']*$num);
-    
+        $total+=(1*$book['price']*$book['bookNum']);
     }
-    //echo $total;
-    //echo $orders;
-    //$bookPrice=Db::table('vorderinfo')->where('orderID',$orderID)->find()['price'];
-    //$bookNum=Db::execute("select bookNum from vorderinfo where orderID='".$orderID."'");
-    //echo $bookPrice;
-    //echo $bookNum;
+
     $this->assign('total', $total);
     $this->assign('orderId', $orderID);
     
