@@ -137,6 +137,7 @@ class Order extends Controller
 	       //echo "hhhhh";
  	        $order=new Neworder();
     	    $custID=customer::where('email',session('email'))->find()['custID'];
+
  	        //支付订单列表更新
  	        $order->custID=$custID;
  	        $order->payway="网上支付";
@@ -145,75 +146,18 @@ class Order extends Controller
 	        $order->createtime=date('Y-m-d');
 	        $order->orderstate="处理中";
  	        $order->save();
- 	        //订单处理列表 
-//   	        $orderinfo=new Orderinfo();
-//    	        $orderinfo->orderID=$order->orderID;
 
-  	        //$bookNum=input('post.bookNum');
+ 	        //订单处理列表
  	        $bookIDs = $_POST['list'];
  	        $num=count($bookIDs);
  	        for($i=0;$i<$num;++$i){
- 	            //echo $bookIDs[$i];
- 	            $bookNum=Db::execute("select bookNum from vcart where bookID='".$bookIDs[$i]."' AND custID='".$custID."'");
+ 	            $bookNum = Db::query("select bookNum from vcart where bookID='".$bookIDs[$i]."' AND custID='".$custID."'")[0]['bookNum'];
+ 	            //订单信息列表增加
  	            $result = Db::execute("insert into orderinfo(orderID,bookID,bookNum) values('".$order->orderID."','".$bookIDs[$i]."','".$bookNum."')");
+ 	            //删除购物车对应的订单
  	            $deletecart=Db::execute("delete from cart where custID='".$custID."' AND bookID='".$bookIDs[$i]."'");
- 	            
- 	            
  	        }
- 	        //request()->post('list/a');
-   	        //$bookIDs=input('post.list');
-   	        //foreach ($bookIDs as $bookID){
-   	           // echo $bookID;
-   	            //$bookNum=Db::execute("select from cart where bookID='".$bookID."'");
-   	            //$result = Db::execute("insert into orderinfo(orderID,bookID,bookNum) values('".$order->orderID."','".$bookID."','".$bookNum."')");
-   	             
-   	            
-   	            
-   	           // $deletecart=Db::execute("delete from cart where custID='".$custID."' AND bookID='".$bookID."'");
-   	        
-   	        //}
- 	       
-//      	    $orderinfo->save();
-     	    
-     	    
-//  	        $sch="email='".session('email')."' and createtime='".$order->createtime."' and custID=".$order->custID;
-//  	        $orderN=Neworder::where($sch)->order('createtime desc')->limit(1)->find();
 
-  	        $bookNum=input('post.bookNum');
-   	        $bookID=input('post.bookID');
- 	       
-//      	    $orderinfo->save();
-     	    
-     	    $result = Db::execute("insert into orderinfo(orderID,bookID,bookNum) values('".$order->orderID."','".$bookID."','".$bookNum."')");
-	        
-
-	         
-	        $deletecart=Db::execute("delete from cart where custID='".$custID."' AND bookID='".$bookID."'");
-// 	        $sch="email='".session('email')."' and createtime='".$order->createtime."' and custID=".$order->custID;
-// 	        $orderN=Neworder::where($sch)->order('createtime desc')->limit(1)->find();
-
-// 	        $orderID=$orderN->orderID;
-	         
-// 	        //读取cart中购买的商品信息
-// 	        $cartIDs=session('cartIDs');
-	    
-// 	        $carts=Cart::where('cartID','in',$cartIDs)->select();
-// 	        foreach($vcarts as $cart){
-// 	            $shoplist=new Shoplist();
-	    
-// 	            $shoplist->orderID=$orderID;
-// 	            $shoplist->bookID=$cart->bookID;
-// 	            $shoplist->num=$cart->bookNum;
-	    
-// 	            $shoplist->save();
-	    
-// 	            $book=Book::get($cart->bookID);
-// 	            //                 $book->SelledNum+=$cart->bookNum;
-// 	            $book->save();
-	    
-// 	            $cart->delete();
-// 	        }
-  	         
 	    });
 	       return "success";
         
