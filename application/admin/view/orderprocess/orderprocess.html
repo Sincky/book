@@ -50,7 +50,7 @@
 								<input class="radioinput" type="radio" name="sex" value="待处理" {if condition="$order[0]['orderstate'] eq '待处理'"} checked="checked"{/if}  />待处理
 								<input class="radioinput" type="radio" name="sex" value="处理中" {if condition="$order[0]['orderstate'] eq '处理中'"} checked="checked"{/if} />处理中
 								<input class="radioinput" type="radio" name="sex" value="已发货" {if condition="$order[0]['orderstate'] eq '已发货'"} checked="checked"{/if} />已发货
-								<input class="radioinput" type="radio" name="sex" value="已交付" {if condition="$order[0]['orderstate'] eq '已交付'"} checked="checked"{/if} />已交付
+								<input class="radioinput" type="radio" name="sex" value="已收货" {if condition="$order[0]['orderstate'] eq '已收货'"} checked="checked"{/if} />已收货
 								<input type="button" value="保存" id="save" class="Sbutton" onclick="saveStatus('{$order[0][\'orderID\']}')" />
 							</div>
 						</div>
