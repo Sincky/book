@@ -170,16 +170,16 @@ body{
 	margin-left: 30px;
 }
 .SevODMid .MidDiv3 .head .Name{
-	margin-left: 90px;
+	margin-left: 130px;
 }
 .SevODMid .MidDiv3 .head .Id{
-	margin-left: 100px;
+	margin-left: 140px;
 }
 .SevODMid .MidDiv3 .head .detail{
-	margin-left: 100px;
+	margin-left: 110px;
 }
 .SevODMid .MidDiv3 .head .price{
-	margin-left: 350px;
+	margin-left: 260px;
 }
 .SevODMid .MidDiv3 .content{
 	height: 50px
@@ -197,7 +197,7 @@ body{
 
 }
 .SevODMid .MidDiv3 .content .Name{
-	width: 150px;
+	width: 250px;
 	text-align: center;
 }
 .SevODMid .MidDiv3 .content .Id{
@@ -205,7 +205,7 @@ body{
 	text-align: center;
 }
 .SevODMid .MidDiv3 .content .detail{
-	width: 400px;
+	width: 300px;
 	margin-left: 55px;
 }
 .SevODMid .MidDiv3 .content .price{
