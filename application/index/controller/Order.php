@@ -43,7 +43,7 @@ class Order extends Controller
 	        $data[$book['orderID']]['books'][$book['bookID']]['bookname'] = $book['bookname'];
 	        $data[$book['orderID']]['books'][$book['bookID']]['bookNum'] = $book['bookNum'];
 	        $data[$book['orderID']]['books'][$book['bookID']]['press'] = $book['press'];
-	        $data[$book['orderID']]['books'][$book['bookID']]['price'] = $book['price'];
+	        $data[$book['orderID']]['books'][$book['bookID']]['price'] = 1*$book['price']*$book['bookNum'];
 	        
 	    }
 	    // 设置页面变量
