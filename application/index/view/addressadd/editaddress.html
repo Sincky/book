@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="__STATIC__/css/editaddress.css" />
+		<link rel="stylesheet" href="__STATIC__/css/AccountManage.css" />
+		<link rel="stylesheet" href="__STATIC__/css/book.css" />		
+		<link rel="stylesheet" href="__STATIC__/css/header.css">
+		<link rel="stylesheet" href="__STATIC__/css/foot.css" />
+		<script type="text/javascript" src="__STATIC__/js/header.js"></script>
+		<script type="text/javascript" src="__STATIC__/js/index.js" ></script>
+		<link rel="stylesheet" href="__STATIC__/css/orderConfirm.css" />
+		<script type="text/javascript" src="__STATIC__/js/header.js"></script>
+		<script type="text/javascript" src="__STATIC__/js/index.js" ></script>
+		
+		
+		<script type="text/javascript" src="__STATIC__/js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="__STATIC__/js/address-add.js"></script>
+			
+	</head>
+	<body>
+	{include file="common/header.html"/}
+		<div class="orderMain">
+		<div class="orderBarDiv">
+			
+		</div>
+		<div class="inputInforDiv">
+			<div class="titleDiv">收货人编辑</div>
+			<div class="inforDiv">
+			<div class="valueDiv"><b>收货人ID</b><input type="hide" name="receID" id="receID" disabled="disabled" value="{$receiver.receID}"/></div>
+				<div class="valueDiv"><b>收货人姓名</b><input type="text" name="receName" id="receName" value="{$receiver.receName}"/></div>
+				<div class="valueDiv"><b>收货地址</b><input type="text" name="receAdd" id="receAdd" value="{$receiver.receAdd}"/></div>
+				<div class="valueDiv"><b>联系方式</b><input type="text" name="recePhone" id="recePhone" value="{$receiver.recePhone}"/></div>
+				<div class="editButtonDiv">
+					<input type="submit" id="inforEdit" name="inforEdit" value="提交" onclick="update();"/>
+
+				</div>
+			</div>
+			
+		</div>
+		</div>
+		{include file="common/foot.html"/}
+	</body>
+</html>
