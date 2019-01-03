@@ -12,6 +12,8 @@ class Productcomment extends Controller
     {
         $comments = Db::table('comment')->select();
         $data = [];
+        foreach ($comments as $i => $comment) {
+        }
 
         foreach ($comments as $i => $comment){
             $book = Db::table('book')->where('bookID',$comment['bookID'])->find();
