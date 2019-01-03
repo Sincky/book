@@ -27,17 +27,15 @@ class Order extends Controller
 // 	    $this->assign('data',$data);
 	    
 	    //以下是按照后台评论写的
-	    $books = Db::query("select * from book,vorderinfo where book.bookID=vorderinfo.bookID and vorderinfo.custID='".$custID."'");
+	    $books = Db::query("select * from book,vorderinfo where book.bookID=vorderinfo.bookID and vorderinfo.custID='".$custID."'order by orderID desc");
 	    $data = [];
 	    foreach ($books as $i => $book){
-	        
-	        $order=Db::table('vorderinfo')->where('bookID',$book['bookID'])->find();
-	        $customer = Db::table('customer')->where('custID',$book['custID'])->find();
+
 	        if(empty($data[$book['orderID']])){
-	            $data[$book['orderID']]['orderID'] = $order['orderID'];
-	            $data[$book['orderID']]['bookID'] = $order['bookID'];
-	            $data[$book['orderID']]['createtime'] = $order['createtime'];
-	            $data[$book['orderID']]['orderstate'] = $order['orderstate'];
+	            $data[$book['orderID']]['orderID'] = $book['orderID'];
+	            $data[$book['orderID']]['bookID'] = $book['bookID'];
+	            $data[$book['orderID']]['createtime'] = $book['createtime'];
+	            $data[$book['orderID']]['orderstate'] = $book['orderstate'];
 	            $data[$book['orderID']]['books'] = "";
 	        }
 	        $data[$book['orderID']]['books'][$book['bookID']]['orderID'] = $book['orderID'];
