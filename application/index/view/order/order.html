@@ -105,11 +105,10 @@
 								echo '<button >待处理</button>';
 								break;
 								case '处理中':
-								echo '<button onclick="remove(this);"><a href="'. url('order/orderUpdate') . '?orderID=' . $book['orderID'] . '&bookID=' . $book['bookID'] . '">确认收货</a></button>';
-
+								echo '<button >处理中</button>';
 								break;
 								case '已发货':
-								echo '<button >发货中</button>';
+								echo '<button onclick="remove(this);"><a href="'. url('order/orderUpdate') . '?orderID=' . $book['orderID'] . '&bookID=' . $book['bookID'] . '">确认收货</a></button>';
 								break;
 								case '已收货':
 								echo '<button >已收货</button>';
@@ -131,7 +130,6 @@
 								break;
 								case '处理中':
 								echo '<button>收货后评价</button>';
-
 								break;
 								case '已发货':
 								echo '<button >收货后评价</button>';
