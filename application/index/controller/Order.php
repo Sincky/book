@@ -35,16 +35,18 @@ class Order extends Controller
 	        $customer = Db::table('customer')->where('custID',$book['custID'])->find();
 	        if(empty($data[$book['orderID']])){
 	            $data[$book['orderID']]['orderID'] = $order['orderID'];
+	            $data[$book['orderID']]['bookID'] = $order['bookID'];
 	            $data[$book['orderID']]['createtime'] = $order['createtime'];
+	            $data[$book['orderID']]['orderstate'] = $order['orderstate'];
 	            $data[$book['orderID']]['books'] = "";
 	        }
-	        $data[$book['orderID']]['books'][$book['custID']]['orderID'] = $book['orderID'];
-	        $data[$book['orderID']]['books'][$book['custID']]['bookID'] = $book['bookID'];
-	        $data[$book['orderID']]['books'][$book['custID']]['bookname'] = $book['bookname'];
-	        $data[$book['orderID']]['books'][$book['custID']]['bookNum'] = $book['bookNum'];
-	        $data[$book['orderID']]['books'][$book['custID']]['press'] = $book['press'];
-	        $data[$book['orderID']]['books'][$book['custID']]['price'] = $book['price'];
-	        $data[$book['orderID']]['books'][$book['custID']]['orderstate'] = $book['orderstate'];
+	        $data[$book['orderID']]['books'][$book['bookID']]['orderID'] = $book['orderID'];
+	        $data[$book['orderID']]['books'][$book['bookID']]['bookID'] = $book['bookID'];
+	        $data[$book['orderID']]['books'][$book['bookID']]['bookname'] = $book['bookname'];
+	        $data[$book['orderID']]['books'][$book['bookID']]['bookNum'] = $book['bookNum'];
+	        $data[$book['orderID']]['books'][$book['bookID']]['press'] = $book['press'];
+	        $data[$book['orderID']]['books'][$book['bookID']]['price'] = $book['price'];
+	        
 	    }
 	    // 设置页面变量
 	    $this->assign('books',$data);
