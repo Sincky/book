@@ -2,7 +2,7 @@
   "name" : "book",
   "description" : "the new thinkphp framework",
   "require" : {
-    "php" : ">=5.4.0",
+    "php" : ">=5.6.27",
     "topthink/framework" : "5.0.*"
   },
   "license" : "Apache-2.0",
