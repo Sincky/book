@@ -1,6 +1,5 @@
 *{
-	font-family: "微软雅黑";
-	
+	font-family: "微软雅黑";	
 	border: 1px;
 }
 
@@ -55,13 +54,13 @@ body{
 
 .inforDiv div{
 	float: left;
-	width: 30%;
+	width: 400px;
 	height: 40px;
 	margin-left: 10px;
 	margin-top: 10px;
 }
 .inforDiv .valueDiv b{
-	
+	width: 100px;	
 	float: right;
 	margin-right: 75%;
 	margin-top: 5px;
@@ -70,14 +69,12 @@ body{
 	width: 70%;
 	height: 90%;
 	float: right;
-	text-align: left;
-	
+	text-align: left;	
 	margin-right: 0px;
 	margin-top: -33px;
 }
 .inforDiv .listDiv b{
 	
-	float: right;
 	margin-right: 75%;
 	margin-top: 5px;
 }
@@ -143,14 +140,14 @@ body{
 }
 .inforDiv .editButtonDiv{
 	float: right;
-	margin-right: 20px;
+	margin-right:50px;
 	margin-bottom: 30px;
 
 }
 .inforDiv .editButtonDiv #inforEdit{
 	float: right;
-	width: 80px;
-	height: 50px;
+	width: 120px;
+	height: 30px;
 	text-align:center;
 	background-color: rgb(12,160,231);
 	color: white;
