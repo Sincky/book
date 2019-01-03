@@ -157,7 +157,7 @@
 /*中间部分*/
 .mainTop .midmainDiv{
 	float: left;
-	width:800px;
+	width:825px;
 	height: 700px;
 	margin-left:0px;
 	margin-top: 25px;
@@ -277,15 +277,35 @@
 	font-size: 10px;
 	color: rgb(153,153,154);
 }
-.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv{
+
+.mainTop .midmainDiv .MassageDiv .ShowOrderDiv{
 	float: left;
 	width:825px;
+	height: auto;
+	margin-left:0px;
+	margin-top: 0px;
+	background-color:white ;
+}
+
+.mainTop .midmainDiv .MassageDiv .ShowOrderDiv .MassageMiddleDiv{
+	float: left;
+	width:auto;
 	height: 150px;
 	margin-left:0px;
 	margin-top: 0px;
 	background-color:white ;
 }
-.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .MassagegoodDiv{
+
+.mainTop .midmainDiv .MassageDiv .ShowOrderDiv .OrderStateDiv{
+	float: left;
+	width:auto;
+	height: 150px;
+	margin-left:0px;
+	margin-top: 0px;
+	background-color:white ;
+}
+
+.mainTop .midmainDiv .MassageDiv .ShowOrderDiv .MassageMiddleDiv .MassagegoodDiv{
 	float: left;
 	width:325px;
 	height: 150px;
@@ -368,7 +388,15 @@
 	font-size: 10px;
 	color: rgb(153,153,154);
 }
-.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Zhuangtai{
+
+.mainTop .midmainDiv .MassageDiv .OrderStateDiv {
+	float: left;
+	height: 150px;
+	margin-left:0px;
+	margin-top: 0px;
+}
+
+.mainTop .midmainDiv .MassageDiv .OrderStateDiv .Zhuangtai{
 	float: left;
 	width:90px;
 	height: 150px;
@@ -376,18 +404,18 @@
 	margin-top: 0px;
 	border-color: rgb(232,232,232);
 }
-.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Zhuangtai h1{
+.mainTop .midmainDiv .MassageDiv .OrderStateDiv .Zhuangtai h1{
 	
 	font-size: 10px;
 	color: rgb(153,153,154);
 }
-.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Zhuangtai .Fahuo{
+.mainTop .midmainDiv .MassageDiv .OrderStateDiv .Zhuangtai .Fahuo{
 	margin-left: 25px;
 	margin-top: 40px;
 	width:50px;
 	height: 50px;
 }
-.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Caozuo{
+.mainTop .midmainDiv .MassageDiv .OrderStateDiv .Caozuo{
 	float: left;
 	width:75px;
 	height: 150px;
@@ -395,7 +423,7 @@
 	margin-top: 0px;
 	border-color: rgb(232,232,232);
 }
-.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv .Caozuo{
+.mainTop .midmainDiv .MassageDiv .OrderStateDiv .Caozuo{
 	float: left;
 	width:75px;
 	height: 150px;
@@ -403,7 +431,17 @@
 	margin-top: 0px;
 	border-color: rgb(232,232,232);
 }
-.mainTop .midmainDiv .MassageDiv .MassageMiddleDiv button{
+
+.mainTop .midmainDiv .MassageDiv .OrderStateDiv .comment{
+	float: left;
+	width:75px;
+	height: 150px;
+	margin-left:0px;
+	margin-top: 0px;
+	border-color: rgb(232,232,232);
+}
+
+.mainTop .midmainDiv .MassageDiv .OrderStateDiv button{
 	width:70px;
 	height: 40px;
 	margin-left:7px;

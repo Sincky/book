@@ -35,16 +35,12 @@
          --> 		
         <div class="mainDiv">
         	<div class="mainTop">
-        		<!--
-                	左边的下拉框
-                -->
         		
 				<!--
                 	中间部分
                 -->
     			<div class="midmainDiv">
                 	<div class="TitlePic">
-                		
                 			<ul class="headitems">
                 				<li class="items1">商品</li>
                 				<li class="items2">单价（元）</li>
@@ -55,11 +51,9 @@
                 				<li class="items7">操作</li>
                 				<li class="items8">评价</li>
                 			</ul>
-                			
-                		
                 	</div>
-                	{foreach $books as $book}
                 	
+                	{foreach $books as $book}
                 	<div class="MassageDiv">
                 		
                 		<div class="MassageTopDiv">
@@ -69,12 +63,7 @@
                 			</h1>
                 			
                 		</div>
-                	
-                	<!--
-                    	作者：2377294073@qq.com
-                    	时间：2019-01-03
-                    	描述：不能遍历同个订单里的所有书本，只能显示每个订单的第一条记录
-                    -->
+                	<div class="ShowOrderDiv">
                 	{foreach $book['books'] as $user}
                 		<div class="MassageMiddleDiv">
                 			<div class="MassagegoodDiv">
@@ -83,7 +72,7 @@
                 				</div>
                 				<div class="MassagegoodnameDiv">
                 				<h1 >{$user['bookname']}</h1><br/>
-                				<h1>{{$user['press']}</h1>
+                				<h1>{$user['press']}</h1>
                 			</div>
                 			</div>
                 			<div class="Pirce">
@@ -100,24 +89,23 @@
                 			<div class="RPirce">        
                 				<h1>￥{$user['price']}</h1>
                 			</div>
-                			
+                		</div>
+                	{/foreach}
+                		<div class="OrderStateDiv">
                 			<div class="Zhuangtai">
-                				
-                				
                 				<div class="Fahuo">
-                					<h1 ><img src="__STATIC__/img/myOrder/car.png" />{$user['orderstate']}</h1>
+                					<h1 ><img src="__STATIC__/img/myOrder/car.png" />{$book['orderstate']}</h1>
                 					<br/>
                 					<h1>订单详情</h1>
                 				</div>
-                				
                 			</div>
                 			<div class="Caozuo">
-								{php} switch($user['orderstate']){
+								{php} switch($book['orderstate']){
 								case '待处理':
 								echo '<button >待处理</button>';
 								break;
 								case '处理中':
-								echo '<button onclick="remove(this);"><a href="'. url('order/orderUpdate') . '?orderID=' . $user['orderID'] . '&bookID=' . $user['bookID'] . '">确认收货</a></button>';
+								echo '<button onclick="remove(this);"><a href="'. url('order/orderUpdate') . '?orderID=' . $book['orderID'] . '&bookID=' . $book['bookID'] . '">确认收货</a></button>';
 
 								break;
 								case '已发货':
@@ -137,7 +125,7 @@
 
                 			</div>
                 			<div class="comment">
-                				{php} switch($user['orderstate']){
+                				{php} switch($book['orderstate']){
 								case '待处理':
 								echo '<button >收货后评价</button>';
 								break;
@@ -149,7 +137,7 @@
 								echo '<button >收货后评价</button>';
 								break;
 								case '已收货':
-								echo '<button ><a href="'. url('order/evaluate') . '?orderID=' . $user['orderID'] . '&bookID=' . $user['bookID'] . '">我要评价</a></button>';
+								echo '<button ><a href="'. url('order/evaluate') . '?orderID=' . $book['orderID'] . '&bookID=' . $book['bookID'] . '">我要评价</a></button>';
 								break;
 								case '已评价':
 								echo '<button >已评价</button>';
@@ -161,15 +149,16 @@
 								{/php}
                 			</div>
                 		</div>
-                	{/foreach}
+                	
+                	</div>
+                	
                 	</div>
                 	{/foreach}
-                	
                 </div>
         	
         
         
-        </div>	
+        	</div>	
         
         </div>
         <!--
