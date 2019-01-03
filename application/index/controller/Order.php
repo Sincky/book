@@ -114,7 +114,8 @@ public function paysuccess(){
         $this->error('请先登录!', 'login/login');
     }
     $custID=customer::where('email',session('email'))->find()['custID'];
-    $orderID=Db::query("select orderID from neworder where custID='".$custID."order by id desc'");
+
+    $orderID=Db::query("select orderID from neworder where custID='".$custID."'order by orderID desc");
     $orderID= $orderID[0]['orderID'];
 
     $total=0;
